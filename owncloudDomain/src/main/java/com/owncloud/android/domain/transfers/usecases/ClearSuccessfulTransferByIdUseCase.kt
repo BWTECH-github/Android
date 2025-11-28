@@ -18,8 +18,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.owncloud.android.domain.spaces.model
+package com.owncloud.android.domain.transfers.usecases
 
-enum class SpaceMenuOption {
-    EDIT, EDIT_IMAGE, DISABLE, ENABLE, DELETE, SET_ICON
+import com.owncloud.android.domain.BaseUseCase
+import com.owncloud.android.domain.transfers.TransferRepository
+
+class ClearSuccessfulTransferByIdUseCase(
+    private val transferRepository: TransferRepository
+) : BaseUseCase <Unit, ClearSuccessfulTransferByIdUseCase.Params>() {
+
+    override fun run(params: Params) = transferRepository.deleteTransferById(params.transferId)
+
+    data class Params(val transferId: Long)
 }
