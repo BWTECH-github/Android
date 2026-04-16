@@ -2,7 +2,7 @@
 <resources>
 
     <!-- App name and other strings-->
-    <string name="app_name" formatted="false">ownCloud</string>
+    <string name="app_name" formatted="false">ownCloud Online</string>
     <string name="account_type" formatted="false">owncloud</string>    <!-- better if was a domain name; but changing it now would require migrate accounts when the app is updated -->
     <string name="authority" formatted="false">org.owncloud</string>
     <string name="document_provider_authority" formatted="false">org.owncloud.documents</string>
@@ -14,15 +14,15 @@
     <string name="data_folder" formatted="false">owncloud</string>
     <string name="log_name" formatted="false">Owncloud_</string>
     <string name="default_display_name_for_root_folder" formatted="false">ownCloud</string>
-    <string name="user_agent">Mozilla/5.0 (Android) ownCloud-android/%1$s</string>
+    <string name="user_agent">Mozilla/5.0 (Android) ownCloudOnline-android/%1$s</string>
 
     <!-- URLs and flags related -->
-    <string name="server_url" formatted="false"></string>
+    <string name="server_url" formatted="false">https://owncloud.online</string>
     <bool name="show_server_url_input">true</bool>
     <bool name="show_welcome_link">true</bool>
-    <string name="welcome_link_url" formatted="false">"https://owncloud.com/docs-guides"</string>
+    <string name="welcome_link_url" formatted="false">"https://owncloud.online"</string>
     <string name="share_api_link" formatted="false"></string>
-    <string name="login_welcome_text" formatted="false"></string>
+    <string name="login_welcome_text" formatted="false">Powered by owncloud.online</string>
 
     <!-- Flags to enable/disable some features -->
     <string name="send_files_to_other_apps" formatted="false">on</string>
@@ -71,12 +71,12 @@
     <bool name="privacy_policy_enabled">true</bool>
     <bool name="wizard_enabled">true</bool>
     <bool name="release_notes_enabled">true</bool>
-    <string name="url_privacy_policy" formatted="false">https://owncloud.com/android-app-privacy-policy/</string>
-    <string name="url_help" formatted="false">https://doc.owncloud.com/android</string>
+    <string name="url_privacy_policy" formatted="false">https://owncloud.online/index.php/settings/admin</string>
+    <string name="url_help" formatted="false">https://owncloud.online</string>
     <string name="url_imprint" formatted="false"></string>
     <string name="mail_recommend" formatted="false">"mailto:"</string>
     <string name="mail_feedback" formatted="false"></string>
-    <string name="url_app_download" formatted="false">"https://play.google.com/store/apps/details?id=com.owncloud.android"</string>
+    <string name="url_app_download" formatted="false">"https://github.com/GrossLukas/Android/releases"</string>
     <string name="url_sync_calendar_contacts">"https://play.google.com/store/apps/details?id=at.bitfire.davdroid"</string>
     <string name="url_document_provider_app">https://play.google.com/store/apps/details?id=com.marc.files</string>
 
