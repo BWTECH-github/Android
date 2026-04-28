@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/login_background_image"
+        android:src="@drawable/login_background_photo"
         android:visibility="gone"
         tools:ignore="ContentDescription"
         tools:visibility="visible" />
@@ -47,23 +47,30 @@
 
             <LinearLayout
                 android:id="@+id/layout_login"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/login_panel_background"
+                android:elevation="6dp"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="10dp"
+                android:padding="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_max="380dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
                     android:id="@+id/thumbnail"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginBottom="50dp"
+                    android:layout_height="128dp"
+                    android:layout_marginBottom="32dp"
+                    android:adjustViewBounds="true"
                     android:contentDescription="@string/app_name"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/logo" />
 
                 <LinearLayout
@@ -163,10 +170,7 @@
                             android:hint="@string/auth_host_url"
                             android:inputType="textUri"
                             android:paddingEnd="55dp"
-                            android:theme="@style/Theme.ownCloud.Authenticator.EditText">
-
-                            <requestFocus />
-                        </EditText>
+                            android:theme="@style/Theme.ownCloud.Authenticator.EditText" />
 
                         <ImageButton
                             android:id="@+id/embeddedCheckServerButton"
@@ -293,6 +297,7 @@
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
                         android:text="@string/auth_register"
+                        android:textAllCaps="false"
                         android:textColor="@color/login_text_color" />
                 </LinearLayout>
 
@@ -319,6 +324,7 @@
                     android:contentDescription="@string/actionbar_settings"
                     android:gravity="center"
                     android:text="@string/actionbar_settings"
+                    android:textAllCaps="false"
                     android:textColor="@color/login_text_color" />
 
             </LinearLayout>

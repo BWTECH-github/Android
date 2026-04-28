@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/login_background_image"
+        android:src="@drawable/login_background_photo"
         android:visibility="invisible"
         tools:ignore="ContentDescription"
         tools:visibility="visible" />
@@ -68,9 +68,13 @@
                     android:id="@+id/LinearLayout1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/login_panel_background"
+                    android:elevation="6dp"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="8dp">
+                    android:padding="24dp">
 
                     <LinearLayout
                         android:id="@+id/webfinger_layout"
@@ -168,10 +172,7 @@
                                 android:hint="@string/auth_host_url"
                                 android:inputType="textUri"
                                 android:paddingEnd="55dp"
-                                android:theme="@style/Theme.ownCloud.Authenticator.EditText">
-
-                                <requestFocus />
-                            </EditText>
+                                android:theme="@style/Theme.ownCloud.Authenticator.EditText" />
 
                             <ImageButton
                                 android:id="@+id/embeddedCheckServerButton"
@@ -311,6 +312,7 @@
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
                     android:text="@string/auth_register"
+                    android:textAllCaps="false"
                     android:textColor="@color/white" />
 
             </LinearLayout>
@@ -330,6 +332,7 @@
                     android:contentDescription="@string/actionbar_settings"
                     android:gravity="center"
                     android:text="@string/actionbar_settings"
+                    android:textAllCaps="false"
                     android:textColor="@color/login_text_color" />
 
             </LinearLayout>
