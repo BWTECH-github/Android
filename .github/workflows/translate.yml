@@ -1,14 +1,11 @@
+﻿# Modified by BW-Tech GmbH: automatic upstream translation sync is disabled for BW-Tech forks.
 name: "Update translations"
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 3 * * *"
-  pull_request:
-    branches:
-      - master
 
-permissions: {}
+permissions:
+  contents: read
 
 jobs:
   update-translations:
