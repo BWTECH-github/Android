@@ -852,6 +852,19 @@
     <string name="content_description_remove_password_button">Remove password</string>
     <string name="content_description_generate_password_button">Generate password</string>
     <string name="content_description_copy_password_button">Copy password</string>
+    <string name="content_description_log_download">Download log file</string>
+    <string name="content_description_log_share">Share log file</string>
+    <string name="content_description_log_delete">Delete log file</string>
+    <string name="content_description_upload_cancel">Cancel upload</string>
+    <string name="content_description_upload_delete">Delete upload</string>
+    <string name="content_description_file_list_item_folder">Folder %1$s</string>
+    <string name="content_description_file_list_item_file">File %1$s</string>
+    <string name="content_description_file_list_item_selected">selected</string>
+    <string name="content_description_file_list_item_not_selected">not selected</string>
+    <string name="content_description_file_state_synchronizing">synchronizing</string>
+    <string name="content_description_file_state_conflict">sync conflict</string>
+    <string name="content_description_file_state_available_offline">available offline</string>
+    <string name="content_description_file_state_downloaded">downloaded</string>
 
     <string name="create_shortcut_dialog_title">Create a shortcut</string>
     <string name="create_shortcut_dialog_url">URL</string>
