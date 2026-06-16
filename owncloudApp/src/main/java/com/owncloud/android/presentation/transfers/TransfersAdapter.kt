@@ -177,6 +177,7 @@ class TransfersAdapter(
                 TransferStatus.TRANSFER_IN_PROGRESS, TransferStatus.TRANSFER_QUEUED -> {
                     uploadRightButton.apply {
                         setImageResource(R.drawable.ic_action_cancel_grey)
+                        contentDescription = context.getString(R.string.content_description_upload_cancel)
                         setOnClickListener {
                             cancel(transferItem.transfer)
                         }
@@ -186,6 +187,7 @@ class TransfersAdapter(
                 TransferStatus.TRANSFER_FAILED -> {
                     uploadRightButton.apply {
                         setImageResource(R.drawable.ic_action_delete_grey)
+                        contentDescription = context.getString(R.string.content_description_upload_delete)
                         setOnClickListener {
                             cancel(transferItem.transfer)
                         }

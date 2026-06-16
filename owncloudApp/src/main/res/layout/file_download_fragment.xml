@@ -59,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
+            android:contentDescription="@string/filedetails_cancel_btn_content_description"
             android:src="@drawable/ic_action_cancel_grey"
             android:background="@android:color/transparent"
             />

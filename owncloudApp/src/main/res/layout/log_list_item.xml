@@ -102,28 +102,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:contentDescription="@string/content_description_log_download"
             android:src="@drawable/ic_baseline_download_grey"
             app:layout_constraintRight_toLeftOf="@id/imageView_share_activity_logs_list"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView_share_activity_logs_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:contentDescription="@string/content_description_log_share"
             android:src="@drawable/ic_share_grey"
             app:layout_constraintRight_toLeftOf="@id/imageView_delete_activity_logs_list"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView_delete_activity_logs_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/content_description_log_delete"
             android:src="@drawable/ic_action_delete_grey"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

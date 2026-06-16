@@ -150,7 +150,7 @@
     </style>
 
     <style name="Button.Borderless" parent="Widget.AppCompat.Button.Borderless">
-        <item name="android:textColor">@color/color_accent</item>
+        <item name="android:textColor">@color/owncloud_blue</item>
     </style>
 
     <!-- Style for top progress bar -->

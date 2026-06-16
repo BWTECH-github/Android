@@ -233,6 +233,12 @@ class FileListAdapter(
                 checkBoxV.setImageResource(R.drawable.ic_checkbox_blank_outline)
             }
 
+            // Accessibility: provide a summarizing content description on the list row root,
+            // since the thumbnail, local-state indicator and selection checkbox are decorative
+            // and not exposed to TalkBack individually.
+            holder.itemView.findViewById<View>(R.id.file_list_constraint_layout)?.contentDescription =
+                buildFileListItemContentDescription(fileWithSyncInfo, isSelected(position))
+
             if (file.isFolder) {
                 // Folder
                 fileIcon.setImageResource(R.drawable.ic_menu_archive)
@@ -391,6 +397,39 @@ class FileListAdapter(
             localStateView.visibility = View.VISIBLE
             localStateView.setImageResource(R.drawable.downloaded_pin)
         }
+    }
+
+    private fun buildFileListItemContentDescription(fileWithSyncInfo: OCFileWithSyncInfo, isSelected: Boolean): String {
+        val file = fileWithSyncInfo.file
+        val parts = mutableListOf<String>()
+
+        parts.add(
+            if (file.isFolder) {
+                context.getString(R.string.content_description_file_list_item_folder, file.fileName)
+            } else {
+                context.getString(R.string.content_description_file_list_item_file, file.fileName)
+            }
+        )
+
+        // Local state mirrors setIconPinAccordingToFilesLocalState
+        val localStateRes = when {
+            fileWithSyncInfo.isSynchronizing -> R.string.content_description_file_state_synchronizing
+            file.etagInConflict != null -> R.string.content_description_file_state_conflict
+            file.isAvailableOffline -> R.string.content_description_file_state_available_offline
+            file.isAvailableLocally -> R.string.content_description_file_state_downloaded
+            else -> null
+        }
+        localStateRes?.let { parts.add(context.getString(it)) }
+
+        parts.add(
+            if (isSelected) {
+                context.getString(R.string.content_description_file_list_item_selected)
+            } else {
+                context.getString(R.string.content_description_file_list_item_not_selected)
+            }
+        )
+
+        return parts.joinToString(", ")
     }
 
     private fun generateFooterText(filesCount: Int, foldersCount: Int): String =
