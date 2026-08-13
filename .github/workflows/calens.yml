@@ -24,7 +24,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Run Calens
-        uses: actionhippie/calens@244f3e5c328b842a740113859b87bbebf697f63b #v1.13.0
+        uses: actionhippie/calens@2008d3a7a90cf05a2a001a3d47cac06cb1b74617 #v1.13.0
         with:
           target: CHANGELOG.md
       - name: Commit files
