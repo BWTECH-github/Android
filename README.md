@@ -1,35 +1,43 @@
-[![Android Unit Tests](https://github.com/owncloud/android/actions/workflows/android-unit-tests.yml/badge.svg)](https://github.com/owncloud/android/actions/workflows/android-unit-tests.yml) [![Android Instrumented Data Tests](https://github.com/owncloud/android/actions/workflows/android-instrumented-data-tests.yml/badge.svg)](https://github.com/owncloud/android/actions/workflows/android-instrumented-data-tests.yml) [![Detekt](https://github.com/owncloud/android/actions/workflows/detekt.yml/badge.svg)](https://github.com/owncloud/android/actions/workflows/detekt.yml) [![Conventional Commits](https://github.com/owncloud/android/actions/workflows/conventional-commits.yml/badge.svg)](https://github.com/owncloud/android/actions/workflows/conventional-commits.yml)
+# owncloud.online für Android
 
-# [ownCloud](https://owncloud.org) Android app
+Die Android-App zu owncloud.online: Dateien ansehen, hoch- und herunterladen,
+teilen und Aufnahmen automatisch hochladen lassen.
 
-<a href="https://play.google.com/store/apps/details?id=com.owncloud.android"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="75"></a><a href="https://f-droid.org/packages/com.owncloud.android/"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" height="75"></a>
-
-| <img src="docs_resources/filelist_device.png"> | <img src="docs_resources/photos_device.png"> | <img src="docs_resources/share_device.png"> | <img src="docs_resources/spaces_device.png"> |
+| <img src="docs_resources/filelist_device.png"> | <img src="docs_resources/photos_device.png"> | <img src="docs_resources/share_device.png"> | <img src="docs_resources/detail_view_device.png"> |
 | ---------------------------------------------- | -------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
 
-## Join development!
+## Was sie kann
 
-**Start contributing:** Make sure you read [SETUP.md](https://github.com/owncloud/android/blob/master/SETUP.md) when you start working on this project. Basically: Fork this repository and contribute back using pull requests to the master branch.
-Easy starting points are also reviewing [pull requests](https://github.com/owncloud/android/pulls) and working on [contributions are welcome](https://github.com/owncloud/android/issues?q=is%3Aopen+is%3Aissue+label%3A%22Contributions+are+welcome%22).
+* **Dateien** durchsehen, öffnen, hoch- und herunterladen
+* **Offline halten** — ausgewählte Ordner bleiben auf dem Gerät verfügbar und
+  werden im Hintergrund abgeglichen
+* **Automatischer Upload** von Fotos und Videos, auf Wunsch nur im WLAN
+* **Teilen** über interne Freigaben und öffentliche Links mit Passwort und
+  Ablaufdatum
+* **Mehrere Konten** gleichzeitig
+* **Anmeldung** per Benutzername und Passwort, OAuth2 oder OpenID Connect
+* **Zugriffsschutz** über PIN, Muster oder die Biometrie des Geräts
 
-**Forum:** [#Android](https://central.owncloud.org/c/android)
+## Bauen
 
-**License:** [GPLv2](https://github.com/owncloud/android/blob/master/LICENSE.txt)
+Die Schritte stehen in [SETUP.md](SETUP.md). Kurz: Repository klonen, in Android
+Studio öffnen, Gradle die Abhängigkeiten holen lassen.
 
-## Join testing!
+Beiträge als Pull Request gegen `main`.
 
-If you are interested in testing the new features before being released and give us your feedback, please try out our beta channels:
+## Fehler melden
 
-**Play Store**
+Als [Issue](https://github.com/BWTECH-github/Android/issues), bitte mit:
 
-1. Download ownCloud app from Play Store.
-2. Go to ownCloud tab in Play Store and scroll down to the end of the view.
-3. Press the **I'M IN** button to join the beta program and your final app will be replaced with the beta one.
+* Version der App und des Servers
+* Android-Version und Gerät
+* den Schritten, mit denen sich das Verhalten erzeugen lässt
 
-Note: If you want to use the ownCloud production version you have to leave the beta program, uninstall the app, and reinstall the production version.
+**Sicherheitslücken nicht als Issue**, sondern vertraulich an
+**security@bw.tech**.
 
-**F-Droid**
+## Herkunft und Lizenz
 
-1. Go to ownCloud tab in F-Droid.
-2. Open versions section.
-3. Download the latest version that contains beta in the name.
+Fork der ownCloud-Android-App, gepflegt von der BW-Tech GmbH für
+owncloud.online. Der Dank für die ursprüngliche Arbeit gehört der
+ownCloud-Gemeinschaft. Lizenz: [GPLv2](LICENSE.txt).
