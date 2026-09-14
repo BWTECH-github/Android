@@ -15,6 +15,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/shareScroll"
     android:layout_width="match_parent"
@@ -101,12 +102,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
+                    android:accessibilityHeading="true"
                     android:paddingStart="@dimen/standard_half_padding"
                     android:text="@string/share_with_user_section_title"
                     android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:accessibilityHeading="true"/>
+                    android:textColor="@color/textColor"
+                    android:textColorLink="@color/textColor"
+                    android:textStyle="bold" />
 
                 <ImageButton
                     android:id="@+id/addUserButton"
@@ -114,8 +116,9 @@
                     android:layout_height="48dp"
                     android:layout_alignParentEnd="true"
                     android:background="@color/transparent"
+                    android:contentDescription="@string/content_description_add_share"
                     android:src="@drawable/ic_add"
-                    android:contentDescription="@string/content_description_add_share" />
+                    app:tint="@color/textColor" />
 
             </RelativeLayout>
 
@@ -156,12 +159,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
+                    android:accessibilityHeading="true"
                     android:paddingStart="@dimen/standard_half_padding"
                     android:text="@string/share_via_link_section_title"
                     android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:accessibilityHeading="true"/>
+                    android:textColor="@color/textColor"
+                    android:textColorLink="@color/textColor"
+                    android:textStyle="bold" />
 
                 <ImageButton
                     android:id="@+id/addPublicLinkButton"
@@ -169,8 +173,9 @@
                     android:layout_height="48dp"
                     android:layout_alignParentEnd="true"
                     android:background="@color/transparent"
+                    android:contentDescription="@string/content_description_add_public_link"
                     android:src="@drawable/ic_add"
-                    android:contentDescription="@string/content_description_add_public_link" />
+                    app:tint="@color/textColor" />
 
             </RelativeLayout>
 
