@@ -203,7 +203,7 @@ class FileListAdapter(
             holder.itemView.findViewById<ImageView>(R.id.shared_via_users_icon).isVisible =
                 file.sharedWithSharee == true || file.isSharedWithMe
 
-            setSpecificViewHolder(viewType, holder, fileWithSyncInfo, thumbnail)
+            setSpecificViewHolder(viewType, holder, fileWithSyncInfo)
 
             setIconPinAccordingToFilesLocalState(holder.itemView.findViewById(R.id.localFileIndicator), fileWithSyncInfo)
 
@@ -278,7 +278,7 @@ class FileListAdapter(
         }
     }
 
-    private fun setSpecificViewHolder(viewType: Int, holder: RecyclerView.ViewHolder, fileWithSyncInfo: OCFileWithSyncInfo, thumbnail: Bitmap?) {
+    private fun setSpecificViewHolder(viewType: Int, holder: RecyclerView.ViewHolder, fileWithSyncInfo: OCFileWithSyncInfo) {
         val file = fileWithSyncInfo.file
 
         when (viewType) {
@@ -330,26 +330,19 @@ class FileListAdapter(
 
             ViewType.GRID_IMAGE.ordinal -> {
                 val view = holder as GridImageViewHolder
+                view.binding.Filename.text = file.fileName
+
                 val fileIcon = holder.itemView.findViewById<ImageView>(R.id.thumbnail)
                 val layoutParams = fileIcon.layoutParams as ViewGroup.MarginLayoutParams
 
-                if (thumbnail == null) {
-                    view.binding.Filename.text = file.fileName
-                    // Reset layout params values default
-                    manageGridLayoutParams(
-                        layoutParams = layoutParams,
-                        marginVertical = 0,
-                        height = context.resources.getDimensionPixelSize(R.dimen.item_file_grid_height),
-                        width = context.resources.getDimensionPixelSize(R.dimen.item_file_grid_width),
-                    )
-                } else {
-                    manageGridLayoutParams(
-                        layoutParams = layoutParams,
-                        marginVertical = context.resources.getDimensionPixelSize(R.dimen.item_file_image_grid_margin),
-                        height = ViewGroup.LayoutParams.MATCH_PARENT,
-                        width = ViewGroup.LayoutParams.MATCH_PARENT,
-                    )
-                }
+                // Keep the thumbnail bound to the icon's box, regardless of whether a preview
+                // image was loaded or not, so it only replaces the icon instead of the whole cell.
+                manageGridLayoutParams(
+                    layoutParams = layoutParams,
+                    marginVertical = 0,
+                    height = context.resources.getDimensionPixelSize(R.dimen.item_file_grid_height),
+                    width = context.resources.getDimensionPixelSize(R.dimen.item_file_grid_width),
+                )
             }
         }
     }
