@@ -120,6 +120,8 @@
     <style name="ownCloud.Appbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="colorPrimary">@color/actionbar_start_color</item>
         <item name="toolbarNavigationButtonStyle">@style/Toolbar.Button.Navigation.Tinted</item>
+        <!-- tints built-in action icons without their own drawable tint (e.g. the search menu item) -->
+        <item name="colorControlNormal">@color/textColor</item>
         <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
     </style>
 

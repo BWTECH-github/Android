@@ -36,6 +36,7 @@
         android:id="@+id/action_share_file"
         android:title="@string/action_share"
         android:icon="@drawable/ic_share_generic_white"
+        app:iconTint="@color/textColor"
         app:showAsAction="ifRoom"
         android:orderInCategory="1" />
     <item
@@ -54,6 +55,7 @@
         android:id="@+id/action_sync_file"
         android:title="@string/filedetails_sync_file"
         android:icon="@drawable/ic_action_refresh"
+        app:iconTint="@color/textColor"
         app:showAsAction="ifRoom"
         android:orderInCategory="1" />
     <item

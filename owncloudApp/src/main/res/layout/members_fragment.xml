@@ -46,30 +46,31 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/standard_half_margin"
+                    android:accessibilityHeading="true"
                     android:gravity="center"
                     android:text="@string/members_title"
-                    android:layout_marginStart="@dimen/standard_half_margin"
                     android:textAllCaps="true"
-                    android:textColor="@color/white"
+                    android:textColor="@color/textColor"
                     android:textStyle="bold"
-                    android:accessibilityHeading="true"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
                     android:id="@+id/add_member_button"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:padding="@dimen/standard_padding"
                     android:background="@color/transparent"
-                    android:src="@drawable/ic_add"
-                    android:contentDescription="@string/content_description_add_member"
-                    android:visibility="gone"
-                    android:focusable="true"
                     android:clickable="true"
+                    android:contentDescription="@string/content_description_add_member"
+                    android:focusable="true"
+                    android:padding="@dimen/standard_padding"
+                    android:src="@drawable/ic_add"
+                    app:tint="@color/textColor"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:visibility="visible"/>
+                    tools:visibility="visible" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -105,30 +106,31 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/standard_half_margin"
+                    android:accessibilityHeading="true"
                     android:gravity="center"
                     android:text="@string/share_via_link_section_title"
-                    android:layout_marginStart="@dimen/standard_half_margin"
                     android:textAllCaps="true"
-                    android:textColor="@color/white"
+                    android:textColor="@color/textColor"
                     android:textStyle="bold"
-                    android:accessibilityHeading="true"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
                     android:id="@+id/add_public_link_button"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:padding="@dimen/standard_padding"
                     android:background="@color/transparent"
-                    android:src="@drawable/ic_add"
-                    android:contentDescription="@string/content_description_add_public_link"
-                    android:visibility="gone"
-                    android:focusable="true"
                     android:clickable="true"
+                    android:contentDescription="@string/content_description_add_public_link"
+                    android:focusable="true"
+                    android:padding="@dimen/standard_padding"
+                    android:src="@drawable/ic_add"
+                    app:tint="@color/textColor"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:visibility="visible"/>
+                    tools:visibility="visible" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

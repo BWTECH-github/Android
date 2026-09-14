@@ -34,6 +34,7 @@
         android:id="@+id/action_share_current_folder"
         android:title="@string/action_share"
         android:icon="@drawable/ic_share_generic_white"
+        app:iconTint="@color/textColor"
         app:showAsAction="ifRoom"
         android:orderInCategory="1" />
 
