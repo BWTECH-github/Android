@@ -101,5 +101,6 @@
         android:focusableInTouchMode="false"
         android:accessibilityHeading="true"
         app:navigationContentDescription="@string/common_back"
-        app:popupTheme="?attr/actionBarPopupTheme" />
+        app:popupTheme="?attr/actionBarPopupTheme"
+        app:titleTextColor="@color/textColor" />
 </com.google.android.material.appbar.AppBarLayout>

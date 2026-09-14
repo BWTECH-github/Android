@@ -117,7 +117,7 @@
     </style>
 
     <style name="Toolbar.Button.Navigation.Tinted" parent="Widget.AppCompat.Toolbar.Button.Navigation">
-        <item name="tint">@color/white</item>
+        <item name="tint">@color/textColor</item>
     </style>
 
     <!-- Transparent style for the app bar -->
