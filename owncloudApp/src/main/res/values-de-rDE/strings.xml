@@ -26,7 +26,7 @@
     <string name="drawer_item_only_available_offline">Offline verfügbar</string>
     <string name="drawer_item_shared_by_link_files">Über einen Link geteilt</string>
     <string name="drawer_item_settings">Einstellungen</string>
-    <string name="drawer_item_uploads_list">Hochgeladenes</string>
+    <string name="drawer_item_uploads_list">Hochgeladen</string>
     <string name="drawer_close">Schließen</string>
     <string name="drawer_open">Öffnen</string>
     <string name="drawer_loading_quota">Kontingent zum Hochladen</string>
@@ -127,7 +127,7 @@
     <!-- Bottom navigation bar -->
     <string name="bottom_nav_files">Dateien</string>
     <string name="bottom_nav_personal">Persönlich</string>
-    <string name="bottom_nav_uploads">Hochgeladenes</string>
+    <string name="bottom_nav_uploads">Hochgeladen</string>
     <string name="bottom_nav_offline">Offline</string>
     <string name="bottom_nav_links">Links</string>
     <string name="bottom_nav_shares">Freigaben</string>
@@ -244,7 +244,7 @@
     <string name="uploader_upload_available_offline_files">Offline-Dateien werden übertragen</string>
     <string name="uploader_upload_requested_from_wifi_files">Hochladen von angeforderten WLAN-Dateien</string>
     <string name="ssl_certificate_not_trusted">Zertifikat des Servers ist nicht vertrauenswürdig.</string>
-    <string name="uploads_view_title">Hochgeladenes</string>
+    <string name="uploads_view_title">Hochgeladen</string>
     <string name="uploads_view_group_current_uploads">Aktuell</string>
     <string name="uploads_view_group_failed_uploads">Fehlgeschlagen (Tippen zum Wiederholen)</string>
     <string name="uploads_view_group_finished_uploads">Hochgeladen</string>

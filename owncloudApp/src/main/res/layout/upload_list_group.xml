@@ -37,7 +37,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/uploadListGroupButtonClear"
-        style="@style/Button.Primary"
+        style="@style/Button.Brand"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:visibility="gone"
@@ -45,16 +45,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/uploadListGroupName"
         android:text="@string/action_upload_clear"
+        android:theme="@style/Button.Brand"
         tools:visibility="visible" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/uploadListGroupButtonRetry"
-        style="@style/Button.Primary"
+        style="@style/Button.Brand"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:visibility="gone"
         app:layout_constraintStart_toEndOf="@id/uploadListGroupButtonClear"
         app:layout_constraintTop_toBottomOf="@id/uploadListGroupName"
         android:text="@string/action_upload_retry"
+        android:theme="@style/Button.Brand"
         tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

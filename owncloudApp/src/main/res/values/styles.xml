@@ -170,6 +170,13 @@
         <item name="android:textColor">@color/primary_button_text_color</item>
     </style>
 
+    <!-- Same role as Button.Primary, but using the current branding colors (primary background, textColor text) -->
+    <style name="Button.Brand" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/primary</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
     <style name="Button.Borderless" parent="Widget.AppCompat.Button.Borderless">
         <item name="android:textColor">@color/owncloud_blue</item>
     </style>

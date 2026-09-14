@@ -354,23 +354,23 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/cancelButton"
-                        style="@style/Button.Primary"
+                        style="@style/Button.Brand"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:contentDescription="@string/share_cancel_public_link_button"
                         android:text="@string/share_cancel_public_link_button"
-                        android:theme="@style/Button.Primary" />
+                        android:theme="@style/Button.Brand" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/saveButton"
-                        style="@style/Button.Primary"
+                        style="@style/Button.Brand"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:contentDescription="@string/share_confirm_public_link_button"
                         android:text="@string/share_confirm_public_link_button"
-                        android:theme="@style/Button.Primary" />
+                        android:theme="@style/Button.Brand" />
 
                 </LinearLayout>
 

@@ -174,7 +174,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/invite_member_button"
-        style="@style/Button.Primary"
+        style="@style/Button.Brand"
+        android:theme="@style/Button.Brand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/standard_quarter_margin"
