@@ -28,6 +28,9 @@
     <style name="Theme.ownCloud" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowBackground">@color/background_color</item>
 
+        <!-- dark status bar icons/text (time, battery, ...), for readability on the turquoise background -->
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+
         <!-- theme for the app bar (both for old actionbar and new toolbar) -->
         <item name="actionBarTheme">@style/ownCloud.Appbar</item>
 
@@ -74,15 +77,19 @@
     <style name="Theme.ownCloud.Overlay">
         <item name="windowActionBarOverlay">true</item>
         <item name="actionBarTheme">@style/ownCloud.Appbar.Transparent</item>
+        <!-- dark background (image preview scrim): keep light status bar icons -->
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
         <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
     </style>
 
     <!-- Extends Theme.ownCloud for video in full screen mode -->
     <style name="Theme.ownCloud.Video">
         <item name="windowActionBarOverlay">true</item>
-        <item name="android:windowLayoutInDisplayCutoutMode">never</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="27">never</item>
         <item name="actionBarTheme">@style/ownCloud.Appbar.Transparent</item>
         <item name="android:windowBackground">@android:color/background_dark</item>
+        <!-- dark background (fullscreen video player): keep light status bar icons -->
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
         <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
     </style>
 
