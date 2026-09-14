@@ -37,6 +37,7 @@
         <!-- properties for action mode -->
         <item name="windowActionModeOverlay">true</item>
         <item name="actionModeBackground">@color/action_mode_background</item>
+        <item name="actionModeStyle">@style/Widget.ownCloud.ActionMode</item>
 
         <!-- colors, Material Design way -->
         <item name="colorPrimary">@color/primary</item>
@@ -135,6 +136,16 @@
     <style name="ownCloud.Appbar.Transparent" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="colorPrimary">@color/owncloud_blue_transparent</item>
         <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+    </style>
+
+    <!-- ACTION MODE styles -->
+
+    <style name="Widget.ownCloud.ActionMode" parent="Widget.AppCompat.ActionMode">
+        <item name="titleTextStyle">@style/TextAppearance.ownCloud.ActionMode.Title</item>
+    </style>
+
+    <style name="TextAppearance.ownCloud.ActionMode.Title" parent="TextAppearance.AppCompat.Widget.ActionMode.Title">
+        <item name="android:textColor">@color/textColor</item>
     </style>
 
     <!-- PREFERENCE styles -->

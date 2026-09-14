@@ -185,7 +185,7 @@
     <string name="file_list_file">ໄຟລ໌</string>
     <string name="file_list_files">ໄຟລ໌</string>
     <string name="filedetails_select_file">ແຕະທີ່ໄຟລ໌ເພື່ອເບິ່ງລາຍລະອຽດ</string>
-    <string name="upload_to">ອັບໂຫຼດໄປທີ່</string>
+    <string name="upload_to">ອັບໂຫຼດໄປທີ່ %1$s</string>
     <string name="pick_document_type">ເລືອກປະເພດເອກະສານ</string>
     <string name="upload_files_title">ອັບໂຫຼດໄຟລ໌</string>
     <string name="filedetails_size">ຂະໜາດ</string>
@@ -228,7 +228,7 @@
     <string name="uploader_upload_failed_ssl_certificate_not_trusted">ໃບຮັບຮອງ SSL ບໍ່ໜ້າເຊື່ອຖື</string>
     <string name="uploader_upload_text_dialog_title">ຕັ້ງຊື່ໄຟລ໌ໃໝ່:</string>
     <string name="uploader_upload_text_dialog_filename_error_empty">ຊື່ໄຟລ໌ບໍ່ສາມາດວ່າງເປົ່າໄດ້</string>
-    <string name="uploader_upload_text_dialog_filename_error_length_max">ຊື່ໄຟລ໌ຍາວເກີນໄປ</string>
+    <string name="uploader_upload_text_dialog_filename_error_length_max">ຊື່ໄຟລ໌ຍາວເກີນໄປ (%d)</string>
     <string name="uploader_upload_text_filename_hint">ຊື່ໄຟລ໌</string>
     <string name="uploader_upload_camera_upload_files">ອັບໂຫຼດຮູບພາບ/ວິດີໂອຈາກກ້ອງ</string>
     <string name="uploader_upload_picture_upload_files">ອັບໂຫຼດຮູບພາບ</string>
@@ -724,7 +724,7 @@
     <string name="release_notes_bugfixes_subtitle">ແອັບຕອນນີ້เสถียรและเชื่อถือได้มากขึ้น. สำหรับรายการการเปลี่ยนแปลงทั้งหมด, เยี่ยมชม owncloud.com</string>
     <!-- Open in web -->
     <string name="ic_action_open_in_web">ເປີດໃນເບຣົາເຊີ</string>
-    <string name="ic_action_open_with_web">ເປີດດ້ວຍ...</string>
+    <string name="ic_action_open_with_web">ເປີດດ້ວຍ %1$s (web)</string>
     <string name="open_in_web_error_generic">ບໍ່ສາມາດເປີດໄຟລ໌ในເບຣົາເຊີໄດ້</string>
     <string name="open_in_web_error_not_supported">ເວີຊັນເຊີບເວີຂອງທ່ານບໍ່ຮອງຮັບการเปิดไฟล์ในເບຣົາເຊີ. ກະລຸນາติดต่อผู้ดูแลระบบ</string>
     <string name="open_in_web_error_too_early">ຄຸນສົມບັດກຳລັງໂຫຼດ. ກະລຸນາລອງໃໝ່ໃນອີກສອງສາມວິນາທີ.</string>

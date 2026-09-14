@@ -204,9 +204,10 @@ class MainFileListFragment : Fragment(),
 
             mode?.invalidate()
 
-            // Set gray color
+            // Set action mode color
             val window = activity?.window
             statusBarColor = window?.statusBarColor ?: -1
+            window?.statusBarColor = statusBarColorActionMode!!
 
             // Hide FAB in multi selection mode
             toggleFabVisibility(false)

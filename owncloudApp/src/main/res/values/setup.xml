@@ -55,7 +55,7 @@
     <color name="button_text_color">@color/owncloud_blue</color>
 
     <!-- Multiselect backgrounds -->
-    <color name="action_mode_background">@color/primary_button_background_color</color>
+    <color name="action_mode_background">@color/primary</color>
     <color name="action_mode_status_bar_background">@color/actionbar_start_color</color>
 
     <!-- Multiaccount support -->
