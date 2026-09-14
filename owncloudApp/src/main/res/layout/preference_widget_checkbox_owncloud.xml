@@ -1,0 +1,11 @@
+<!-- Mirrors androidx.preference's preference_widget_checkbox.xml, but with our own
+     checkbox artwork so it matches the file-selection checkboxes. -->
+<CheckBox
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/checkbox"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:focusable="false"
+    android:clickable="false"
+    android:background="@null"
+    android:button="@drawable/checkbox_selector" />

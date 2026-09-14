@@ -48,6 +48,8 @@
 
         <!-- style for search view -->
         <item name="searchViewStyle">@style/ownCloud.SearchView</item>
+
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.ownCloud</item>
         <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
     </style>
 
@@ -133,6 +135,16 @@
     <style name="ownCloud.Appbar.Transparent" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="colorPrimary">@color/owncloud_blue_transparent</item>
         <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+    </style>
+
+    <!-- PREFERENCE styles -->
+
+    <style name="PreferenceThemeOverlay.ownCloud" parent="PreferenceThemeOverlay">
+        <item name="checkBoxPreferenceStyle">@style/Preference.CheckBoxPreference.ownCloud</item>
+    </style>
+
+    <style name="Preference.CheckBoxPreference.ownCloud" parent="Preference.CheckBoxPreference.Material">
+        <item name="android:widgetLayout">@layout/preference_widget_checkbox_owncloud</item>
     </style>
 
     <!-- MORE styles -->
