@@ -41,6 +41,9 @@ import com.owncloud.android.domain.availableoffline.usecases.GetFilesAvailableOf
 import com.owncloud.android.domain.availableoffline.usecases.SetFilesAsAvailableOfflineUseCase
 import com.owncloud.android.domain.availableoffline.usecases.UnsetFilesAsAvailableOfflineUseCase
 import com.owncloud.android.domain.automaticuploads.usecases.GetAutomaticUploadsConfigurationUseCase
+import com.owncloud.android.domain.favorites.usecases.GetFilesFavoriteFromAccountAsStreamUseCase
+import com.owncloud.android.domain.favorites.usecases.SetFilesAsFavoriteUseCase
+import com.owncloud.android.domain.favorites.usecases.UnsetFilesAsFavoriteUseCase
 import com.owncloud.android.domain.automaticuploads.usecases.GetPictureUploadsConfigurationStreamUseCase
 import com.owncloud.android.domain.automaticuploads.usecases.GetVideoUploadsConfigurationStreamUseCase
 import com.owncloud.android.domain.automaticuploads.usecases.ResetPictureUploadsUseCase
@@ -224,6 +227,11 @@ val useCaseModule = module {
     factoryOf(::GetFilesAvailableOfflineFromEveryAccountUseCase)
     factoryOf(::SetFilesAsAvailableOfflineUseCase)
     factoryOf(::UnsetFilesAsAvailableOfflineUseCase)
+
+    // Favorites
+    factoryOf(::GetFilesFavoriteFromAccountAsStreamUseCase)
+    factoryOf(::SetFilesAsFavoriteUseCase)
+    factoryOf(::UnsetFilesAsFavoriteUseCase)
 
     // Sharing
     factoryOf(::CreatePrivateShareAsyncUseCase)

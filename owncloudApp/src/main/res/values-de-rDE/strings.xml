@@ -126,6 +126,7 @@
 
     <!-- Bottom navigation bar -->
     <string name="bottom_nav_files">Dateien</string>
+    <string name="bottom_nav_favorites">Favoriten</string>
     <string name="bottom_nav_personal">Persönlich</string>
     <string name="bottom_nav_uploads">Hochgeladen</string>
     <string name="bottom_nav_offline">Offline</string>
@@ -167,6 +168,7 @@
     <string name="spaces_list_empty_title">Keine Spaces</string>
     <string name="space_label">Space:</string>
     <string name="file_list_empty_title_available_offline">Keine Offline-Dateien vorhanden</string>
+    <string name="file_list_empty_title_favorite">Keine Favoriten vorhanden</string>
     <string name="file_list_empty_title_shared_by_links">Keine geteilten Links</string>
     <string name="file_list_empty_subtitle_all_files">Laden Sie Inhalte hoch oder synchronisieren Sie mit Ihren Geräten.</string>
     <string name="light_users_subtitle">Persönlicher Space ist nicht verfügbar</string>
@@ -174,6 +176,7 @@
     <string name="shares_list_empty_subtitle">Sie arbeiten nicht mit anderen zusammen an deren Ressourcen.</string>
     <string name="spaces_list_empty_subtitle">Sie haben keinen Zugriff auf einen Space!</string>
     <string name="file_list_empty_subtitle_available_offline">Dateien und Ordner, die Sie als offline verfügbar markieren, werden hier angezeigt.</string>
+    <string name="file_list_empty_subtitle_favorite">Dateien und Ordner, die Sie zu Favoriten hinzufügen, werden hier angezeigt.</string>
     <string name="file_list_empty_subtitle_shared_by_links">Dateien und Ordner, die Sie per Link teilen, werden hier erscheinen.</string>
     <string name="file_list_loading">Lade&amp;#8230;</string>
     <string name="file_list_no_app_for_file_type">Keine Applikationen für diesen Dateityp gefunden</string>
@@ -377,6 +380,8 @@
 
     <string name="set_available_offline">Als offline verfügbar markieren</string>
     <string name="unset_available_offline">Offline-verfügbar-Markierung entfernen</string>
+    <string name="set_favorite">Zu Favoriten hinzufügen</string>
+    <string name="unset_favorite">Aus Favoriten entfernen</string>
     <string name="confirmation_set_available_offline">Die Offline-Verfügbarkeit der Datei wurde korrekt eingeschaltet</string>
     <string name="confirmation_unset_available_offline">Die Offline-Verfügbarkeit der Datei wurde korrekt ausgeschaltet</string>
     <string name="common_rename">Umbenennen</string>

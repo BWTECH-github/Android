@@ -101,6 +101,19 @@
         android:icon="@drawable/ic_action_unset_available_offline"
         android:orderInCategory="1" />
     <item
+        android:id="@+id/action_set_favorite"
+        android:title="@string/set_favorite"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_star_border_24dp"
+        app:iconTint="@color/textColor"
+        android:orderInCategory="1" />
+    <item
+        android:id="@+id/action_unset_favorite"
+        android:title="@string/unset_favorite"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_star_black_24dp"
+        android:orderInCategory="1" />
+    <item
         android:id="@+id/action_see_details"
         android:title="@string/actionbar_see_details"
         android:icon="@drawable/ic_info_white"

@@ -51,6 +51,7 @@ interface FileRepository {
     fun getFilesWithSyncInfoAvailableOfflineFromAccountAsFlow(owner: String): Flow<List<OCFileWithSyncInfo>>
     fun getFilesAvailableOfflineFromAccount(owner: String): List<OCFile>
     fun getFilesAvailableOfflineFromEveryAccount(): List<OCFile>
+    fun getFilesWithSyncInfoFavoriteFromAccountAsFlow(owner: String): Flow<List<OCFileWithSyncInfo>>
     fun getDownloadedFilesForAccount(owner: String): List<OCFile>
     fun getFilesWithLastUsageOlderThanGivenTime(milliseconds: Long): List<OCFile>
 
@@ -70,6 +71,7 @@ interface FileRepository {
     fun cleanConflict(fileId: Long)
     fun disableThumbnailsForFile(fileId: Long)
     fun updateFileWithNewAvailableOfflineStatus(ocFile: OCFile, newAvailableOfflineStatus: AvailableOfflineStatus)
+    fun setFileAsFavorite(ocFile: OCFile, favorite: Boolean)
     fun updateFileWithLastUsage(fileId: Long, lastUsage: Long?)
     fun updateDownloadedFilesStorageDirectoryInStoragePath(oldDirectory: String, newDirectory: String)
     fun saveDownloadWorkerUuid(fileId: Long, workerUuid: UUID)

@@ -76,6 +76,7 @@ class FilterFileMenuOptionsUseCase(
         val displaySelectInverse = params.displaySelectInverse
         val onlyAvailableOfflineFiles = params.onlyAvailableOfflineFiles
         val onlySharedByLinkFiles = params.onlySharedByLinkFiles
+        val onlyFavoriteFiles = params.onlyFavoriteFiles
         val shareViaLinkAllowed = params.shareViaLinkAllowed
         val shareWithUsersAllowed = params.shareWithUsersAllowed
         val sendAllowed = params.sendAllowed
@@ -94,7 +95,7 @@ class FilterFileMenuOptionsUseCase(
             optionsToShow.add(FileMenuOption.SELECT_INVERSE)
         }
         // Share
-        if (!onlyAvailableOfflineFiles && shareViaLinkOrWithUsersAllowed && resharingAllowed &&
+        if (!onlyAvailableOfflineFiles && !onlyFavoriteFiles && shareViaLinkOrWithUsersAllowed && resharingAllowed &&
             isPersonalSpace && hasResharePermission) {
             optionsToShow.add(FileMenuOption.SHARE)
         }
@@ -103,31 +104,31 @@ class FilterFileMenuOptionsUseCase(
             optionsToShow.add(FileMenuOption.OPEN_WITH)
         }
         // Download
-        if (noSyncAndPreviewing && !onlyAvailableOfflineFiles && !onlySharedByLinkFiles &&
+        if (noSyncAndPreviewing && !onlyAvailableOfflineFiles && !onlySharedByLinkFiles && !onlyFavoriteFiles &&
             !anyFolder(files) && !anyFileDownloaded(files)) {
             optionsToShow.add(FileMenuOption.DOWNLOAD)
         }
         // Synchronize
-        if (!isAnyFileSynchronizing && !onlyAvailableOfflineFiles && !onlySharedByLinkFiles &&
+        if (!isAnyFileSynchronizing && !onlyAvailableOfflineFiles && !onlySharedByLinkFiles && !onlyFavoriteFiles &&
             (anyFileDownloaded(files) || anyFolder(files))) {
             optionsToShow.add(FileMenuOption.SYNC)
         }
         // Cancel sync
-        if (isAnyFileSynchronizing && !onlyAvailableOfflineFiles && !onlySharedByLinkFiles && !anyAvailableOfflineFile(files)) {
+        if (isAnyFileSynchronizing && !onlyAvailableOfflineFiles && !onlySharedByLinkFiles && !onlyFavoriteFiles && !anyAvailableOfflineFile(files)) {
             optionsToShow.add(FileMenuOption.CANCEL_SYNC)
         }
         // Rename
-        if (noSyncAndPreviewing && !onlyAvailableOfflineFiles && !onlySharedByLinkFiles &&
+        if (noSyncAndPreviewing && !onlyAvailableOfflineFiles && !onlySharedByLinkFiles && !onlyFavoriteFiles &&
             hasRenamePermission) {
             optionsToShow.add(FileMenuOption.RENAME)
         }
         // Move
-        if (noSyncAndPreviewing && !onlyAvailableOfflineFiles && !onlySharedByLinkFiles &&
+        if (noSyncAndPreviewing && !onlyAvailableOfflineFiles && !onlySharedByLinkFiles && !onlyFavoriteFiles &&
             hasMovePermission) {
             optionsToShow.add(FileMenuOption.MOVE)
         }
         // Copy
-        if (noSyncAndPreviewing && !onlyAvailableOfflineFiles && !onlySharedByLinkFiles) {
+        if (noSyncAndPreviewing && !onlyAvailableOfflineFiles && !onlySharedByLinkFiles && !onlyFavoriteFiles) {
             optionsToShow.add(FileMenuOption.COPY)
         }
         // Send
@@ -143,12 +144,20 @@ class FilterFileMenuOptionsUseCase(
         if (anyAvailableOfflineFile(files) && !isAnyFileVideoStreaming) {
             optionsToShow.add(FileMenuOption.UNSET_AV_OFFLINE)
         }
+        // Set as favorite
+        if (anyNotFavoriteFile(files)) {
+            optionsToShow.add(FileMenuOption.SET_FAVORITE)
+        }
+        // Unset as favorite
+        if (anyFavoriteFile(files)) {
+            optionsToShow.add(FileMenuOption.UNSET_FAVORITE)
+        }
         // Details
         if (isSingleFile(files)) {
             optionsToShow.add(FileMenuOption.DETAILS)
         }
         // Remove
-        if (!isAnyFileSynchronizing && !onlyAvailableOfflineFiles && !onlySharedByLinkFiles && hasRemovePermission) {
+        if (!isAnyFileSynchronizing && !onlyAvailableOfflineFiles && !onlySharedByLinkFiles && !onlyFavoriteFiles && hasRemovePermission) {
             optionsToShow.add(FileMenuOption.REMOVE)
         }
 
@@ -184,6 +193,12 @@ class FilterFileMenuOptionsUseCase(
     private fun anyNotAvailableOfflineFile(files: List<OCFile>) =
         files.any { it.availableOfflineStatus == AvailableOfflineStatus.NOT_AVAILABLE_OFFLINE }
 
+    private fun anyFavoriteFile(files: List<OCFile>) =
+        files.any { it.favorite }
+
+    private fun anyNotFavoriteFile(files: List<OCFile>) =
+        files.any { !it.favorite }
+
     private fun anyFileSharedWithMe(files: List<OCFile>) =
         files.any { it.isSharedWithMe }
 
@@ -203,6 +218,7 @@ class FilterFileMenuOptionsUseCase(
         val displaySelectInverse: Boolean,
         val onlyAvailableOfflineFiles: Boolean,
         val onlySharedByLinkFiles: Boolean,
+        val onlyFavoriteFiles: Boolean = false,
         val shareViaLinkAllowed: Boolean,
         val shareWithUsersAllowed: Boolean,
         val sendAllowed: Boolean

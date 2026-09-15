@@ -41,6 +41,19 @@
             app:layout_constraintStart_toEndOf="@+id/thumbnail"
             app:layout_constraintTop_toBottomOf="@+id/thumbnail" />
 
+        <ImageView
+            android:id="@+id/favoriteIndicator"
+            android:layout_width="@dimen/file_indicator_pin_size"
+            android:layout_height="@dimen/file_indicator_pin_size"
+            android:importantForAccessibility="no"
+            android:src="@drawable/favorite_pin"
+            android:translationX="-8dp"
+            android:translationY="10dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/thumbnail"
+            app:layout_constraintStart_toEndOf="@+id/thumbnail"
+            tools:visibility="visible" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

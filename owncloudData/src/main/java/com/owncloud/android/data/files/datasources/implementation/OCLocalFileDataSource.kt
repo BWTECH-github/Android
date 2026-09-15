@@ -96,6 +96,11 @@ class OCLocalFileDataSource(
             it.toModel()
         }
 
+    override fun getSearchFavoriteFolderContent(folderId: Long, search: String): List<OCFile> =
+        fileDao.getSearchFavoriteFolderContent(folderId = folderId, search = search).map {
+            it.toModel()
+        }
+
     override fun getFolderContentWithSyncInfoAsFlow(folderId: Long): Flow<List<OCFileWithSyncInfo>> =
         fileDao.getFolderContentWithSyncInfoAsFlow(folderId = folderId).map { folderContent ->
             folderContent.map { it.toModel() }
@@ -124,6 +129,11 @@ class OCLocalFileDataSource(
     override fun getFilesAvailableOfflineFromEveryAccount(): List<OCFile> =
         fileDao.getFilesAvailableOfflineFromEveryAccount().map {
             it.toModel()
+        }
+
+    override fun getFilesWithSyncInfoFavoriteFromAccountAsFlow(owner: String): Flow<List<OCFileWithSyncInfo>> =
+        fileDao.getFilesWithSyncInfoFavoriteFromAccountAsFlow(owner).map { fileList ->
+            fileList.map { it.toModel() }
         }
 
     override fun getDownloadedFilesForAccount(owner: String): List<OCFile> =
@@ -200,6 +210,10 @@ class OCLocalFileDataSource(
         fileDao.updateAvailableOfflineStatusForFile(ocFile, newAvailableOfflineStatus.ordinal)
     }
 
+    override fun updateFavoriteStatusForFile(ocFile: OCFile, favorite: Boolean) {
+        fileDao.updateFavoriteStatusForFile(ocFile.id!!, favorite)
+    }
+
     override fun updateDownloadedFilesStorageDirectoryInStoragePath(oldDirectory: String, newDirectory: String) {
         fileDao.updateDownloadedFilesStorageDirectoryInStoragePath(oldDirectory, newDirectory)
     }
@@ -248,6 +262,7 @@ class OCLocalFileDataSource(
                 length = length,
                 sharedByLink = sharedByLink,
                 sharedWithSharee = sharedWithSharee,
+                favorite = favorite ?: false,
                 storagePath = storagePath,
                 availableOfflineStatus = AvailableOfflineStatus.fromValue(availableOfflineStatus),
                 needsToUpdateThumbnail = needsToUpdateThumbnail,
@@ -276,6 +291,7 @@ class OCLocalFileDataSource(
                 length = length,
                 sharedByLink = sharedByLink,
                 sharedWithSharee = sharedWithSharee,
+                favorite = favorite,
                 storagePath = storagePath,
                 availableOfflineStatus = availableOfflineStatus?.ordinal ?: AvailableOfflineStatus.NOT_AVAILABLE_OFFLINE.ordinal,
                 needsToUpdateThumbnail = needsToUpdateThumbnail,

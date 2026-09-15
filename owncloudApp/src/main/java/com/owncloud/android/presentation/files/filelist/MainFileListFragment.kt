@@ -780,6 +780,14 @@ class MainFileListFragment : Fragment(),
                     FileMenuOption.UNSET_AV_OFFLINE -> {
                         fileOperationsViewModel.performOperation(FileOperation.UnsetFilesAsAvailableOffline(listOf(file)))
                     }
+
+                    FileMenuOption.SET_FAVORITE -> {
+                        fileOperationsViewModel.performOperation(FileOperation.SetFilesAsFavorite(listOf(file)))
+                    }
+
+                    FileMenuOption.UNSET_FAVORITE -> {
+                        fileOperationsViewModel.performOperation(FileOperation.UnsetFilesAsFavorite(listOf(file)))
+                    }
                 }
                 dialog.hide()
                 dialog.dismiss()
@@ -1454,6 +1462,16 @@ class MainFileListFragment : Fragment(),
                 true
             }
 
+            R.id.action_set_favorite -> {
+                fileOperationsViewModel.performOperation(FileOperation.SetFilesAsFavorite(listOf(singleFile)))
+                true
+            }
+
+            R.id.action_unset_favorite -> {
+                fileOperationsViewModel.performOperation(FileOperation.UnsetFilesAsFavorite(listOf(singleFile)))
+                true
+            }
+
             else -> {
                 false
             }
@@ -1505,6 +1523,16 @@ class MainFileListFragment : Fragment(),
 
             R.id.action_unset_available_offline -> {
                 fileOperationsViewModel.performOperation(FileOperation.UnsetFilesAsAvailableOffline(checkedFiles))
+                true
+            }
+
+            R.id.action_set_favorite -> {
+                fileOperationsViewModel.performOperation(FileOperation.SetFilesAsFavorite(checkedFiles))
+                true
+            }
+
+            R.id.action_unset_favorite -> {
+                fileOperationsViewModel.performOperation(FileOperation.UnsetFilesAsFavorite(checkedFiles))
                 true
             }
 

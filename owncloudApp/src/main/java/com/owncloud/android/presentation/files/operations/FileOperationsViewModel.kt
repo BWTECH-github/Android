@@ -34,6 +34,8 @@ import com.owncloud.android.domain.appregistry.usecases.CreateFileWithAppProvide
 import com.owncloud.android.domain.availableoffline.usecases.SetFilesAsAvailableOfflineUseCase
 import com.owncloud.android.domain.availableoffline.usecases.UnsetFilesAsAvailableOfflineUseCase
 import com.owncloud.android.domain.exceptions.NoNetworkConnectionException
+import com.owncloud.android.domain.favorites.usecases.SetFilesAsFavoriteUseCase
+import com.owncloud.android.domain.favorites.usecases.UnsetFilesAsFavoriteUseCase
 import com.owncloud.android.domain.files.model.OCFile
 import com.owncloud.android.domain.files.usecases.CopyFileUseCase
 import com.owncloud.android.domain.files.usecases.CreateFolderAsyncUseCase
@@ -70,6 +72,8 @@ class FileOperationsViewModel(
     private val createFileWithAppProviderUseCase: CreateFileWithAppProviderUseCase,
     private val setFilesAsAvailableOfflineUseCase: SetFilesAsAvailableOfflineUseCase,
     private val unsetFilesAsAvailableOfflineUseCase: UnsetFilesAsAvailableOfflineUseCase,
+    private val setFilesAsFavoriteUseCase: SetFilesAsFavoriteUseCase,
+    private val unsetFilesAsFavoriteUseCase: UnsetFilesAsFavoriteUseCase,
     private val manageDeepLinkUseCase: ManageDeepLinkUseCase,
     private val setLastUsageFileUseCase: SetLastUsageFileUseCase,
     private val isAnyFileAvailableLocallyAndNotAvailableOfflineUseCase: IsAnyFileAvailableLocallyAndNotAvailableOfflineUseCase,
@@ -125,6 +129,8 @@ class FileOperationsViewModel(
             is FileOperation.CreateFolder -> createFolderOperation(fileOperation)
             is FileOperation.SetFilesAsAvailableOffline -> setFileAsAvailableOffline(fileOperation)
             is FileOperation.UnsetFilesAsAvailableOffline -> unsetFileAsAvailableOffline(fileOperation)
+            is FileOperation.SetFilesAsFavorite -> setFilesAsFavorite(fileOperation)
+            is FileOperation.UnsetFilesAsFavorite -> unsetFilesAsFavorite(fileOperation)
             is FileOperation.SynchronizeFolderOperation -> syncFolderOperation(fileOperation)
             is FileOperation.RefreshFolderOperation -> refreshFolderOperation(fileOperation)
             is FileOperation.CreateFileWithAppProviderOperation -> createFileWithAppProvider(fileOperation)
@@ -305,6 +311,18 @@ class FileOperationsViewModel(
     private fun unsetFileAsAvailableOffline(fileOperation: FileOperation.UnsetFilesAsAvailableOffline) {
         viewModelScope.launch(coroutinesDispatcherProvider.io) {
             unsetFilesAsAvailableOfflineUseCase(UnsetFilesAsAvailableOfflineUseCase.Params(fileOperation.filesToUpdate))
+        }
+    }
+
+    private fun setFilesAsFavorite(fileOperation: FileOperation.SetFilesAsFavorite) {
+        viewModelScope.launch(coroutinesDispatcherProvider.io) {
+            setFilesAsFavoriteUseCase(SetFilesAsFavoriteUseCase.Params(fileOperation.filesToUpdate))
+        }
+    }
+
+    private fun unsetFilesAsFavorite(fileOperation: FileOperation.UnsetFilesAsFavorite) {
+        viewModelScope.launch(coroutinesDispatcherProvider.io) {
+            unsetFilesAsFavoriteUseCase(UnsetFilesAsFavoriteUseCase.Params(fileOperation.filesToUpdate))
         }
     }
 

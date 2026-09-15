@@ -229,12 +229,10 @@ abstract class DrawerActivity : ToolbarActivity() {
             val capabilities = uiResult.data
             if (AccountUtils.isSpacesFeatureAllowedForAccount(baseContext, account, capabilities)) {
                 getBottomNavigationView()?.menu?.get(0)?.title = getString(R.string.bottom_nav_personal)
-                getBottomNavigationView()?.menu?.get(1)?.title = getString(R.string.bottom_nav_shares)
-                getBottomNavigationView()?.menu?.get(1)?.icon = AppCompatResources.getDrawable(this, R.drawable.ic_ocis_shares)
-                getBottomNavigationView()?.menu?.get(2)?.isVisible = capabilities?.isSpacesProjectsAllowed() == true
+                getBottomNavigationView()?.menu?.get(2)?.title = getString(R.string.bottom_nav_shares)
+                getBottomNavigationView()?.menu?.get(2)?.icon = AppCompatResources.getDrawable(this, R.drawable.ic_ocis_shares)
             } else {
                 getBottomNavigationView()?.menu?.get(0)?.title = getString(R.string.bottom_nav_files)
-                getBottomNavigationView()?.menu?.get(2)?.isVisible = false
             }
         }
     }
@@ -242,7 +240,7 @@ abstract class DrawerActivity : ToolbarActivity() {
     private fun bottomBarNavigationTo(menuItemId: Int, isCurrentOptionActive: Boolean) {
         when (menuItemId) {
             R.id.nav_all_files -> navigateToOption(FileListOption.ALL_FILES)
-            R.id.nav_spaces -> navigateToOption(FileListOption.SPACES_LIST)
+            R.id.nav_favorite_files -> navigateToOption(FileListOption.FAVORITE)
             R.id.nav_uploads -> if (!isCurrentOptionActive) {
                 val uploadListIntent = Intent(applicationContext, UploadListActivity::class.java)
                 uploadListIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
@@ -353,7 +351,7 @@ abstract class DrawerActivity : ToolbarActivity() {
                             getString(R.string.drawer_quota),
                             DisplayUtils.bytesToHumanReadable(userQuota.used, context, true),
                             DisplayUtils.bytesToHumanReadable(userQuota.getTotal(), context, true),
-                            userQuota.getRelative()
+                            userQuota.getRelative().toInt().toString()
                         )
                     }
                     getAccountQuotaStatusText()?.apply {
@@ -378,7 +376,7 @@ abstract class DrawerActivity : ToolbarActivity() {
                             getString(R.string.drawer_quota),
                             DisplayUtils.bytesToHumanReadable(userQuota.used, context, true),
                             DisplayUtils.bytesToHumanReadable(userQuota.getTotal(), context, true),
-                            userQuota.getRelative()
+                            userQuota.getRelative().toInt().toString()
                         )
                     }
                     getAccountQuotaStatusText()?.apply {
@@ -397,7 +395,7 @@ abstract class DrawerActivity : ToolbarActivity() {
                             getString(R.string.drawer_quota),
                             DisplayUtils.bytesToHumanReadable(userQuota.used, context, true),
                             DisplayUtils.bytesToHumanReadable(userQuota.getTotal(), context, true),
-                            userQuota.getRelative()
+                            userQuota.getRelative().toInt().toString()
                         )
                     }
                     getAccountQuotaStatusText()?.apply {
@@ -414,7 +412,7 @@ abstract class DrawerActivity : ToolbarActivity() {
                         getString(R.string.drawer_quota),
                         DisplayUtils.bytesToHumanReadable(userQuota.used, this, true),
                         DisplayUtils.bytesToHumanReadable(userQuota.getTotal(), this, true),
-                        userQuota.getRelative()
+                        userQuota.getRelative().toInt().toString()
                     )
                     getAccountQuotaStatusText()?.visibility = View.GONE
                 }

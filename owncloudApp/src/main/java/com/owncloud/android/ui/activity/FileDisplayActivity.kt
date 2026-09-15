@@ -988,6 +988,7 @@ class FileDisplayActivity : FileActivity(),
 
                     FileListOption.ALL_FILES -> getString(R.string.default_display_name_for_root_folder)
                     FileListOption.SPACES_LIST -> getString(R.string.bottom_nav_spaces)
+                    FileListOption.FAVORITE -> getString(R.string.bottom_nav_favorites)
                 }
             setTitle(title)
             setupRootToolbar(title = title, isSearchEnabled = true, isAvatarRequested = false)
@@ -1614,7 +1615,7 @@ class FileDisplayActivity : FileActivity(),
             },
             onWorkFailed = {
                 showMessageInSnackbar(
-                    message = String.format(getString(R.string.downloader_download_failed_ticker), file.fileName)
+                    message = String.format(getString(R.string.downloader_download_failed_content), file.fileName)
                 )
                 if (file.id == waitingToSend?.id) {
                     waitingToSend = null
@@ -1849,6 +1850,15 @@ class FileDisplayActivity : FileActivity(),
                     updateToolbar(file)
                 }
             }
+
+            FileListOption.FAVORITE -> {
+                if (previousFileListOption != newFileListOption || initialState) {
+                    file = storageManager.getRootPersonalFolder()
+                    fileListOption = newFileListOption
+                    mainFileListFragment?.updateFileListOption(newFileListOption, file) ?: initAndShowListOfFiles(newFileListOption)
+                    updateToolbar(file)
+                }
+            }
         }
     }
 
@@ -1857,9 +1867,9 @@ class FileDisplayActivity : FileActivity(),
     }
 
     private fun getMenuItemForFileListOption(fileListOption: FileListOption?): Int = when (fileListOption) {
-        FileListOption.SPACES_LIST -> R.id.nav_spaces
         FileListOption.SHARED_BY_LINK -> R.id.nav_shared_by_link_files
         FileListOption.AV_OFFLINE -> R.id.nav_available_offline_files
+        FileListOption.FAVORITE -> R.id.nav_favorite_files
         else -> R.id.nav_all_files
     }
 

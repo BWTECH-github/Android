@@ -126,6 +126,7 @@
 
     <!-- Bottom navigation bar -->
     <string name="bottom_nav_files">Files</string>
+    <string name="bottom_nav_favorites">Favorites</string>
     <string name="bottom_nav_personal">Personal</string>
     <string name="bottom_nav_uploads">Uploads</string>
     <string name="bottom_nav_offline">Offline</string>
@@ -167,6 +168,7 @@
     <string name="spaces_list_empty_title">No spaces</string>
     <string name="space_label">Space:</string>
     <string name="file_list_empty_title_available_offline">No available offline files</string>
+    <string name="file_list_empty_title_favorite">No favorite files</string>
     <string name="file_list_empty_title_shared_by_links">No shared links</string>
     <string name="file_list_empty_subtitle_all_files">Upload some content or sync with your devices!</string>
     <string name="light_users_subtitle">Personal space is not available</string>
@@ -174,6 +176,7 @@
     <string name="shares_list_empty_subtitle">You are not collaborating on other people\'s resources.</string>
     <string name="spaces_list_empty_subtitle">You don\'t have access to any space!</string>
     <string name="file_list_empty_subtitle_available_offline">Files and folders you mark as available offline will show up here.</string>
+    <string name="file_list_empty_subtitle_favorite">Files and folders you add to favorites will show up here.</string>
     <string name="file_list_empty_subtitle_shared_by_links">Files and folders you share by link will show up here.</string>
     <string name="file_list_loading">Loading&#8230;</string>
     <string name="file_list_no_app_for_file_type">No app found for file type</string>
@@ -379,6 +382,8 @@
 
     <string name="set_available_offline">Set as available offline</string>
     <string name="unset_available_offline">Unset as available offline</string>
+    <string name="set_favorite">Add to favorites</string>
+    <string name="unset_favorite">Remove from favorites</string>
     <string name="confirmation_set_available_offline">The file was set as available offline correctly</string>
     <string name="confirmation_unset_available_offline">The file was unset as available offline correctly</string>
     <string name="common_rename">Rename</string>
@@ -865,6 +870,7 @@
     <string name="content_description_file_state_conflict">sync conflict</string>
     <string name="content_description_file_state_available_offline">available offline</string>
     <string name="content_description_file_state_downloaded">downloaded</string>
+    <string name="content_description_file_state_favorite">favorite</string>
 
     <string name="create_shortcut_dialog_title">Create a shortcut</string>
     <string name="create_shortcut_dialog_url">URL</string>

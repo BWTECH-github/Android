@@ -96,4 +96,11 @@ interface RemoteFileDataSource {
         accountName: String,
     ): OCMetaFile
 
+    fun setFileAsFavorite(
+        remotePath: String,
+        favorite: Boolean,
+        accountName: String,
+        spaceWebDavUrl: String? = null,
+    )
+
 }

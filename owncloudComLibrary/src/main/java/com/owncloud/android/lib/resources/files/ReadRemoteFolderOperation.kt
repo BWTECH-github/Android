@@ -31,6 +31,7 @@ import com.owncloud.android.lib.common.http.HttpConstants.HTTP_OK
 import com.owncloud.android.lib.common.http.methods.webdav.DavConstants
 import com.owncloud.android.lib.common.http.methods.webdav.DavUtils
 import com.owncloud.android.lib.common.http.methods.webdav.PropfindMethod
+import com.owncloud.android.lib.common.http.methods.webdav.properties.OCFavorite
 import com.owncloud.android.lib.common.http.methods.webdav.properties.OCShareTypes
 import com.owncloud.android.lib.common.network.WebdavUtils
 import com.owncloud.android.lib.common.operations.RemoteOperation
@@ -60,6 +61,7 @@ class ReadRemoteFolderOperation(
     override fun run(client: OwnCloudClient): RemoteOperationResult<ArrayList<RemoteFile>> {
         try {
             PropertyRegistry.register(OCShareTypes.Factory())
+            PropertyRegistry.register(OCFavorite.Factory())
 
             val propfindMethod = PropfindMethod(
                 getFinalWebDavUrl(),

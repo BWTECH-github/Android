@@ -207,6 +207,8 @@ class FileListAdapter(
 
             setIconPinAccordingToFilesLocalState(holder.itemView.findViewById(R.id.localFileIndicator), fileWithSyncInfo)
 
+            holder.itemView.findViewById<ImageView>(R.id.favoriteIndicator).isVisible = file.favorite
+
             holder.itemView.setOnClickListener {
                 listener.onItemClick(
                     ocFileWithSyncInfo = fileWithSyncInfo,
@@ -413,6 +415,10 @@ class FileListAdapter(
             else -> null
         }
         localStateRes?.let { parts.add(context.getString(it)) }
+
+        if (file.favorite) {
+            parts.add(context.getString(R.string.content_description_file_state_favorite))
+        }
 
         parts.add(
             if (isSelected) {

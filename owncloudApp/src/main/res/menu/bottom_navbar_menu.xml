@@ -22,15 +22,13 @@
         android:icon="@drawable/ic_folder"
         android:title="@string/bottom_nav_files" />
     <item
+        android:id="@+id/nav_favorite_files"
+        android:icon="@drawable/ic_star_black_24dp"
+        android:title="@string/bottom_nav_favorites" />
+    <item
         android:id="@+id/nav_shared_by_link_files"
         android:icon="@drawable/ic_shared_by_link"
         android:title="@string/bottom_nav_links" />
-    <item
-        android:id="@+id/nav_spaces"
-        android:icon="@drawable/ic_spaces"
-        android:title="@string/bottom_nav_spaces"
-        android:visible="false"
-        />
     <item
         android:id="@+id/nav_uploads"
         android:icon="@drawable/ic_uploads"

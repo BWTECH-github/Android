@@ -36,6 +36,7 @@ import at.bitfire.dav4jvm.property.OCPermissions
 import at.bitfire.dav4jvm.property.OCPrivatelink
 import at.bitfire.dav4jvm.property.OCSize
 import at.bitfire.dav4jvm.property.ResourceType
+import com.owncloud.android.lib.common.http.methods.webdav.properties.OCFavorite
 import com.owncloud.android.lib.common.http.methods.webdav.properties.OCShareTypes
 
 object DavUtils {
@@ -53,6 +54,7 @@ object DavUtils {
             OCSize.NAME,
             OCPrivatelink.NAME,
             OCShareTypes.NAME,
+            OCFavorite.NAME,
         )
 
     val quotaPropSet: Array<Property.Name>

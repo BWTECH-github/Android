@@ -89,4 +89,10 @@ interface FileService : Service {
         fileId: String,
     ): RemoteOperationResult<RemoteMetaFile>
 
+    fun setFileAsFavorite(
+        remotePath: String,
+        favorite: Boolean,
+        spaceWebDavUrl: String? = null,
+    ): RemoteOperationResult<Unit>
+
 }

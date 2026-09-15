@@ -221,6 +221,7 @@ class OCFileRepository(
             FileListOption.SPACES_LIST -> emptyList()
             FileListOption.AV_OFFLINE -> localFileDataSource.getSearchAvailableOfflineFolderContent(folderId, search)
             FileListOption.SHARED_BY_LINK -> localFileDataSource.getSearchSharedByLinkFolderContent(folderId, search)
+            FileListOption.FAVORITE -> localFileDataSource.getSearchFavoriteFolderContent(folderId, search)
         }
 
     override fun getFolderContent(folderId: Long): List<OCFile> =
@@ -243,6 +244,9 @@ class OCFileRepository(
 
     override fun getFilesAvailableOfflineFromEveryAccount(): List<OCFile> =
         localFileDataSource.getFilesAvailableOfflineFromEveryAccount()
+
+    override fun getFilesWithSyncInfoFavoriteFromAccountAsFlow(owner: String): Flow<List<OCFileWithSyncInfo>> =
+        localFileDataSource.getFilesWithSyncInfoFavoriteFromAccountAsFlow(owner)
 
     override fun getDownloadedFilesForAccount(owner: String): List<OCFile> = localFileDataSource.getDownloadedFilesForAccount(owner)
 
@@ -522,6 +526,19 @@ class OCFileRepository(
 
     override fun updateFileWithNewAvailableOfflineStatus(ocFile: OCFile, newAvailableOfflineStatus: AvailableOfflineStatus) {
         localFileDataSource.updateAvailableOfflineStatusForFile(ocFile, newAvailableOfflineStatus)
+    }
+
+    override fun setFileAsFavorite(ocFile: OCFile, favorite: Boolean) {
+        val spaceWebDavUrl = localSpacesDataSource.getWebDavUrlForSpace(ocFile.spaceId, ocFile.owner)
+
+        remoteFileDataSource.setFileAsFavorite(
+            remotePath = ocFile.remotePath,
+            favorite = favorite,
+            accountName = ocFile.owner,
+            spaceWebDavUrl = spaceWebDavUrl,
+        )
+
+        localFileDataSource.updateFavoriteStatusForFile(ocFile, favorite)
     }
 
     override fun updateFileWithLastUsage(fileId: Long, lastUsage: Long?) {

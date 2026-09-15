@@ -31,6 +31,7 @@ import com.owncloud.android.domain.appregistry.usecases.GetAppRegistryForMimeTyp
 import com.owncloud.android.domain.appregistry.usecases.GetAppRegistryWhichAllowCreationAsStreamUseCase
 import com.owncloud.android.domain.appregistry.usecases.GetUrlToOpenInWebUseCase
 import com.owncloud.android.domain.availableoffline.usecases.GetFilesAvailableOfflineFromAccountAsStreamUseCase
+import com.owncloud.android.domain.favorites.usecases.GetFilesFavoriteFromAccountAsStreamUseCase
 import com.owncloud.android.domain.files.model.FileListOption
 import com.owncloud.android.domain.files.model.FileMenuOption
 import com.owncloud.android.domain.files.model.OCFile
@@ -78,6 +79,7 @@ class MainFileListViewModel(
     private val getFolderContentAsStreamUseCase: GetFolderContentAsStreamUseCase,
     private val getSharedByLinkForAccountAsStreamUseCase: GetSharedByLinkForAccountAsStreamUseCase,
     private val getFilesAvailableOfflineFromAccountAsStreamUseCase: GetFilesAvailableOfflineFromAccountAsStreamUseCase,
+    private val getFilesFavoriteFromAccountAsStreamUseCase: GetFilesFavoriteFromAccountAsStreamUseCase,
     private val getFileByIdUseCase: GetFileByIdUseCase,
     private val getFileByRemotePathUseCase: GetFileByRemotePathUseCase,
     private val getSpaceWithSpecialsByIdForAccountUseCase: GetSpaceWithSpecialsByIdForAccountUseCase,
@@ -241,6 +243,15 @@ class MainFileListViewModel(
                         }
                     }
 
+                    FileListOption.FAVORITE -> {
+                        val fileById = fileByIdResult.getDataOrNull()
+                        parentDir = if (fileById != null && !fileById.favorite) {
+                            getFileByRemotePathUseCase(GetFileByRemotePathUseCase.Params(fileById.owner, ROOT_PATH)).getDataOrNull()
+                        } else {
+                            fileById
+                        }
+                    }
+
                     FileListOption.SPACES_LIST -> {
                         parentDir = TODO("Move it to usecase if possible")
                     }
@@ -320,6 +331,7 @@ class MainFileListViewModel(
                     displaySelectInverse = isMultiselection,
                     onlyAvailableOfflineFiles = fileListOption.value.isAvailableOffline(),
                     onlySharedByLinkFiles = fileListOption.value.isSharedByLink(),
+                    onlyFavoriteFiles = fileListOption.value.isFavorite(),
                     shareViaLinkAllowed = shareViaLinkAllowed,
                     shareWithUsersAllowed = shareWithUsersAllowed,
                     sendAllowed = sendAllowed,
@@ -373,6 +385,7 @@ class MainFileListViewModel(
             FileListOption.ALL_FILES -> retrieveFlowForAllFiles(currentFolderDisplayed, currentFolderDisplayed.owner)
             FileListOption.SHARED_BY_LINK -> retrieveFlowForShareByLink(currentFolderDisplayed, currentFolderDisplayed.owner)
             FileListOption.AV_OFFLINE -> retrieveFlowForAvailableOffline(currentFolderDisplayed, currentFolderDisplayed.owner)
+            FileListOption.FAVORITE -> retrieveFlowForFavorite(currentFolderDisplayed, currentFolderDisplayed.owner)
             FileListOption.SPACES_LIST -> flowOf()
         }.toFileListUiState(
             currentFolderDisplayed,
@@ -417,6 +430,20 @@ class MainFileListViewModel(
     ): Flow<List<OCFileWithSyncInfo>> =
         if (currentFolderDisplayed.remotePath == ROOT_PATH) {
             getFilesAvailableOfflineFromAccountAsStreamUseCase(GetFilesAvailableOfflineFromAccountAsStreamUseCase.Params(accountName))
+        } else {
+            retrieveFlowForAllFiles(currentFolderDisplayed, accountName)
+        }
+
+    /**
+     * In root folder, all the favorite files should be shown. Otherwise, the folder content should be shown.
+     * Logic to handle the browse back in [manageBrowseUp]
+     */
+    private fun retrieveFlowForFavorite(
+        currentFolderDisplayed: OCFile,
+        accountName: String,
+    ): Flow<List<OCFileWithSyncInfo>> =
+        if (currentFolderDisplayed.remotePath == ROOT_PATH) {
+            getFilesFavoriteFromAccountAsStreamUseCase(GetFilesFavoriteFromAccountAsStreamUseCase.Params(accountName))
         } else {
             retrieveFlowForAllFiles(currentFolderDisplayed, accountName)
         }

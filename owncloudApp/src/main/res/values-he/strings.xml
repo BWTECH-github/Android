@@ -233,7 +233,7 @@
   <string name="downloader_download_succeeded_ticker">ההורדה הצליחה</string>
   <string name="downloader_download_succeeded_content">%1$s הורדו</string>
   <string name="downloader_download_failed_ticker">ההורדה נכשלה</string>
-  <string name="downloader_download_failed_content">לא ניתן להשלים את ההורדה של </string>
+  <string name="downloader_download_failed_content">לא ניתן להשלים את ההורדה של %1$s</string>
   <string name="downloader_not_downloaded_yet">לא הורד עדיין</string>
   <string name="downloader_download_failed_credentials_error">הורדה נכשלה, יש להתחבר מחדש</string>
   <string name="downloader_download_forbidden_permissions">להורדת קובץ זה</string>

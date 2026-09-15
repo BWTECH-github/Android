@@ -94,6 +94,12 @@ interface FileDao {
         search: String
     ): List<OCFileEntity>
 
+    @Query(SELECT_FILTERED_FAVORITE_FOLDER_CONTENT)
+    fun getSearchFavoriteFolderContent(
+        folderId: Long,
+        search: String
+    ): List<OCFileEntity>
+
     @Query(SELECT_FOLDER_CONTENT)
     fun getFolderContent(
         folderId: Long
@@ -136,6 +142,12 @@ interface FileDao {
 
     @Query(SELECT_FILES_AVAILABLE_OFFLINE_FROM_EVERY_ACCOUNT)
     fun getFilesAvailableOfflineFromEveryAccount(): List<OCFileEntity>
+
+    @Transaction
+    @Query(SELECT_FILES_FAVORITE_FROM_ACCOUNT)
+    fun getFilesWithSyncInfoFavoriteFromAccountAsFlow(
+        accountOwner: String
+    ): Flow<List<OCFileAndFileSync>>
 
     @Query(SELECT_DOWNLOADED_FILES_FOR_ACCOUNT)
     fun getDownloadedFilesForAccount(
@@ -372,6 +384,9 @@ interface FileDao {
     @Query(UPDATE_FILE_WITH_NEW_AVAILABLE_OFFLINE_STATUS)
     fun updateFileWithAvailableOfflineStatus(id: Long, availableOfflineStatus: Int)
 
+    @Query(UPDATE_FILE_WITH_NEW_FAVORITE_STATUS)
+    fun updateFavoriteStatusForFile(id: Long, favorite: Boolean)
+
     @Query(UPDATE_FILE_WITH_LAST_USAGE)
     fun updateFileWithLastUsage(id: Long, lastUsage: Long?)
 
@@ -544,6 +559,12 @@ interface FileDao {
             WHERE parentId = :folderId AND remotePath LIKE '%' || :search || '%' AND sharedByLink LIKE '%1%'
         """
 
+        private const val SELECT_FILTERED_FAVORITE_FOLDER_CONTENT = """
+            SELECT *
+            FROM ${ProviderMeta.ProviderTableMeta.FILES_TABLE_NAME}
+            WHERE parentId = :folderId AND remotePath LIKE '%' || :search || '%' AND favorite = 1
+        """
+
         private const val SELECT_FOLDER_BY_MIMETYPE = """
             SELECT *
             FROM ${ProviderMeta.ProviderTableMeta.FILES_TABLE_NAME}
@@ -574,6 +595,12 @@ interface FileDao {
             WHERE keepInSync = '1'
         """
 
+        private const val SELECT_FILES_FAVORITE_FROM_ACCOUNT = """
+            SELECT *
+            FROM ${ProviderMeta.ProviderTableMeta.FILES_TABLE_NAME}
+            WHERE owner = :accountOwner AND favorite = 1
+        """
+
         private const val SELECT_FILES_WHERE_LAST_USAGE_IS_OLDER_THAN_GIVEN_TIME = """
             SELECT *
             FROM ${ProviderMeta.ProviderTableMeta.FILES_TABLE_NAME}
@@ -584,6 +611,12 @@ interface FileDao {
         private const val UPDATE_FILE_WITH_NEW_AVAILABLE_OFFLINE_STATUS = """
             UPDATE ${ProviderMeta.ProviderTableMeta.FILES_TABLE_NAME}
             SET keepInSync = :availableOfflineStatus
+            WHERE id = :id
+        """
+
+        private const val UPDATE_FILE_WITH_NEW_FAVORITE_STATUS = """
+            UPDATE ${ProviderMeta.ProviderTableMeta.FILES_TABLE_NAME}
+            SET favorite = :favorite
             WHERE id = :id
         """
 

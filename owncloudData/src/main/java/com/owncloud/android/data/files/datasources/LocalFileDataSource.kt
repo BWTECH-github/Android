@@ -38,12 +38,14 @@ interface LocalFileDataSource {
     fun getSearchFolderContent(folderId: Long, search: String): List<OCFile>
     fun getSearchAvailableOfflineFolderContent(folderId: Long, search: String): List<OCFile>
     fun getSearchSharedByLinkFolderContent(folderId: Long, search: String): List<OCFile>
+    fun getSearchFavoriteFolderContent(folderId: Long, search: String): List<OCFile>
     fun getFolderContentWithSyncInfoAsFlow(folderId: Long): Flow<List<OCFileWithSyncInfo>>
     fun getFolderImages(folderId: Long): List<OCFile>
     fun getSharedByLinkWithSyncInfoForAccountAsFlow(owner: String): Flow<List<OCFileWithSyncInfo>>
     fun getFilesWithSyncInfoAvailableOfflineFromAccountAsFlow(owner: String): Flow<List<OCFileWithSyncInfo>>
     fun getFilesAvailableOfflineFromAccount(owner: String): List<OCFile>
     fun getFilesAvailableOfflineFromEveryAccount(): List<OCFile>
+    fun getFilesWithSyncInfoFavoriteFromAccountAsFlow(owner: String): Flow<List<OCFileWithSyncInfo>>
     fun getDownloadedFilesForAccount(owner: String): List<OCFile>
     fun getFileWithSyncInfoByIdAsFlow(id: Long): Flow<OCFileWithSyncInfo?>
     fun getFilesWithLastUsageOlderThanGivenTime(milliseconds: Long): List<OCFile>
@@ -59,6 +61,7 @@ interface LocalFileDataSource {
 
     fun disableThumbnailsForFile(fileId: Long)
     fun updateAvailableOfflineStatusForFile(ocFile: OCFile, newAvailableOfflineStatus: AvailableOfflineStatus)
+    fun updateFavoriteStatusForFile(ocFile: OCFile, favorite: Boolean)
     fun updateDownloadedFilesStorageDirectoryInStoragePath(oldDirectory: String, newDirectory: String)
     fun saveUploadWorkerUuid(fileId: Long, workerUuid: UUID)
     fun saveDownloadWorkerUuid(fileId: Long, workerUuid: UUID)

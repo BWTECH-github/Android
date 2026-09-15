@@ -37,6 +37,7 @@ import com.owncloud.android.lib.resources.files.RemoteFile
 import com.owncloud.android.lib.resources.files.RemoteMetaFile
 import com.owncloud.android.lib.resources.files.RemoveRemoteFileOperation
 import com.owncloud.android.lib.resources.files.RenameRemoteFileOperation
+import com.owncloud.android.lib.resources.files.SetFileAsFavoriteRemoteOperation
 import com.owncloud.android.lib.resources.files.services.FileService
 
 class OCFileService(override val client: OwnCloudClient) : FileService {
@@ -147,4 +148,15 @@ class OCFileService(override val client: OwnCloudClient) : FileService {
         fileId: String,
     ): RemoteOperationResult<RemoteMetaFile> =
         GetRemoteMetaFileOperation(fileId).execute(client)
+
+    override fun setFileAsFavorite(
+        remotePath: String,
+        favorite: Boolean,
+        spaceWebDavUrl: String?,
+    ): RemoteOperationResult<Unit> =
+        SetFileAsFavoriteRemoteOperation(
+            remotePath = remotePath,
+            favorite = favorite,
+            spaceWebDavUrl = spaceWebDavUrl,
+        ).execute(client)
 }

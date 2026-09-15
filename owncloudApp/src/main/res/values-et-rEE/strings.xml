@@ -199,7 +199,7 @@
     <string name="filedetails_file_image_content_description">Faili tõmmis</string>
     <string name="filedetails_cancel_btn_content_description">Allalaadimise tühistamise nupp</string>
     <string name="filedetails_sync_file">Sünkrooni</string>
-    <string name="filedetails_renamed_in_upload_msg">Fail nimetati üleslaadimise käigus ümber %1$ </string>
+    <string name="filedetails_renamed_in_upload_msg">Fail nimetati üleslaadimise käigus ümber %1$s</string>
     <string name="list_layout">Nimekiri</string>
     <string name="action_share">Jaga</string>
     <string name="login_account_preparing">Valmistan kontot ette esimeseks käivitamiseks</string>

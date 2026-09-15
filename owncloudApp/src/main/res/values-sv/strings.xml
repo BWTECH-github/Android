@@ -251,7 +251,7 @@
   <string name="biometric_not_enrolled">Registrera minst en biometrisk uppgift för att använda denna funktionen</string>
   <string name="biometric_prompt_title">Biometrisk inloggning</string>
   <string name="biometric_prompt_subtitle">Logga in med dina biometriska uppgifter</string>
-  <string name="media_notif_ticker">%1$ musikspelare</string>
+  <string name="media_notif_ticker">%1$s musikspelare</string>
   <string name="media_state_playing">%1$s (spelar)</string>
   <string name="media_state_loading">%1$s (buffrar)</string>
   <string name="media_event_done">%1$s spelat färdigt</string>

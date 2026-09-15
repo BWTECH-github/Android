@@ -212,6 +212,19 @@ class OCRemoteFileDataSource(
             clientManager.getFileService(accountName).getMetaFileInfo(fileId)
         }.toModel()
 
+    override fun setFileAsFavorite(
+        remotePath: String,
+        favorite: Boolean,
+        accountName: String,
+        spaceWebDavUrl: String?,
+    ) = executeRemoteOperation {
+        clientManager.getFileService(accountName).setFileAsFavorite(
+            remotePath = remotePath,
+            favorite = favorite,
+            spaceWebDavUrl = spaceWebDavUrl,
+        )
+    }
+
     companion object {
         @VisibleForTesting
         fun RemoteFile.toModel(): OCFile =
@@ -232,6 +245,7 @@ class OCRemoteFileDataSource(
                 privateLink = privateLink,
                 sharedWithSharee = sharedWithSharee,
                 sharedByLink = sharedByLink,
+                favorite = favorite,
             )
 
         @VisibleForTesting

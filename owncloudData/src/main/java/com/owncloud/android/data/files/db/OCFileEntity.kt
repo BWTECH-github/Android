@@ -91,6 +91,7 @@ data class OCFileEntity(
     val fileIsDownloading: Boolean? = null,
     val sharedWithSharee: Boolean? = false,
     var sharedByLink: Boolean = false,
+    var favorite: Boolean? = false,
     val spaceId: String? = null,
 ) {
     @PrimaryKey(autoGenerate = true)

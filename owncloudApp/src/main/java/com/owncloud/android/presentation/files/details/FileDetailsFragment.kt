@@ -70,8 +70,10 @@ import com.owncloud.android.presentation.files.details.FileDetailsViewModel.Acti
 import com.owncloud.android.presentation.files.details.FileDetailsViewModel.ActionsInDetailsView.SYNC_AND_OPEN_WITH
 import com.owncloud.android.presentation.files.details.FileDetailsViewModel.ActionsInDetailsView.SYNC_AND_SEND
 import com.owncloud.android.presentation.files.operations.FileOperation.SetFilesAsAvailableOffline
+import com.owncloud.android.presentation.files.operations.FileOperation.SetFilesAsFavorite
 import com.owncloud.android.presentation.files.operations.FileOperation.SynchronizeFileOperation
 import com.owncloud.android.presentation.files.operations.FileOperation.UnsetFilesAsAvailableOffline
+import com.owncloud.android.presentation.files.operations.FileOperation.UnsetFilesAsFavorite
 import com.owncloud.android.presentation.files.operations.FileOperationsViewModel
 import com.owncloud.android.presentation.files.removefile.RemoveFilesDialogFragment
 import com.owncloud.android.presentation.files.removefile.RemoveFilesDialogFragment.Companion.TAG_REMOVE_FILES_DIALOG_FRAGMENT
@@ -335,6 +337,16 @@ class FileDetailsFragment : FileFragment() {
 
             R.id.action_unset_available_offline -> {
                 fileOperationsViewModel.performOperation(UnsetFilesAsAvailableOffline(listOf(safeFile.file)))
+                true
+            }
+
+            R.id.action_set_favorite -> {
+                fileOperationsViewModel.performOperation(SetFilesAsFavorite(listOf(safeFile.file)))
+                true
+            }
+
+            R.id.action_unset_favorite -> {
+                fileOperationsViewModel.performOperation(UnsetFilesAsFavorite(listOf(safeFile.file)))
                 true
             }
 
