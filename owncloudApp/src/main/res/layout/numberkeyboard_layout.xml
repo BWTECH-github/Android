@@ -42,7 +42,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:contentDescription="@string/numberkeyboard_one"
             android:padding="@dimen/standard_padding"
             android:text="@string/numberkeyboard_one"
-            android:textColor="@drawable/numberkeyboard_key_text_color"
+            android:textColor="@color/textColor"
             android:textStyle="bold" />
 
     </com.owncloud.android.presentation.security.passcode.SquareFrameLayout>
@@ -63,7 +63,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:contentDescription="@string/numberkeyboard_two"
             android:padding="@dimen/standard_padding"
             android:text="@string/numberkeyboard_two"
-            android:textColor="@drawable/numberkeyboard_key_text_color"
+            android:textColor="@color/textColor"
             android:textStyle="bold" />
 
     </com.owncloud.android.presentation.security.passcode.SquareFrameLayout>
@@ -84,7 +84,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:contentDescription="@string/numberkeyboard_three"
             android:padding="@dimen/standard_padding"
             android:text="@string/numberkeyboard_three"
-            android:textColor="@drawable/numberkeyboard_key_text_color"
+            android:textColor="@color/textColor"
             android:textStyle="bold" />
 
     </com.owncloud.android.presentation.security.passcode.SquareFrameLayout>
@@ -106,7 +106,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:contentDescription="@string/numberkeyboard_four"
             android:padding="@dimen/standard_padding"
             android:text="@string/numberkeyboard_four"
-            android:textColor="@drawable/numberkeyboard_key_text_color"
+            android:textColor="@color/textColor"
             android:textStyle="bold" />
 
     </com.owncloud.android.presentation.security.passcode.SquareFrameLayout>
@@ -127,7 +127,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:contentDescription="@string/numberkeyboard_five"
             android:padding="@dimen/standard_padding"
             android:text="@string/numberkeyboard_five"
-            android:textColor="@drawable/numberkeyboard_key_text_color"
+            android:textColor="@color/textColor"
             android:textStyle="bold" />
 
     </com.owncloud.android.presentation.security.passcode.SquareFrameLayout>
@@ -148,7 +148,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:contentDescription="@string/numberkeyboard_six"
             android:padding="@dimen/standard_padding"
             android:text="@string/numberkeyboard_six"
-            android:textColor="@drawable/numberkeyboard_key_text_color"
+            android:textColor="@color/textColor"
             android:textStyle="bold" />
 
     </com.owncloud.android.presentation.security.passcode.SquareFrameLayout>
@@ -170,7 +170,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:contentDescription="@string/numberkeyboard_seven"
             android:padding="@dimen/standard_padding"
             android:text="@string/numberkeyboard_seven"
-            android:textColor="@drawable/numberkeyboard_key_text_color"
+            android:textColor="@color/textColor"
             android:textStyle="bold" />
 
     </com.owncloud.android.presentation.security.passcode.SquareFrameLayout>
@@ -191,7 +191,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:contentDescription="@string/numberkeyboard_eight"
             android:padding="@dimen/standard_padding"
             android:text="@string/numberkeyboard_eight"
-            android:textColor="@drawable/numberkeyboard_key_text_color"
+            android:textColor="@color/textColor"
             android:textStyle="bold" />
 
     </com.owncloud.android.presentation.security.passcode.SquareFrameLayout>
@@ -212,7 +212,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:contentDescription="@string/numberkeyboard_nine"
             android:padding="@dimen/standard_padding"
             android:text="@string/numberkeyboard_nine"
-            android:textColor="@drawable/numberkeyboard_key_text_color"
+            android:textColor="@color/textColor"
             android:textStyle="bold" />
 
     </com.owncloud.android.presentation.security.passcode.SquareFrameLayout>
@@ -254,7 +254,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             android:contentDescription="@string/numberkeyboard_zero"
             android:padding="@dimen/standard_padding"
             android:text="@string/numberkeyboard_zero"
-            android:textColor="@drawable/numberkeyboard_key_text_color"
+            android:textColor="@color/textColor"
             android:textStyle="bold" />
 
     </com.owncloud.android.presentation.security.passcode.SquareFrameLayout>
