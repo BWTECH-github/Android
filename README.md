@@ -12,6 +12,7 @@ teilen und Aufnahmen automatisch hochladen lassen.
 * **Offline halten** — ausgewählte Ordner bleiben auf dem Gerät verfügbar und
   werden im Hintergrund abgeglichen
 * **Automatischer Upload** von Fotos und Videos, auf Wunsch nur im WLAN
+* **Favoriten** markieren und einsehen
 * **Teilen** über interne Freigaben und öffentliche Links mit Passwort und
   Ablaufdatum
 * **Mehrere Konten** gleichzeitig
