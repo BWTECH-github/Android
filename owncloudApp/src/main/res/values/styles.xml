@@ -332,9 +332,9 @@
     </style>
 
     <style name="Button.Authenticator" parent="Widget.AppCompat.Button.Colored">
-        <item name="colorButtonNormal">@color/login_button_background_color</item>
-        <item name="colorAccent">@color/login_button_background_color</item>
-        <item name="android:textColor">@color/login_button_text_color</item>
+        <item name="colorButtonNormal">@color/primary</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:textColor">@color/textColor</item>
     </style>
 
     <style name="EditText.Authenticator" parent="Widget.AppCompat.EditText">
