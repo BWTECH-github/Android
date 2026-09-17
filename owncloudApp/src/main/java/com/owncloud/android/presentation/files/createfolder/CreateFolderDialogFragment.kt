@@ -24,6 +24,7 @@ package com.owncloud.android.presentation.files.createfolder
 import android.app.Dialog
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -54,7 +55,7 @@ class CreateFolderDialogFragment : DialogFragment() {
 
         // Inflate the layout for the dialog
         val inflater = requireActivity().layoutInflater
-        val view = inflater.inflate(R.layout.edit_box_dialog, null)
+        val view = inflater.inflate(R.layout.create_folder_dialog, null)
 
         // Allow or disallow touches with other visible windows
         view.filterTouchesWhenObscured = PreferenceUtils.shouldDisallowTouchesWithOtherVisibleWindows(context)
@@ -70,36 +71,25 @@ class CreateFolderDialogFragment : DialogFragment() {
 
         inputText.requestFocus()
 
+        val cancelButton = view.findViewById<Button>(R.id.createFolderCancelButton)
+        val confirmButton = view.findViewById<Button>(R.id.createFolderConfirmButton)
+        confirmButton.isEnabled = isButtonEnabled
+
         // Build the dialog
         val builder = AlertDialog.Builder(requireActivity())
         builder.setView(view)
-            .setPositiveButton(android.R.string.ok) { dialog, _ ->
-                createFolderListener.onFolderNameSet(
-                    newFolderName = inputText.text.toString(),
-                    parentFolder = parentFolder
-                )
-                dialog.dismiss()
-            }
-            .setNegativeButton(android.R.string.cancel, null)
             .setTitle(R.string.uploader_info_dirname)
         val alertDialog = builder.create()
 
-        alertDialog.setOnShowListener {
-            val okButton = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE)
-            okButton.isEnabled = isButtonEnabled
-
-            okButton.setOnClickListener {
-                var fileName: String = inputText.text.toString()
-                createFolderListener.onFolderNameSet(fileName, parentFolder)
-                dialog?.dismiss()
-            }
+        cancelButton.setOnClickListener { alertDialog.dismiss() }
+        confirmButton.setOnClickListener {
+            createFolderListener.onFolderNameSet(inputText.text.toString(), parentFolder)
+            alertDialog.dismiss()
         }
 
         inputText.doOnTextChanged { text, _, _, _ ->
-            val okButton = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE)
-
             if (text.isNullOrBlank()) {
-                okButton.isEnabled = false
+                confirmButton.isEnabled = false
                 error = getString(R.string.uploader_upload_text_dialog_filename_error_empty)
             } else if (text.length > maxFilenameLength) {
                 error = String.format(
@@ -109,13 +99,13 @@ class CreateFolderDialogFragment : DialogFragment() {
             } else if (forbiddenChars.any { text.contains(it) }) {
                 error = getString(R.string.filename_forbidden_characters)
             } else {
-                okButton.isEnabled = true
+                confirmButton.isEnabled = true
                 error = null
                 inputLayout.error = error
             }
 
             if (error != null) {
-                okButton.isEnabled = false
+                confirmButton.isEnabled = false
                 inputLayout.error = error
             }
         }
