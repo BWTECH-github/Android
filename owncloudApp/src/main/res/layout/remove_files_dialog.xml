@@ -58,27 +58,27 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/dialog_remove_no"
-                    style="@style/Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:text="@string/common_no" />
+                    android:text="@string/common_no"
+                    android:theme="@style/Button.Secondary" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/dialog_remove_local_only"
-                    style="@style/Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/confirmation_remove_local" />
+                    android:text="@string/confirmation_remove_local"
+                    android:theme="@style/Button.Secondary" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/dialog_remove_yes"
-                    style="@style/Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:text="@string/common_yes" />
+                    android:text="@string/common_yes"
+                    android:theme="@style/Button.Brand" />
 
             </LinearLayout>
         </LinearLayout>
