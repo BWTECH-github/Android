@@ -25,13 +25,15 @@
 
                 <TextView
                     android:id="@+id/create_shortcut_dialog_url_text"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/create_shortcut_dialog_label_width"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/standard_half_padding"
                     android:padding="@dimen/standard_padding"
                     android:text="@string/create_shortcut_dialog_url"
                     android:textColor="@color/black"
                     android:gravity="bottom"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:textSize="15sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -51,6 +53,7 @@
                             android:id="@+id/create_shortcut_dialog_url_value"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:hint="@string/create_shortcut_dialog_url_placeholder"
                             android:inputType="textNoSuggestions"
                             android:textSize="15sp" />
 
@@ -67,13 +70,15 @@
 
                 <TextView
                     android:id="@+id/create_shortcut_dialog_text"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/create_shortcut_dialog_label_width"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/standard_half_padding"
                     android:padding="@dimen/standard_padding"
                     android:text="@string/global_name"
                     android:textColor="@color/black"
                     android:gravity="bottom"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:textSize="15sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -127,13 +132,14 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/createButton"
-                    style="@style/Button.Primary"
+                    style="@style/Button.Brand"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:enabled="false"
                     android:text="@string/share_privilege_can_edit_create"
-                    android:textColor="@color/grey" />
+                    android:textColor="@color/grey"
+                    android:theme="@style/Button.Brand" />
 
                 </LinearLayout>
 
