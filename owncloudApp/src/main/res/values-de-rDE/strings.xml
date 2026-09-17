@@ -277,7 +277,7 @@
     <string name="uploader_upload_canceled_ticker">Hochladen abgebrochen</string>
     <string name="downloader_download_canceled_ticker">Herunterladen abgebrochen</string>
     <string name="downloader_download_enqueued_ticker">Herunterladen von %1$s in Warteschlange eingereiht</string>
-    <string name="downloader_download_in_progress_ticker">Herunterladen&amp;#8230;</string>
+    <string name="downloader_download_in_progress_ticker">Herunterladen&#8230;</string>
     <string name="downloader_download_in_progress_content">%1$d%% Herunterladen %2$s</string>
     <string name="downloader_download_succeeded_ticker">Herunterladen erfolgreich</string>
     <string name="downloader_download_succeeded_content">%1$s wurde erfolgreich heruntergeladen</string>
