@@ -21,12 +21,10 @@
 package com.owncloud.android.presentation.files.renamefile
 
 import android.app.Dialog
-import android.content.DialogInterface
 import android.os.Bundle
-import android.view.View
 import android.view.WindowManager
+import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.DialogFragment
@@ -45,7 +43,7 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
  * Triggers the rename operation when name is confirmed.
  */
 
-class RenameFileDialogFragment : DialogFragment(), DialogInterface.OnClickListener {
+class RenameFileDialogFragment : DialogFragment() {
 
     private var targetFile: OCFile? = null
     private val filesViewModel: FileOperationsViewModel by sharedViewModel()
@@ -60,7 +58,7 @@ class RenameFileDialogFragment : DialogFragment(), DialogInterface.OnClickListen
 
         // Inflate the layout for the dialog
         val inflater = requireActivity().layoutInflater
-        val view = inflater.inflate(R.layout.edit_box_dialog, null)
+        val view = inflater.inflate(R.layout.rename_file_dialog, null)
 
         // Allow or disallow touches with other visible windows
         view.filterTouchesWhenObscured =
@@ -84,26 +82,29 @@ class RenameFileDialogFragment : DialogFragment(), DialogInterface.OnClickListen
 
         inputText.requestFocus()
 
+        val cancelButton = view.findViewById<Button>(R.id.renameCancelButton)
+        val confirmButton = view.findViewById<Button>(R.id.renameConfirmButton)
+        confirmButton.isEnabled = isButtonEnabled
+
         // Build the dialog
         return AlertDialog.Builder(requireActivity()).apply {
             setView(view)
-            setPositiveButton(android.R.string.ok, this@RenameFileDialogFragment)
-            setNegativeButton(android.R.string.cancel, this@RenameFileDialogFragment)
             setTitle(R.string.rename_dialog_title)
         }.create().apply {
             window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
             avoidScreenshotsIfNeeded()
 
-            setOnShowListener {
-                val okButton = getButton(AlertDialog.BUTTON_POSITIVE)
-                okButton.isEnabled = isButtonEnabled
-
+            cancelButton.setOnClickListener { dismiss() }
+            confirmButton.setOnClickListener {
+                // These checks are done in the RenameFileUseCase too, we could remove them too.
+                val newFileName = inputText.text.toString()
+                filesViewModel.performOperation(FileOperation.RenameOperation(targetFile!!, newFileName))
+                dismiss()
             }
 
             inputText.doOnTextChanged { text, _, _, _ ->
-                val okButton = getButton(AlertDialog.BUTTON_POSITIVE)
                 if (text.isNullOrBlank()) {
-                    okButton.isEnabled = false
+                    confirmButton.isEnabled = false
                     error = getString(R.string.uploader_upload_text_dialog_filename_error_empty)
                 } else if (text.length > maxFilenameLength) {
                     error = String.format(
@@ -113,13 +114,13 @@ class RenameFileDialogFragment : DialogFragment(), DialogInterface.OnClickListen
                 } else if (forbiddenChars.any { text.contains(it) }) {
                     error = getString(R.string.filename_forbidden_characters)
                 } else {
-                    okButton.isEnabled = true
+                    confirmButton.isEnabled = true
                     error = null
                     inputLayout.error = error
                 }
 
                 if (error != null) {
-                    okButton.isEnabled = false
+                    confirmButton.isEnabled = false
                     inputLayout.error = error
                 }
 
@@ -130,14 +131,6 @@ class RenameFileDialogFragment : DialogFragment(), DialogInterface.OnClickListen
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putBoolean(IS_BUTTON_ENABLED_FLAG_KEY, isButtonEnabled)
-    }
-
-    override fun onClick(dialog: DialogInterface, which: Int) {
-        if (which == AlertDialog.BUTTON_POSITIVE) {
-            // These checks are done in the RenameFileUseCase too, we could remove them too.
-            val newFileName = (getDialog()!!.findViewById<View>(R.id.user_input) as TextView).text.toString()
-            filesViewModel.performOperation(FileOperation.RenameOperation(targetFile!!, newFileName))
-        }
     }
 
     companion object {

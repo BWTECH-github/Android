@@ -354,13 +354,13 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/cancelButton"
-                        style="@style/Button.Brand"
+                        style="@style/Button.Secondary"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:contentDescription="@string/share_cancel_public_link_button"
                         android:text="@string/share_cancel_public_link_button"
-                        android:theme="@style/Button.Brand" />
+                        android:theme="@style/Button.Secondary" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/saveButton"
