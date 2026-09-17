@@ -22,11 +22,11 @@
         app:key="show_hidden_files"
         app:title="@string/prefs_show_hidden_files" />
 
-    <SwitchPreferenceCompat
+    <!--<SwitchPreferenceCompat
         app:iconSpaceReserved="false"
         app:key="show_disabled_spaces"
         app:title="@string/prefs_show_disabled_spaces"
-        app:summary="@string/prefs_show_disabled_spaces_summary"/>
+        app:summary="@string/prefs_show_disabled_spaces_summary"/> -->
 
     <ListPreference
         app:defaultValue="NEVER"
