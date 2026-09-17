@@ -30,6 +30,12 @@
 
     <!-- Shared width for stacked form labels, so their input boxes align vertically -->
     <dimen name="create_shortcut_dialog_label_width">72dp</dimen>
+
+    <!-- Overrides com.getbase:floatingactionbutton's own fab_actions_spacing (16dp), to tighten the gap between the speed dial items -->
+    <dimen name="fab_actions_spacing">10dp</dimen>
+
+    <!-- Overrides com.getbase:floatingactionbutton's own fab_labels_margin (8dp), to move the labels closer to their FAB icons -->
+    <dimen name="fab_labels_margin">2dp</dimen>
     <dimen name="nav_drawer_width">260dp</dimen>
     <dimen name="nav_drawer_header_height">140dp</dimen>
     <dimen name="nav_drawer_header_avatar">56dp</dimen>

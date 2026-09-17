@@ -142,26 +142,15 @@
         fab:layout_dodgeInsetEdges="bottom">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_upload"
+            android:id="@+id/fab_newshortcut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/actionbar_upload"
+            android:contentDescription="@string/fab_new_shortcut"
             fab:fab_colorNormal="@color/primary_button_background_color"
             fab:fab_colorPressed="@color/owncloud_blue"
-            fab:fab_icon="@drawable/ic_action_upload"
+            fab:fab_icon="@drawable/ic_action_open_shortcut"
             fab:fab_size="mini"
-            fab:fab_title="@string/actionbar_upload" />
-
-        <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_mkdir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/actionbar_mkdir"
-            fab:fab_colorNormal="@color/primary_button_background_color"
-            fab:fab_colorPressed="@color/owncloud_blue"
-            fab:fab_icon="@drawable/ic_action_create_dir"
-            fab:fab_size="mini"
-            fab:fab_title="@string/actionbar_mkdir" />
+            fab:fab_title="@string/fab_new_shortcut" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_newfile"
@@ -175,15 +164,26 @@
             fab:fab_title="@string/fab_new_file" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_newshortcut"
+            android:id="@+id/fab_mkdir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/fab_new_shortcut"
+            android:contentDescription="@string/actionbar_mkdir"
             fab:fab_colorNormal="@color/primary_button_background_color"
             fab:fab_colorPressed="@color/owncloud_blue"
-            fab:fab_icon="@drawable/ic_action_open_shortcut"
+            fab:fab_icon="@drawable/ic_action_create_dir"
             fab:fab_size="mini"
-            fab:fab_title="@string/fab_new_shortcut" />
+            fab:fab_title="@string/actionbar_mkdir" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/actionbar_upload"
+            fab:fab_colorNormal="@color/primary_button_background_color"
+            fab:fab_colorPressed="@color/owncloud_blue"
+            fab:fab_icon="@drawable/ic_action_upload"
+            fab:fab_size="mini"
+            fab:fab_title="@string/actionbar_upload" />
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
