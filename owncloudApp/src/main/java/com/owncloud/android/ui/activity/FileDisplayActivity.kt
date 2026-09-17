@@ -1463,13 +1463,13 @@ class FileDisplayActivity : FileActivity(),
         }
     }
 
-    private fun openShortcutFileInBrowser(file: OCFile) {
+    fun openShortcutFileInBrowser(file: OCFile) {
         val url = extractUrlFromFile(file.storagePath.toString())
         val urlFormat = formatUrl(url!!)
         val message = getString(R.string.open_shortcut_description)
         val messageTextView = TextView(this).apply {
             text = message
-            setPadding(0, 70, 0, 30)
+            setPadding(0, 24, 0, 30)
             setTextColor(ContextCompat.getColor(this@FileDisplayActivity, android.R.color.black))
             setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
         }
@@ -1487,27 +1487,32 @@ class FileDisplayActivity : FileActivity(),
             addView(urlTextView)
         }
 
+        val buttonsRow = layoutInflater.inflate(R.layout.open_shortcut_dialog_buttons, null)
+
         val layout = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
             setPadding(62, 0, 62, 70)
             addView(messageTextView)
             addView(scrollView)
+            addView(buttonsRow)
         }
 
         val dialog = AlertDialog.Builder(this@FileDisplayActivity)
             .setTitle(getString(R.string.open_shortcut_title))
             .setView(layout)
-            .setPositiveButton(R.string.drawer_open) { view, _ ->
-                urlFormat?.let {
-                    goToUrl(urlFormat)
-                }
-                view.dismiss()
-            }
-            .setNegativeButton(R.string.share_cancel_public_link_button) { view, _ ->
-                view.dismiss()
-            }
             .setCancelable(true)
             .create()
+
+        buttonsRow.findViewById<View>(R.id.openShortcutCancelButton).setOnClickListener {
+            dialog.dismiss()
+        }
+        buttonsRow.findViewById<View>(R.id.openShortcutOpenButton).setOnClickListener {
+            urlFormat?.let {
+                goToUrl(urlFormat)
+            }
+            dialog.dismiss()
+        }
+
         dialog.show()
     }
 
@@ -1599,7 +1604,7 @@ class FileDisplayActivity : FileActivity(),
             onWorkRunning = { progress -> Timber.d("Downloading - Progress $progress") },
             onWorkSucceeded = {
                 CoroutineScope(Dispatchers.IO).launch {
-                    if (file.mimeType == MIMETYPE_TEXT_URI_LIST) {
+                    if (file.isShortcutFile) {
                         waitingToOpen = storageManager.getFileByPath(file.remotePath, file.spaceId)
                         launch(Dispatchers.Main) {
                             openShortcutFileInBrowser(waitingToOpen!!)
@@ -1766,7 +1771,7 @@ class FileDisplayActivity : FileActivity(),
      * @param file [OCFile] to sync and open.
      */
     private fun startSyncThenOpen(file: OCFile) {
-        if (file.mimeType == MIMETYPE_TEXT_URI_LIST) {
+        if (file.isShortcutFile) {
             openOrDownloadShortcutFile(file)
         } else {
             navigateToDetails(account = account, ocFile = file, syncFileAtOpen = true)
@@ -2092,7 +2097,6 @@ class FileDisplayActivity : FileActivity(),
         private const val KEY_WAITING_TO_SEND = "WAITING_TO_SEND"
         private const val KEY_UPLOAD_HELPER = "FILE_UPLOAD_HELPER"
         private const val KEY_FILE_LIST_OPTION = "FILE_LIST_OPTION"
-        const val MIMETYPE_TEXT_URI_LIST = "text/uri-list"
         const val KEY_DEEP_LINK_ACCOUNTS_CHECKED = "DEEP_LINK_ACCOUNTS_CHECKED"
 
         private const val CUSTOM_DIALOG_TAG = "CUSTOM_DIALOG"

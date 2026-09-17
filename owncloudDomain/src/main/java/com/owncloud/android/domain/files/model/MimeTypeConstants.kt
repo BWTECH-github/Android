@@ -37,3 +37,6 @@ const val MIME_BMP = "image/bmp"
 const val MIME_X_MS_BMP = "image/x-ms-bmp"
 const val MIME_GIF = "image/gif"
 
+const val MIME_TEXT_URI_LIST = "text/uri-list"
+const val MIME_INTERNET_SHORTCUT = "application/internet-shortcut"
+const val EXTENSION_URL = "url"

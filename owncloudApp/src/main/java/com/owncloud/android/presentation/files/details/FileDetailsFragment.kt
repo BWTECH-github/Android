@@ -593,6 +593,10 @@ class FileDetailsFragment : FileFragment() {
     private fun navigateToPreviewOrOpenFile(fileWaitingToPreview: OCFile) {
         val fileDisplayActivity = requireActivity() as FileDisplayActivity
         when {
+            fileWaitingToPreview.isShortcutFile -> {
+                fileDisplayActivity.openShortcutFileInBrowser(fileWaitingToPreview)
+            }
+
             PreviewImageFragment.canBePreviewed(fileWaitingToPreview) -> {
                 fileDisplayActivity.startImagePreview(fileWaitingToPreview)
             }

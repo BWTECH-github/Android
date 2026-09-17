@@ -97,6 +97,14 @@ data class OCFile(
         get() = isOfType(MIME_PREFIX_TEXT)
 
     /**
+     * @return 'True' if the file is a .url shortcut file. Detection cannot rely on mimeType alone,
+     * since servers don't consistently report the same mimetype for these files.
+     */
+    val isShortcutFile: Boolean
+        get() = mimeType.isOneOf(MIME_TEXT_URI_LIST, MIME_INTERNET_SHORTCUT) ||
+            fileName.substringAfterLast('.', "").lowercase(Locale.ROOT) == EXTENSION_URL
+
+    /**
      * @return 'True' if the file has the 'W' (can write) within its group of permissions
      */
     val hasWritePermission: Boolean
