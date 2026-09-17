@@ -101,7 +101,7 @@
     <!-- DEFAULT (via Theme.ownCloud), and explicitly used ONCE, in Preference "behaviour" for instant uploads - NO MORE, not needed, it's default -->
     <style name="Theme.ownCloud.AlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="colorAccent">@color/color_accent</item>
-        <item name="android:textColorPrimary">@color/primary</item>
+        <item name="android:textColorPrimary">@color/textColor</item>
         <item name="searchViewStyle">@style/ownCloud.SearchView</item>
         <item name="buttonBarButtonStyle">@style/Theme.ownCloud.Dialog.ButtonBar.Button</item>
         <item name="buttonBarStyle">@style/Theme.ownCloud.Dialog.ButtonBar</item>
@@ -135,7 +135,14 @@
     <!-- Transparent style for the app bar -->
     <style name="ownCloud.Appbar.Transparent" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="colorPrimary">@color/owncloud_blue_transparent</item>
+        <!-- dark/black scrim background (image and video preview): keep icons white instead of the brand color -->
+        <item name="colorControlNormal">@color/white</item>
+        <item name="toolbarNavigationButtonStyle">@style/Toolbar.Button.Navigation.Tinted.White</item>
         <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+    </style>
+
+    <style name="Toolbar.Button.Navigation.Tinted.White" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="tint">@color/white</item>
     </style>
 
     <!-- ACTION MODE styles -->
