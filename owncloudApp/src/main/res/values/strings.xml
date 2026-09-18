@@ -969,4 +969,6 @@
     <string name="details_label">Details</string>
     <string name="space_members_label">Space members</string>
 
+    <string name="tab_label_ascii">Text</string>
+
 </resources>

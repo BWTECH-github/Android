@@ -921,7 +921,6 @@
     <string name="whats_new_label">Novedades</string>
     <string name="audio_preview_label">Previsualización de audio</string>
     <string name="details_label">Detalles</string>
-    <string name="text_preview_label">Previsualización de texto</string>
     <string name="space_members_label">Miembros del espacio</string>
 
 </resources>
