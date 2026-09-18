@@ -33,7 +33,11 @@
             android:layout_weight="1"
             android:text="@string/welcome_feature_skip_button"
             android:textColor="@color/textColor"
-            android:textSize="14sp" />
+            android:maxLines="1"
+            android:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="10sp"
+            app:autoSizeMaxTextSize="14sp"
+            app:autoSizeStepGranularity="1sp" />
 
         <com.owncloud.android.wizard.ProgressIndicator
             android:id="@+id/progressIndicator"
@@ -49,7 +53,7 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <ImageButton
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/forward"
                 style="@style/Button.Borderless"
                 android:layout_width="64dp"

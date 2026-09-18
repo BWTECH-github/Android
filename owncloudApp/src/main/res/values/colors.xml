@@ -39,6 +39,7 @@
     <color name="half_black">#808080</color>
     <color name="black_semi_transparent">#B2000000</color>
     <color name="textColor">#26384d</color>
+    <color name="textColor_transparent">#4D26384D</color>
     <color name="drawerMenuTextColor">#000000</color>
     <color name="list_divider_background">#eee</color>
     <color name="filelist_icon_background">#DDDDDD</color>
