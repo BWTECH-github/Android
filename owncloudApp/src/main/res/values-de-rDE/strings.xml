@@ -745,6 +745,8 @@
     <string name="release_notes_5_0_0_subtitle_set_favorites">Markieren Sie Ihre Dateien als Favorit, um sie jederzeit schnell wiederzufinden.</string>
     <string name="release_notes_5_0_0_title_user_interface">Moderne Benutzeroberfläche</string>
     <string name="release_notes_5_0_0_subtitle_user_interface">Die App erstrahlt jetzt in einem frischeren, moderneren Design.</string>
+    <string name="release_notes_5_0_0_title_swipe_actions">Wischen zum Favorisieren oder Löschen</string>
+    <string name="release_notes_5_0_0_subtitle_swipe_actions">Wischen Sie eine Datei nach rechts, um sie als Favorit zu markieren, oder nach links, um sie zu löschen.</string>
 
     <!-- Open in web -->
     <string name="ic_action_open_in_web">Öffnen im Webbrowser</string>

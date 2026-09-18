@@ -68,4 +68,8 @@
     <!-- Bottom Sheet Fragment -->
     <color name="bottom_sheet_fragment_item_color">#6E758C</color>
     <color name="bottom_sheet_fragment_title_color">#6E758C</color>
+
+    <!-- File list swipe actions -->
+    <color name="swipe_favorite_background">#FFD700</color>
+    <color name="swipe_delete_background">@color/quota_exceeded</color>
 </resources>

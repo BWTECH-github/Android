@@ -708,6 +708,8 @@
     <string name="release_notes_5_0_0_subtitle_set_favorites">파일을 즐겨찾기로 표시하여 언제든지 빠르게 찾아보세요</string>
     <string name="release_notes_5_0_0_title_user_interface">현대적인 사용자 인터페이스</string>
     <string name="release_notes_5_0_0_subtitle_user_interface">앱이 더욱 세련되고 현대적인 모습으로 변경되었습니다</string>
+    <string name="release_notes_5_0_0_title_swipe_actions">스와이프로 즐겨찾기 추가 또는 삭제</string>
+    <string name="release_notes_5_0_0_subtitle_swipe_actions">파일을 오른쪽으로 스와이프하면 즐겨찾기에 추가되고, 왼쪽으로 스와이프하면 삭제됩니다</string>
     <!-- Open in web -->
     <string name="ic_action_open_in_web">웹에서 열기</string>
     <string name="ic_action_open_with_web">%1$s (웹)에서 열기</string>

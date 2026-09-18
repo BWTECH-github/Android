@@ -642,6 +642,8 @@
     <string name="release_notes_5_0_0_subtitle_set_favorites">Dosyalarınızı favori olarak işaretleyin, böylece onları her zaman hızlıca bulabilirsiniz</string>
     <string name="release_notes_5_0_0_title_user_interface">Modern kullanıcı arayüzü</string>
     <string name="release_notes_5_0_0_subtitle_user_interface">Uygulama artık daha modern bir görünüme sahip</string>
+    <string name="release_notes_5_0_0_title_swipe_actions">Favorilere eklemek veya silmek için kaydırın</string>
+    <string name="release_notes_5_0_0_subtitle_swipe_actions">Bir dosyayı favorilere eklemek için sağa, silmek için sola kaydırın</string>
     <!-- Open in web -->
     <string name="ic_action_open_in_web">Web\'te aç</string>
     <string name="ic_action_open_with_web">%1$s\'da aç (web)</string>

@@ -728,6 +728,8 @@
     <string name="release_notes_5_0_0_subtitle_set_favorites">Märgi oma failid lemmikuteks, et need alati kiiresti üles leida</string>
     <string name="release_notes_5_0_0_title_user_interface">Kaasaegne kasutajaliides</string>
     <string name="release_notes_5_0_0_subtitle_user_interface">Rakendusel on nüüd värskem ja kaasaegsem välimus</string>
+    <string name="release_notes_5_0_0_title_swipe_actions">Pühi lemmikuks märkimiseks või kustutamiseks</string>
+    <string name="release_notes_5_0_0_subtitle_swipe_actions">Pühi faili paremale, et märkida see lemmikuks, või vasakule, et see kustutada</string>
     <!-- Open in web -->
     <string name="ic_action_open_in_web">Ava veebis</string>
     <string name="ic_action_open_with_web">Ava %1$s (veebis)</string>

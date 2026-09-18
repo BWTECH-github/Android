@@ -726,6 +726,8 @@
     <string name="release_notes_5_0_0_subtitle_set_favorites">ໝາຍໄຟລ໌ຂອງທ່ານເປັນລາຍການທີ່ມັກເພື່ອຄົ້ນຫາໄດ້ໄວສະເໝີ</string>
     <string name="release_notes_5_0_0_title_user_interface">ອິນເຕີເຟດທີ່ທັນສະໄໝ</string>
     <string name="release_notes_5_0_0_subtitle_user_interface">ແອັບຕອນນີ້ມີໜ້າຕາທີ່ທັນສະໄໝກວ່າເກົ່າ</string>
+    <string name="release_notes_5_0_0_title_swipe_actions">ປັດເພື່ອໝາຍເປັນລາຍການທີ່ມັກ ຫຼືລຶບ</string>
+    <string name="release_notes_5_0_0_subtitle_swipe_actions">ປັດໄຟລ໌ໄປທາງຂວາເພື່ອໝາຍເປັນລາຍການທີ່ມັກ, ຫຼືປັດໄປທາງຊ້າຍເພື່ອລຶບ</string>
     <!-- Open in web -->
     <string name="ic_action_open_in_web">ເປີດໃນເບຣົາເຊີ</string>
     <string name="ic_action_open_with_web">ເປີດດ້ວຍ %1$s (web)</string>

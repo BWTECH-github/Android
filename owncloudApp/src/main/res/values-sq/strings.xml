@@ -727,6 +727,8 @@
     <string name="release_notes_5_0_0_subtitle_set_favorites">Vendosini skedarët tuaj si të preferuar që t\'i gjeni gjithmonë shpejt</string>
     <string name="release_notes_5_0_0_title_user_interface">Ndërfaqe moderne</string>
     <string name="release_notes_5_0_0_subtitle_user_interface">Aplikacioni tani ka një pamje më moderne</string>
+    <string name="release_notes_5_0_0_title_swipe_actions">Rrëshqit për ta shënuar si të preferuar ose për ta fshirë</string>
+    <string name="release_notes_5_0_0_subtitle_swipe_actions">Rrëshqit një skedar djathtas për ta shënuar si të preferuar, ose majtas për ta fshirë</string>
     <!-- Open in web -->
     <string name="ic_action_open_in_web">Hape në web</string>
     <string name="ic_action_open_with_web">Hape në %1$s (web)</string>

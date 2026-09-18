@@ -30,6 +30,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.content.res.Configuration
+import android.graphics.Canvas
+import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Build
@@ -55,6 +57,7 @@ import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import coil.load
@@ -414,6 +417,8 @@ class MainFileListFragment : Fragment(),
 
         binding.recyclerViewMainFileList.adapter = fileListAdapter
 
+        setupSwipeActions()
+
         // Set Swipe to refresh and its listener
         binding.swipeRefreshMainFileList.isEnabled = mainFileListViewModel.fileListOption.value != FileListOption.AV_OFFLINE
         binding.swipeRefreshMainFileList.setOnRefreshListener {
@@ -449,6 +454,114 @@ class MainFileListFragment : Fragment(),
         setFabMainContentDescription()
 
         setTextHintRootToolbar()
+    }
+
+    /**
+     * Enables swipe gestures on list rows: swipe right toggles favorite, swipe left opens the
+     * delete confirmation dialog. Disabled in grid mode and while multi-selection is active.
+     * The row is only allowed to be dragged a short distance (SWIPE_MAX_REVEAL_FRACTION of its
+     * width) before snapping back, instead of sliding fully off screen like a dismiss gesture.
+     */
+    private fun setupSwipeActions() {
+        val swipeCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+
+            private val favoriteBackground = ColorDrawable(ContextCompat.getColor(requireContext(), R.color.swipe_favorite_background))
+            private val deleteBackground = ColorDrawable(ContextCompat.getColor(requireContext(), R.color.swipe_delete_background))
+            private val favoriteIcon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_star_black_24dp)?.apply {
+                setTint(ContextCompat.getColor(requireContext(), R.color.white))
+            }
+            private val deleteIcon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_delete)
+
+            override fun getSwipeDirs(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder): Int =
+                if (viewType == ViewType.VIEW_TYPE_LIST && actionMode == null) super.getSwipeDirs(recyclerView, viewHolder) else 0
+
+            override fun getSwipeThreshold(viewHolder: RecyclerView.ViewHolder): Float = SWIPE_TRIGGER_THRESHOLD_FRACTION
+
+            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean = false
+
+            override fun onChildDraw(
+                c: Canvas,
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                dX: Float,
+                dY: Float,
+                actionState: Int,
+                isCurrentlyActive: Boolean
+            ) {
+                if (actionState != ItemTouchHelper.ACTION_STATE_SWIPE) {
+                    super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                    return
+                }
+
+                val itemView = viewHolder.itemView
+                val maxReveal = itemView.width * SWIPE_MAX_REVEAL_FRACTION
+                val clampedDX = dX.coerceIn(-maxReveal, maxReveal)
+
+                if (clampedDX > 0) {
+                    drawSwipeBackground(c, itemView, favoriteBackground, favoriteIcon, isStart = true, revealSize = clampedDX)
+                } else if (clampedDX < 0) {
+                    drawSwipeBackground(c, itemView, deleteBackground, deleteIcon, isStart = false, revealSize = -clampedDX)
+                }
+
+                super.onChildDraw(c, recyclerView, viewHolder, clampedDX, dY, actionState, isCurrentlyActive)
+            }
+
+            private fun drawSwipeBackground(
+                c: Canvas,
+                itemView: View,
+                background: ColorDrawable,
+                icon: Drawable?,
+                isStart: Boolean,
+                revealSize: Float
+            ) {
+                if (isStart) {
+                    background.setBounds(itemView.left, itemView.top, itemView.left + revealSize.toInt(), itemView.bottom)
+                } else {
+                    background.setBounds(itemView.right - revealSize.toInt(), itemView.top, itemView.right, itemView.bottom)
+                }
+                background.draw(c)
+
+                icon?.let {
+                    val iconMargin = (itemView.height - it.intrinsicHeight) / 2
+                    val iconTop = itemView.top + (itemView.height - it.intrinsicHeight) / 2
+                    val iconLeft = if (isStart) itemView.left + iconMargin else itemView.right - iconMargin - it.intrinsicWidth
+                    it.setBounds(iconLeft, iconTop, iconLeft + it.intrinsicWidth, iconTop + it.intrinsicHeight)
+                    if (revealSize > iconMargin + it.intrinsicWidth) it.draw(c)
+                }
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.bindingAdapterPosition
+                val file = (fileListAdapter.files.getOrNull(position) as? OCFileWithSyncInfo)?.file
+                if (position == RecyclerView.NO_POSITION || file == null) {
+                    return
+                }
+
+                when (direction) {
+                    ItemTouchHelper.RIGHT -> {
+                        val operation = if (file.favorite) {
+                            FileOperation.UnsetFilesAsFavorite(listOf(file))
+                        } else {
+                            FileOperation.SetFilesAsFavorite(listOf(file))
+                        }
+                        fileOperationsViewModel.performOperation(operation)
+                    }
+
+                    ItemTouchHelper.LEFT -> {
+                        RemoveFilesDialogFragment.newInstance(file).show(requireActivity().supportFragmentManager, TAG_REMOVE_FILES_DIALOG_FRAGMENT)
+                    }
+                }
+
+                // Slide the row back to its resting position instead of leaving it swiped out or
+                // snapping back instantly via a rebind
+                viewHolder.itemView.animate()
+                    .translationX(0f)
+                    .setDuration(SWIPE_RESET_ANIMATION_DURATION_MS)
+                    .start()
+            }
+        }
+
+        ItemTouchHelper(swipeCallback).attachToRecyclerView(binding.recyclerViewMainFileList)
     }
 
     private fun setTextHintRootToolbar() {
@@ -1686,6 +1799,16 @@ class MainFileListFragment : Fragment(),
         private const val DIALOG_CREATE_SHORTCUT = "DIALOG_CREATE_SHORTCUT"
 
         private const val FILE_DOCXF_EXTENSION = "docxf"
+
+        // Fraction of the row's width the user needs to drag before the swipe action (favorite/delete) triggers
+        private const val SWIPE_TRIGGER_THRESHOLD_FRACTION = 0.25f
+
+        // Fraction of the row's width the swipe reveal is allowed to travel, so the row is only dragged
+        // a short distance instead of sliding fully off screen like a dismiss gesture
+        private const val SWIPE_MAX_REVEAL_FRACTION = 0.3f
+
+        // Duration of the row's slide-back animation once a swipe action (favorite/delete) has triggered
+        private const val SWIPE_RESET_ANIMATION_DURATION_MS = 200L
 
         @JvmStatic
         fun newInstance(

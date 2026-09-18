@@ -554,6 +554,8 @@
   <string name="release_notes_5_0_0_subtitle_set_favorites">ھۆججەتلىرىڭىزنى يىغقۇچقا قوشۇپ، ئۇلارنى ھەمىشە تېز تېپىڭ</string>
   <string name="release_notes_5_0_0_title_user_interface">زامانىۋى ئارايۈز</string>
   <string name="release_notes_5_0_0_subtitle_user_interface">ئەپ ھازىر تېخىمۇ زامانىۋى كۆرۈنۈشكە ئىگە بولدى</string>
+  <string name="release_notes_5_0_0_title_swipe_actions">سىيرىش ئارقىلىق يىغقۇچقا قوشۇش ياكى ئۆچۈرۈش</string>
+  <string name="release_notes_5_0_0_subtitle_swipe_actions">ھۆججەتنى ئوڭغا سىيرىپ يىغقۇچقا قوشۇڭ ياكى سولغا سىيرىپ ئۆچۈرۈڭ</string>
   <!--Open in web-->
   <string name="ic_action_open_in_web">تورنى ئېچىڭ</string>
   <string name="open_in_web_error_generic">تورنى ئاچقىلى بولمايدۇ</string>

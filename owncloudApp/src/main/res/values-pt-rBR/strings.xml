@@ -729,6 +729,8 @@
     <string name="release_notes_5_0_0_subtitle_set_favorites">Marque seus arquivos como favoritos para encontrá-los sempre rapidamente</string>
     <string name="release_notes_5_0_0_title_user_interface">Interface moderna</string>
     <string name="release_notes_5_0_0_subtitle_user_interface">O app agora tem um visual mais moderno e renovado</string>
+    <string name="release_notes_5_0_0_title_swipe_actions">Deslize para favoritar ou excluir</string>
+    <string name="release_notes_5_0_0_subtitle_swipe_actions">Deslize um arquivo para a direita para marcá-lo como favorito, ou para a esquerda para excluí-lo</string>
     <!-- Open in web -->
     <string name="ic_action_open_in_web">Abrir na web</string>
     <string name="ic_action_open_with_web">Abrir em%1$s (web)</string>

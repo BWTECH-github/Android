@@ -728,6 +728,8 @@
     <string name="release_notes_5_0_0_subtitle_set_favorites">Mark your files as favourites to always find them quickly</string>
     <string name="release_notes_5_0_0_title_user_interface">Modern user interface</string>
     <string name="release_notes_5_0_0_subtitle_user_interface">The app now has a fresh, more modern look</string>
+    <string name="release_notes_5_0_0_title_swipe_actions">Swipe to favourite or delete</string>
+    <string name="release_notes_5_0_0_subtitle_swipe_actions">Swipe a file right to mark it as favourite, or left to delete it</string>
     <!-- Open in web -->
     <string name="ic_action_open_in_web">Open in web</string>
     <string name="ic_action_open_with_web">Open in %1$s (web)</string>
