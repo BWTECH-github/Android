@@ -89,7 +89,6 @@
             app:layout_constraintStart_toStartOf="@id/Filename"
             app:layout_constraintTop_toBottomOf="@id/Filename"
             app:layout_constraintEnd_toStartOf="@id/file_list_size"
-            app:layout_constraintBottom_toTopOf="@id/space_path_line"
             tools:visibility="visible">
 
             <ImageView
@@ -145,13 +144,13 @@
             app:layout_constraintTop_toBottomOf="@id/Filename"
             tools:text="Mod Date" />
 
-        <include
+        <!-- <include
             android:id="@+id/space_path_line"
             layout="@layout/space_path_line"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="@+id/Filename"
-            app:layout_constraintTop_toBottomOf="@+id/file_list_size" />
+            app:layout_constraintTop_toBottomOf="@+id/file_list_size" /> -->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

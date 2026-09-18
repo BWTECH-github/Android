@@ -335,12 +335,13 @@ class MainFileListFragment : Fragment(),
     }
 
     private fun updateConfigDependentSizes() {
-        val cardSize = resources.getDimensionPixelSize(R.dimen.spaces_header_card_height)
-        binding.spaceHeader.spaceHeaderCard.layoutParams.apply {
-            width = cardSize
-            height = cardSize
-        }
-        binding.spaceHeader.spaceHeaderCard.requestLayout()
+        // Spaces
+        // val cardSize = resources.getDimensionPixelSize(R.dimen.spaces_header_card_height)
+        // binding.spaceHeader.spaceHeaderCard.layoutParams.apply {
+        //     width = cardSize
+        //     height = cardSize
+        // }
+        // binding.spaceHeader.spaceHeaderCard.requestLayout()
 
         val iconSize = resources.getDimensionPixelSize(R.dimen.empty_icon_size)
         binding.emptyDataParent.listEmptyDatasetIcon.layoutParams.apply {
@@ -844,28 +845,29 @@ class MainFileListFragment : Fragment(),
             )
             showOrHideEmptyView(fileListUiState)
 
-            binding.spaceHeader.root.apply {
-                if ((fileListUiState.space?.isProject == true || (fileListUiState.space?.isPersonal == true && isMultiPersonal)) &&
-                    fileListUiState.folderToDisplay?.remotePath == ROOT_PATH && fileListUiState.fileListOption != FileListOption.AV_OFFLINE) {
-                    isVisible = true
-                    animate().translationY(0f).duration = 100
-                } else {
-                    animate().translationY(-height.toFloat()).withEndAction { isVisible = false }
-                }
-            }
-
-            val spaceSpecialImage = fileListUiState.space?.getSpaceSpecialImage()
-            if (spaceSpecialImage != null) {
-                binding.spaceHeader.spaceHeaderImage.load(
-                    ThumbnailsRequester.getPreviewUriForSpaceSpecial(spaceSpecialImage),
-                    ThumbnailsRequester.getCoilImageLoader()
-                ) {
-                    placeholder(R.drawable.ic_spaces)
-                    error(R.drawable.ic_spaces)
-                }
-            }
-            binding.spaceHeader.spaceHeaderName.text = fileListUiState.space?.name
-            binding.spaceHeader.spaceHeaderSubtitle.text = fileListUiState.space?.description
+            // Spaces
+            // binding.spaceHeader.root.apply {
+            //     if ((fileListUiState.space?.isProject == true || (fileListUiState.space?.isPersonal == true && isMultiPersonal)) &&
+            //         fileListUiState.folderToDisplay?.remotePath == ROOT_PATH && fileListUiState.fileListOption != FileListOption.AV_OFFLINE) {
+            //         isVisible = true
+            //         animate().translationY(0f).duration = 100
+            //     } else {
+            //         animate().translationY(-height.toFloat()).withEndAction { isVisible = false }
+            //     }
+            // }
+            //
+            // val spaceSpecialImage = fileListUiState.space?.getSpaceSpecialImage()
+            // if (spaceSpecialImage != null) {
+            //     binding.spaceHeader.spaceHeaderImage.load(
+            //         ThumbnailsRequester.getPreviewUriForSpaceSpecial(spaceSpecialImage),
+            //         ThumbnailsRequester.getCoilImageLoader()
+            //     ) {
+            //         placeholder(R.drawable.ic_spaces)
+            //         error(R.drawable.ic_spaces)
+            //     }
+            // }
+            // binding.spaceHeader.spaceHeaderName.text = fileListUiState.space?.name
+            // binding.spaceHeader.spaceHeaderSubtitle.text = fileListUiState.space?.description
 
             actionMode?.invalidate()
         }

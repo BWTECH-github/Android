@@ -48,12 +48,12 @@
     <dimen name="bottom_navigation_bar_corner_radius">18dp</dimen>
 
     <!-- item file list dimens -->
-    <dimen name="item_file_list_min_height">72dp</dimen>
+    <dimen name="item_file_list_min_height">60dp</dimen>
     <dimen name="item_file_list_icon_min_width">60dp</dimen>
 
     <dimen name="file_indicator_pin_size">12dp</dimen>
     <dimen name="file_indicator_pin_size_grid">18dp</dimen>
-    <dimen name="file_icon_size">32dp</dimen>
+    <dimen name="file_icon_size">36dp</dimen>
     <dimen name="file_icon_size_bottom_sheet">48dp</dimen>
     <dimen name="file_icon_size_grid">128dp</dimen>
     <dimen name="file_avatar_size">128dp</dimen>

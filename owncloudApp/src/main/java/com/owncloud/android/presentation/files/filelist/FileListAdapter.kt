@@ -313,6 +313,7 @@ class FileListAdapter(
                     it.fileListLastMod.text = DisplayUtils.getRelativeTimestamp(context, file.modificationTimestamp)
                     it.threeDotMenu.isVisible = !isPickerMode && getCheckedItems().isEmpty()
                     it.threeDotMenu.contentDescription = context.getString(R.string.content_description_file_operations, file.fileName)
+                    /*
                     if (fileListOption.isAvailableOffline() || (fileListOption.isSharedByLink() && fileWithSyncInfo.space == null)) {
                         it.spacePathLine.path.apply {
                             text = file.getParentRemotePath()
@@ -333,6 +334,7 @@ class FileListAdapter(
                         it.spacePathLine.spaceIcon.isVisible = false
                         it.spacePathLine.spaceName.isVisible = false
                     }
+                    */
                     it.threeDotMenu.setOnClickListener {
                         listener.onThreeDotButtonClick(fileWithSyncInfo = fileWithSyncInfo)
                     }
