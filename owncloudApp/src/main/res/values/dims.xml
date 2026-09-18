@@ -45,6 +45,7 @@
 
     <!-- Bottom navigation bar -->
     <dimen name="bottom_navigation_bar_height">56dp</dimen>
+    <dimen name="bottom_navigation_bar_corner_radius">18dp</dimen>
 
     <!-- item file list dimens -->
     <dimen name="item_file_list_min_height">72dp</dimen>

@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/bottom_navigation_bar_height"
         android:layout_gravity="bottom"
-        android:background="@color/actionbar_start_color"
+        android:background="@drawable/bg_bottom_nav_rounded_top"
         android:visibility="visible"
         app:itemIconTint="@color/textColor"
         app:itemTextColor="@color/textColor"
