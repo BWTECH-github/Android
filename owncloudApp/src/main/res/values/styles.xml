@@ -79,7 +79,7 @@
     <!-- Extends Theme.ownCloud to make the LEGACY ActionBar an OVERLAY on top of the image preview -->
     <style name="Theme.ownCloud.Overlay">
         <item name="windowActionBarOverlay">true</item>
-        <item name="actionBarTheme">@style/ownCloud.Appbar.ImagePreview</item>
+        <item name="actionBarTheme">@style/ownCloud.Appbar.Preview</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
     </style>
@@ -88,10 +88,10 @@
     <style name="Theme.ownCloud.Video">
         <item name="windowActionBarOverlay">true</item>
         <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="27">never</item>
-        <item name="actionBarTheme">@style/ownCloud.Appbar.Transparent</item>
+        <item name="actionBarTheme">@style/ownCloud.Appbar.Preview</item>
         <item name="android:windowBackground">@android:color/background_dark</item>
-        <!-- dark background (fullscreen video player): keep light status bar icons -->
-        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <!-- turquoise toolbar background (video preview): dark status bar icons for readability -->
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
         <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
     </style>
 
@@ -131,22 +131,9 @@
         <item name="tint">@color/textColor</item>
     </style>
 
-    <!-- Transparent style for the app bar -->
-    <style name="ownCloud.Appbar.Transparent" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="colorPrimary">@color/owncloud_blue_transparent</item>
-        <!-- dark/black scrim background (video preview): keep icons white instead of the brand color -->
-        <item name="colorControlNormal">@color/white</item>
-        <item name="toolbarNavigationButtonStyle">@style/Toolbar.Button.Navigation.Tinted.White</item>
-        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
-    </style>
-
-    <style name="Toolbar.Button.Navigation.Tinted.White" parent="Widget.AppCompat.Toolbar.Button.Navigation">
-        <item name="tint">@color/white</item>
-    </style>
-
-    <!-- Turquoise app bar for image preview: keeps the brand-colored toolbar on top of the image,
-         with dark blue icons/title for readability, instead of the dark scrim used for video preview -->
-    <style name="ownCloud.Appbar.ImagePreview" parent="ThemeOverlay.AppCompat.ActionBar">
+    <!-- Turquoise app bar for image/video preview: keeps the brand-colored toolbar on top of the media,
+         with dark blue icons/title for readability -->
+    <style name="ownCloud.Appbar.Preview" parent="ThemeOverlay.AppCompat.ActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorControlNormal">@color/textColor</item>
         <item name="android:textColorPrimary">@color/textColor</item>
