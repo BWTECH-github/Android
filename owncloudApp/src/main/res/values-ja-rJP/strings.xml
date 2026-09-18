@@ -723,10 +723,10 @@
     <string name="release_notes_icon">リリースノートのアイコン</string>
     <string name="release_notes_bugfixes_title">軽微なバグ修正</string>
     <string name="release_notes_bugfixes_subtitle">アプリの使い心地を向上するため、いくつかのバグを修正しました</string>
-    <string name="release_notes_4_8_0_title_set_emoji_as_space_image">絵文字をスペース用画像として設定する</string>
-    <string name="release_notes_4_8_0_subtitle_set_emoji_as_space_image">適切な権限を持つInfinite Scaleユーザーは、絵文字をスペース用画像として設定できるようになりました</string>
-    <string name="release_notes_4_8_0_title_space_membership">スペースのメンバーシップ</string>
-    <string name="release_notes_4_8_0_subtitle_space_membership">Infinite Scaleユーザーは、スペースのすべてのメンバーを確認し、適切な権限で管理できます</string>
+    <string name="release_notes_5_0_0_title_set_favorites">ファイルをお気に入りに登録</string>
+    <string name="release_notes_5_0_0_subtitle_set_favorites">ファイルをお気に入りに登録して、いつでもすぐに見つけられるようにしましょう</string>
+    <string name="release_notes_5_0_0_title_user_interface">モダンなユーザーインターフェース</string>
+    <string name="release_notes_5_0_0_subtitle_user_interface">アプリがより新しくモダンな見た目になりました</string>
     <!-- Open in web -->
     <string name="ic_action_open_in_web">Webで開く</string>
     <string name="ic_action_open_with_web">%1$s(Web) で開く</string>

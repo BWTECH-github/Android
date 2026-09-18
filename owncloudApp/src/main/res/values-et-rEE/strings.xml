@@ -724,8 +724,10 @@
     <string name="release_notes_icon">Väljalasketeavituse ikoon</string>
     <string name="release_notes_bugfixes_title">Väiksemad veaparandused</string>
     <string name="release_notes_bugfixes_subtitle">Mõned vead parandati, et täiustada rakenduse kasutajakogemust</string>
-    <string name="release_notes_4_8_0_title_set_emoji_as_space_image">Emoji määramine ruumi pildiks</string>
-    <string name="release_notes_4_8_0_subtitle_set_emoji_as_space_image">Korrektse õigustega Infinite Scale kasutajad saavad nüüd ruumi pildiks valida ka emoji</string>
+    <string name="release_notes_5_0_0_title_set_favorites">Märgi failid lemmikuteks</string>
+    <string name="release_notes_5_0_0_subtitle_set_favorites">Märgi oma failid lemmikuteks, et need alati kiiresti üles leida</string>
+    <string name="release_notes_5_0_0_title_user_interface">Kaasaegne kasutajaliides</string>
+    <string name="release_notes_5_0_0_subtitle_user_interface">Rakendusel on nüüd värskem ja kaasaegsem välimus</string>
     <!-- Open in web -->
     <string name="ic_action_open_in_web">Ava veebis</string>
     <string name="ic_action_open_with_web">Ava %1$s (veebis)</string>

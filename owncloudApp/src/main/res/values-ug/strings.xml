@@ -550,6 +550,10 @@
   <string name="release_notes_proceed">داۋاملاشتۇرۇڭ</string>
   <string name="release_notes_bugfixes_title">كىچىك خاتالىق</string>
   <string name="release_notes_bugfixes_subtitle">بەزى خاتالىقلار ئەپتىكى تەجرىبىنى ياخشىلاش ئۈچۈن ئوڭشالدى</string>
+  <string name="release_notes_5_0_0_title_set_favorites">ھۆججەتلەرنى يىغقۇچقا قوشۇڭ</string>
+  <string name="release_notes_5_0_0_subtitle_set_favorites">ھۆججەتلىرىڭىزنى يىغقۇچقا قوشۇپ، ئۇلارنى ھەمىشە تېز تېپىڭ</string>
+  <string name="release_notes_5_0_0_title_user_interface">زامانىۋى ئارايۈز</string>
+  <string name="release_notes_5_0_0_subtitle_user_interface">ئەپ ھازىر تېخىمۇ زامانىۋى كۆرۈنۈشكە ئىگە بولدى</string>
   <!--Open in web-->
   <string name="ic_action_open_in_web">تورنى ئېچىڭ</string>
   <string name="open_in_web_error_generic">تورنى ئاچقىلى بولمايدۇ</string>

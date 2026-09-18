@@ -716,6 +716,10 @@
     <string name="release_notes_icon">Julkaisutiedotteen ikoni</string>
     <string name="release_notes_bugfixes_title">Pieniä bugikorjauksia</string>
     <string name="release_notes_bugfixes_subtitle">Joitain bugeja korjattu sovelluksen käyttökokemuksen parantamiseksi</string>
+    <string name="release_notes_5_0_0_title_set_favorites">Merkitse tiedostoja suosikeiksi</string>
+    <string name="release_notes_5_0_0_subtitle_set_favorites">Merkitse tiedostosi suosikeiksi löytääksesi ne aina nopeasti</string>
+    <string name="release_notes_5_0_0_title_user_interface">Moderni käyttöliittymä</string>
+    <string name="release_notes_5_0_0_subtitle_user_interface">Sovelluksella on nyt raikkaampi, modernimpi ulkoasu</string>
     <!-- Open in web -->
     <string name="ic_action_open_in_web">Avoinna verkossa</string>
     <string name="ic_action_open_with_web">Avoinna %1$s (web)</string>

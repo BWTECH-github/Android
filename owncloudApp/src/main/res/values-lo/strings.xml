@@ -722,6 +722,10 @@
     <string name="release_notes_icon">ໄອຄອນบันทึกประจำรุ่น</string>
     <string name="release_notes_bugfixes_title">การแก้ไขข้อบกพร่อง</string>
     <string name="release_notes_bugfixes_subtitle">ແອັບຕອນນີ້เสถียรและเชื่อถือได้มากขึ้น. สำหรับรายการการเปลี่ยนแปลงทั้งหมด, เยี่ยมชม owncloud.com</string>
+    <string name="release_notes_5_0_0_title_set_favorites">ໝາຍໄຟລ໌ເປັນລາຍການທີ່ມັກ</string>
+    <string name="release_notes_5_0_0_subtitle_set_favorites">ໝາຍໄຟລ໌ຂອງທ່ານເປັນລາຍການທີ່ມັກເພື່ອຄົ້ນຫາໄດ້ໄວສະເໝີ</string>
+    <string name="release_notes_5_0_0_title_user_interface">ອິນເຕີເຟດທີ່ທັນສະໄໝ</string>
+    <string name="release_notes_5_0_0_subtitle_user_interface">ແອັບຕອນນີ້ມີໜ້າຕາທີ່ທັນສະໄໝກວ່າເກົ່າ</string>
     <!-- Open in web -->
     <string name="ic_action_open_in_web">ເປີດໃນເບຣົາເຊີ</string>
     <string name="ic_action_open_with_web">ເປີດດ້ວຍ %1$s (web)</string>
@@ -746,7 +750,6 @@
     <string name="invalid_deep_link_format">ລິ້ງທີ່ໃຫ້ມານັ້ນບໍ່ຖືກຕ້ອງ. ກະລຸນາກວດສອບຮູບແບບແລ້ວລອງໃໝ່</string>
     <string name="deep_link_user_no_access">ທ່ານບໍ່ມີສິດເຂົ້າເຖິງຊັບພະຍາກອນນີ້. ກະລຸນາກວດສອບສິດຂອງທ່ານ</string>
     <string name="deep_link_loading">ກຳລັງໂຫຼດເນື້ອຫາ...</string>
-
     <string name="fab_refresh_text">ໂຫຼດໃໝ່</string>
     <string name="fab_refresh_sync_in_progress">ກຳລັງຊິງຄ໌. ກະລຸນາລອງໃໝ່ພາຍຫຼັງ</string>
 

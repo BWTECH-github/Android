@@ -44,28 +44,13 @@ class ReleaseNotesViewModel(
     companion object {
         val releaseNotesList = listOf(
             ReleaseNote(
-                title = R.string.release_notes_4_8_0_title_space_membership,
-                subtitle = R.string.release_notes_4_8_0_subtitle_space_membership,
+                title = R.string.release_notes_5_0_0_title_set_favorites,
+                subtitle = R.string.release_notes_5_0_0_subtitle_set_favorites,
                 type = ReleaseNoteType.ENHANCEMENT
             ),
             ReleaseNote(
-                title = R.string.release_notes_4_8_0_title_space_public_links,
-                subtitle = R.string.release_notes_4_8_0_subtitle_space_public_links,
-                type = ReleaseNoteType.ENHANCEMENT
-            ),
-            ReleaseNote(
-                title = R.string.release_notes_4_8_0_title_set_emoji_as_space_image,
-                subtitle = R.string.release_notes_4_8_0_subtitle_set_emoji_as_space_image,
-                type = ReleaseNoteType.ENHANCEMENT
-            ),
-            ReleaseNote(
-                title = R.string.release_notes_4_8_0_title_spaces_permanent_links,
-                subtitle = R.string.release_notes_4_8_0_subtitle_spaces_permanent_links,
-                type = ReleaseNoteType.ENHANCEMENT
-            ),
-            ReleaseNote(
-                title = R.string.release_notes_4_8_0_title_action_to_copy_or_move_destination_folder,
-                subtitle = R.string.release_notes_4_8_0_subtitle_action_to_copy_or_move_destination_folder,
+                title = R.string.release_notes_5_0_0_title_user_interface,
+                subtitle = R.string.release_notes_5_0_0_subtitle_user_interface,
                 type = ReleaseNoteType.ENHANCEMENT
             ),
             ReleaseNote(

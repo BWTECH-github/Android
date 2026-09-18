@@ -737,14 +737,10 @@
     <string name="release_notes_icon">Icono notas de lanzamiento</string>
     <string name="release_notes_bugfixes_title">Solución de problemas</string>
     <string name="release_notes_bugfixes_subtitle">Algunos errores se solucionaron para mejorar la experiencia en la app</string>
-    <string name="release_notes_4_8_0_title_set_emoji_as_space_image">Emoji como imagen de space</string>
-    <string name="release_notes_4_8_0_subtitle_set_emoji_as_space_image">Usuarios de Infinite Scale con permisos pueden configurar un emoji como imagen de un space</string>
-    <string name="release_notes_4_8_0_title_space_membership">Membresía a espacio</string>
-    <string name="release_notes_4_8_0_subtitle_space_membership">Los usuarios de Infinite Scale pueden ver todos los miembros de una escala y gestionarlos con los permisos adecuados</string>
-    <string name="release_notes_4_8_0_title_spaces_permanent_links">Enlaces permanentes para spaces</string>
-    <string name="release_notes_4_8_0_subtitle_spaces_permanent_links">Usuarios de Infinite Scale pueden ahora obtener un enlace permanence a un space y compartirlo con otros miembros</string>
-    <string name="release_notes_4_8_0_title_space_public_links">Enlaces públicos a spaces</string>
-    <string name="release_notes_4_8_0_subtitle_space_public_links">Usuarios de Infinite Scale pueden ahora ver todos los enlaces a un space y gestionarlos si tienen los permisos adecuados.</string>
+    <string name="release_notes_5_0_0_title_set_favorites">Marca archivos como favoritos</string>
+    <string name="release_notes_5_0_0_subtitle_set_favorites">Marca tus archivos como favoritos para encontrarlos siempre rápidamente</string>
+    <string name="release_notes_5_0_0_title_user_interface">Interfaz moderna</string>
+    <string name="release_notes_5_0_0_subtitle_user_interface">La app ahora tiene un aspecto más moderno y renovado</string>
 
     <!-- Open in web -->
     <string name="ic_action_open_in_web">Abrir en web</string>

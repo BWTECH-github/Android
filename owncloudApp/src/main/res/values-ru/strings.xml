@@ -712,6 +712,10 @@
     <string name="release_notes_icon">Иконка к примечанию релиза</string>
     <string name="release_notes_bugfixes_title">Незначительные исправления ошибок</string>
     <string name="release_notes_bugfixes_subtitle">Некоторые ошибки были исправлены для улучшения работы приложения</string>
+    <string name="release_notes_5_0_0_title_set_favorites">Отмечайте файлы как избранные</string>
+    <string name="release_notes_5_0_0_subtitle_set_favorites">Отмечайте файлы как избранные, чтобы всегда быстро их находить</string>
+    <string name="release_notes_5_0_0_title_user_interface">Современный интерфейс</string>
+    <string name="release_notes_5_0_0_subtitle_user_interface">Теперь у приложения более современный вид</string>
     <!-- Open in web -->
     <string name="ic_action_open_in_web">Открыть в браузере</string>
     <string name="ic_action_open_with_web">Открыть в %1$s (веб)</string>

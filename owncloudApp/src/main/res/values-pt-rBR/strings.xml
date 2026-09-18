@@ -725,8 +725,10 @@
     <string name="release_notes_icon">Ícone de nota de lançamento</string>
     <string name="release_notes_bugfixes_title">Pequenas correções de bugs</string>
     <string name="release_notes_bugfixes_subtitle">Alguns bugs foram corrigidos para melhorar a experiência no aplicativo</string>
-    <string name="release_notes_4_8_0_title_set_emoji_as_space_image">Definir emoji como imagem espacial</string>
-    <string name="release_notes_4_8_0_subtitle_set_emoji_as_space_image">Usuários do Infinite Scale com as permissões adequadas agora podem definir um emoji como imagem espacial.</string>
+    <string name="release_notes_5_0_0_title_set_favorites">Marcar arquivos como favoritos</string>
+    <string name="release_notes_5_0_0_subtitle_set_favorites">Marque seus arquivos como favoritos para encontrá-los sempre rapidamente</string>
+    <string name="release_notes_5_0_0_title_user_interface">Interface moderna</string>
+    <string name="release_notes_5_0_0_subtitle_user_interface">O app agora tem um visual mais moderno e renovado</string>
     <!-- Open in web -->
     <string name="ic_action_open_in_web">Abrir na web</string>
     <string name="ic_action_open_with_web">Abrir em%1$s (web)</string>
