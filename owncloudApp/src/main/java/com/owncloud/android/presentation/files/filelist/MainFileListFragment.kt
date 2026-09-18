@@ -477,6 +477,8 @@ class MainFileListFragment : Fragment(),
 
             override fun getSwipeThreshold(viewHolder: RecyclerView.ViewHolder): Float = SWIPE_TRIGGER_THRESHOLD_FRACTION
 
+            override fun isLongPressDragEnabled(): Boolean = false
+
             override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean = false
 
             override fun onChildDraw(
