@@ -305,12 +305,12 @@ class FileListAdapter(
                     it.fileListConstraintLayout.filterTouchesWhenObscured = PreferenceUtils.shouldDisallowTouchesWithOtherVisibleWindows(context)
                     it.Filename.text = file.fileName
                     val isFolderInKw = isMultiPersonal && file.isFolder
-                    it.fileListSize.text = if (isFolderInKw) "" else DisplayUtils.bytesToHumanReadable(file.length, context, true)
-                    it.fileListSeparator.visibility = if (isFolderInKw) View.GONE else View.VISIBLE
+                    it.fileListSizeText.text = if (isFolderInKw) "" else DisplayUtils.bytesToHumanReadable(file.length, context, true)
+                    // it.fileListSeparator.visibility = if (isFolderInKw) View.GONE else View.VISIBLE
                     it.fileListLastMod.layoutParams = (it.fileListLastMod.layoutParams as ViewGroup.MarginLayoutParams).also {
                             params -> params.marginStart = if (isFolderInKw) 0 else
                         context.resources.getDimensionPixelSize(R.dimen.standard_quarter_margin) }
-                    it.fileListLastMod.text = DisplayUtils.getRelativeTimestamp(context, file.modificationTimestamp)
+                    it.fileListLastModText.text = DisplayUtils.getRelativeTimestamp(context, file.modificationTimestamp)
                     it.threeDotMenu.isVisible = !isPickerMode && getCheckedItems().isEmpty()
                     it.threeDotMenu.contentDescription = context.getString(R.string.content_description_file_operations, file.fileName)
                     /*
