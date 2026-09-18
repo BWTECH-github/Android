@@ -56,9 +56,6 @@ dependencies {
     implementation libs.material
     implementation libs.patternlockview
 
-    // Markdown Preview
-    implementation libs.bundles.markwon
-
     // Timber
     implementation libs.timber
 

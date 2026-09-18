@@ -120,7 +120,6 @@ import com.owncloud.android.ui.helpers.FilesUploadHelper
 import com.owncloud.android.ui.preview.PreviewAudioFragment
 import com.owncloud.android.ui.preview.PreviewImageActivity
 import com.owncloud.android.ui.preview.PreviewImageFragment
-import com.owncloud.android.ui.preview.PreviewTextFragment
 import com.owncloud.android.ui.preview.PreviewVideoActivity
 import com.owncloud.android.usecases.synchronization.SynchronizeFileUseCase
 import com.owncloud.android.usecases.transfers.downloads.DownloadFileUseCase
@@ -486,13 +485,6 @@ class FileDisplayActivity : FileActivity(),
                         account,
                         startPlaybackPosition,
                         autoplay
-                    )
-                }
-
-                PreviewTextFragment.canBePreviewed(file) -> {
-                    PreviewTextFragment.newInstance(
-                        file,
-                        account
                     )
                 }
 
@@ -1730,21 +1722,6 @@ class FileDisplayActivity : FileActivity(),
     }
 
     /**
-     * Stars the preview of a text file [OCFile].
-     *
-     * @param file Text [OCFile] to preview.
-     */
-    fun startTextPreview(file: OCFile) {
-        val textPreviewFragment = PreviewTextFragment.newInstance(
-            file,
-            account
-        )
-        setSecondFragment(textPreviewFragment)
-        updateToolbar(file)
-        setFile(file)
-    }
-
-    /**
      * Chooses the suitable method to preview a file [OCFile].
      *
      * @param file File [OCFile] to preview.
@@ -1752,10 +1729,6 @@ class FileDisplayActivity : FileActivity(),
     private fun startPreview(file: OCFile?) {
         file?.let {
             when {
-                PreviewTextFragment.canBePreviewed(file) -> {
-                    startTextPreview(file)
-                }
-
                 PreviewAudioFragment.canBePreviewed(file) -> {
                     startAudioPreview(file, 0)
                 }
@@ -1927,12 +1900,6 @@ class FileDisplayActivity : FileActivity(),
             PreviewImageFragment.canBePreviewed(file) -> {
                 // preview image - it handles the sync, if needed
                 startImagePreview(file)
-            }
-
-            PreviewTextFragment.canBePreviewed(file) -> {
-                setFile(file)
-                fileWaitingToPreview = file
-                fileOperationsViewModel.performOperation(FileOperation.SynchronizeFileOperation(file, account.name))
             }
 
             PreviewAudioFragment.canBePreviewed(file) -> {

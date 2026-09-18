@@ -627,7 +627,8 @@ class MainFileListFragment : Fragment(),
                 } else {
                     // Set file icon depending on its mimetype. Ask for thumbnail later.
                     thumbnailBottomSheet.setImageResource(MimetypeIconUtil.getFileTypeIconId(file.mimeType, file.fileName))
-                    if (file.remoteId != null) {
+
+                    if (file.remoteId != null && !file.isText) {
                         val thumbnail = ThumbnailsCacheManager.getBitmapFromDiskCache(file.remoteId)
                         if (thumbnail != null) {
                             thumbnailBottomSheet.setImageBitmap(thumbnail)

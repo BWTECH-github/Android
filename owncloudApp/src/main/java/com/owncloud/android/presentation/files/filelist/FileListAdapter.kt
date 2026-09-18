@@ -188,7 +188,7 @@ class FileListAdapter(
             val fileIcon = holder.itemView.findViewById<ImageView>(R.id.thumbnail).apply {
                 tag = file.id
             }
-            val thumbnail: Bitmap? = file.remoteId?.let { ThumbnailsCacheManager.getBitmapFromDiskCache(file.remoteId) }
+            val thumbnail: Bitmap? = if (!file.isText) file.remoteId?.let { ThumbnailsCacheManager.getBitmapFromDiskCache(file.remoteId) } else null
 
             holder.itemView.findViewById<LinearLayout>(R.id.ListItemLayout)?.apply {
                 contentDescription = "LinearLayout-$name"
@@ -248,23 +248,26 @@ class FileListAdapter(
                 // Set file icon depending on its mimetype. Ask for thumbnail later.
                 fileIcon.setImageResource(MimetypeIconUtil.getFileTypeIconId(file.mimeType, file.fileName))
 
-                if (thumbnail != null) {
-                    fileIcon.setImageBitmap(thumbnail)
-                }
-                if (file.needsToUpdateThumbnail && ThumbnailsCacheManager.cancelPotentialThumbnailWork(file, fileIcon)) {
-                    // generate new Thumbnail
-                    val task = ThumbnailsCacheManager.ThumbnailGenerationTask(fileIcon, account)
-                    val asyncDrawable = ThumbnailsCacheManager.AsyncThumbnailDrawable(context.resources, thumbnail, task)
-
-                    // If drawable is not visible, do not update it.
-                    if (asyncDrawable.minimumHeight > 0 && asyncDrawable.minimumWidth > 0) {
-                        fileIcon.setImageDrawable(asyncDrawable)
+                // Text files are shown with their plain mimetype icon, no preview thumbnail
+                if (!file.isText) {
+                    if (thumbnail != null) {
+                        fileIcon.setImageBitmap(thumbnail)
                     }
-                    task.execute(file)
-                }
+                    if (file.needsToUpdateThumbnail && ThumbnailsCacheManager.cancelPotentialThumbnailWork(file, fileIcon)) {
+                        // generate new Thumbnail
+                        val task = ThumbnailsCacheManager.ThumbnailGenerationTask(fileIcon, account)
+                        val asyncDrawable = ThumbnailsCacheManager.AsyncThumbnailDrawable(context.resources, thumbnail, task)
 
-                if (file.mimeType == "image/png") {
-                    fileIcon.setBackgroundColor(ContextCompat.getColor(context, R.color.background_color))
+                        // If drawable is not visible, do not update it.
+                        if (asyncDrawable.minimumHeight > 0 && asyncDrawable.minimumWidth > 0) {
+                            fileIcon.setImageDrawable(asyncDrawable)
+                        }
+                        task.execute(file)
+                    }
+
+                    if (file.mimeType == "image/png") {
+                        fileIcon.setBackgroundColor(ContextCompat.getColor(context, R.color.background_color))
+                    }
                 }
             }
 

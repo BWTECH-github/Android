@@ -25,7 +25,6 @@ import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.owncloud.android.ui.preview.PreviewAudioFragment
 import com.owncloud.android.ui.preview.PreviewImageFragment
-import com.owncloud.android.ui.preview.PreviewTextFragment
 import com.owncloud.android.ui.preview.PreviewVideoActivity
 import com.owncloud.android.usecases.files.RemoveLocallyFilesWithLastUsageOlderThanGivenTimeUseCase
 import org.koin.core.component.KoinComponent
@@ -58,7 +57,6 @@ class RemoveLocallyFilesWithLastUsageOlderThanGivenTimeWorker(
     private fun filePreviewing(): String? =
         when {
             PreviewVideoActivity.isOpen -> PreviewVideoActivity.currentFilePreviewing?.remoteId
-            PreviewTextFragment.isOpen -> PreviewTextFragment.currentFilePreviewing?.remoteId
             PreviewImageFragment.isOpen -> PreviewImageFragment.currentFilePreviewing?.remoteId
             PreviewAudioFragment.isOpen -> PreviewAudioFragment.currentFilePreviewing?.remoteId
             else -> null

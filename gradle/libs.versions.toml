@@ -37,7 +37,6 @@ kotlin = "1.9.20"
 kotlinxCoroutines = "1.9.0"
 ksp = "1.9.20-1.0.14"
 ktlint = "11.1.0"
-markwon = "4.6.2"
 material = "1.8.0"
 mockk = "1.13.3"
 moshi = "1.15.0"
@@ -101,11 +100,6 @@ kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", versio
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
-markwon-core = { group = "io.noties.markwon", name = "core", version.ref = "markwon" }
-markwon-ext-strikethrough = { group = "io.noties.markwon", name = "ext-strikethrough", version.ref = "markwon" }
-markwon-ext-tables = { group = "io.noties.markwon", name = "ext-tables", version.ref = "markwon" }
-markwon-ext-tasklist = { group = "io.noties.markwon", name = "ext-tasklist", version.ref = "markwon" }
-markwon-html = { group = "io.noties.markwon", name = "html", version.ref = "markwon" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
@@ -124,7 +118,6 @@ ktlint-gradlePlugin = { group = "org.jlleitschuh.gradle", name = "ktlint-gradle"
 
 [bundles]
 espresso = ["androidx-test-espresso-contrib", "androidx-test-espresso-core", "androidx-test-espresso-intents", "androidx-test-espresso-web"]
-markwon = ["markwon-core", "markwon-ext-tables", "markwon-ext-strikethrough", "markwon-ext-tasklist", "markwon-html"]
 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
