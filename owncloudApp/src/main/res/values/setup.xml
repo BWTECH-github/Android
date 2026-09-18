@@ -71,7 +71,7 @@
     <bool name="privacy_policy_enabled">true</bool>
     <bool name="wizard_enabled">true</bool>
     <bool name="release_notes_enabled">true</bool>
-    <string name="url_privacy_policy" formatted="false">https://owncloud.online/index.php/settings/admin</string>
+    <string name="url_privacy_policy" formatted="false">https://owncloud.online/privacy-policy/</string>
     <string name="url_help" formatted="false">https://owncloud.online</string>
     <string name="url_imprint" formatted="false"></string>
     <string name="mail_recommend" formatted="false">"mailto:"</string>

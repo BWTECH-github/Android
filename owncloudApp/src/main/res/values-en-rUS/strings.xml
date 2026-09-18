@@ -871,7 +871,7 @@
     <string name="members_invite">Invite</string>
     <string name="member_type_user">User</string>
     <string name="member_type_group">Group</string>
-    <string name="feedback_dialog_get_in_contact_description"><![CDATA[ Ask for help in our <a href=\"%1$s\"><b>forum</b></a> or contribute in our <a href=\"%2$s\"><b>GitHub repo</b></a>]]></string>
+    <string name="feedback_dialog_get_in_contact_description"><![CDATA[ Give us feedback in our <a href=\"%1$s\"><b>GitHub repository</b></a>]]></string>
 
     <string name="link_role_accessibility">Link</string>
     <string name="button_role_accessibility">Button</string>

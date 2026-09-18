@@ -870,7 +870,7 @@
     <string name="members_invite">招待する</string>
     <string name="member_type_user">ユーザー</string>
     <string name="member_type_group">グループ</string>
-    <string name="feedback_dialog_get_in_contact_description"><![CDATA[ <a href=\"%1$s\"><b>フォーラム</b></a>で質問するか、<a href=\"%2$s\"><b>GitHubリポジトリ</b></a>に貢献してください]]></string>
+    <string name="feedback_dialog_get_in_contact_description"><![CDATA[ <a href=\"%1$s\"><b>GitHubリポジトリ</b></a>にフィードバックをお寄せください]]></string>
 
     <string name="link_role_accessibility">リンク</string>
     <string name="button_role_accessibility">ボタン</string>

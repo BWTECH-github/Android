@@ -606,8 +606,7 @@ abstract class DrawerActivity : ToolbarActivity() {
     protected abstract fun restart()
 
     companion object {
-        const val CENTRAL_URL = "https://central.owncloud.org/"
-        const val GITHUB_URL = "https://github.com/owncloud/android/issues/new/choose"
+        const val GITHUB_URL = "https://github.com/BWTECH-github/Android"
         private const val KEY_CHECKED_MENU_ITEM = "CHECKED_MENU_ITEM"
     }
 }

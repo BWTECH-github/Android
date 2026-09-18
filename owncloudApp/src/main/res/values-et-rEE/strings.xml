@@ -852,7 +852,7 @@
     <string name="delete_space_failed">Ruumi kustutamine ebaõnnestus</string>
     <string name="set_space_icon">Määra ikoon</string>
     <string name="members_title">Liikmed</string>
-    <string name="feedback_dialog_get_in_contact_description"><![CDATA[ Küsi abi meie <a href=\"%1$s\"><b>foorumist</b></a> või anna oma panus <a href=\"%2$s\"><b>GitHub reposse</b></a>]]></string>
+    <string name="feedback_dialog_get_in_contact_description"><![CDATA[ Anna meile tagasisidet meie <a href=\"%1$s\"><b>GitHub repositooriumis</b></a>]]></string>
 
     <string name="link_role_accessibility">Link</string>
     <string name="button_role_accessibility">Nupp</string>
