@@ -28,9 +28,11 @@ import android.accounts.Account
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Color
+import android.graphics.Outline
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewOutlineProvider
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
@@ -61,6 +63,14 @@ class FileListAdapter(
 
     var files = mutableListOf<Any>()
     private var account: Account? = AccountUtils.getCurrentOwnCloudAccount(context)
+
+    // Slightly rounds the corners of image previews, without affecting the plain mimetype icons
+    private val thumbnailOutlineProvider = object : ViewOutlineProvider() {
+        override fun getOutline(view: View, outline: Outline) {
+            val radius = view.resources.getDimension(R.dimen.file_thumbnail_corner_radius)
+            outline.setRoundRect(0, 0, view.width, view.height, radius)
+        }
+    }
     private var fileListOption: FileListOption = FileListOption.ALL_FILES
 
     fun updateFileList(filesToAdd: List<OCFileWithSyncInfo>, fileListOption: FileListOption) {
@@ -187,6 +197,8 @@ class FileListAdapter(
             val name = file.fileName
             val fileIcon = holder.itemView.findViewById<ImageView>(R.id.thumbnail).apply {
                 tag = file.id
+                outlineProvider = thumbnailOutlineProvider
+                clipToOutline = file.isImage
             }
             val thumbnail: Bitmap? = if (!file.isText) file.remoteId?.let { ThumbnailsCacheManager.getBitmapFromDiskCache(file.remoteId) } else null
 
