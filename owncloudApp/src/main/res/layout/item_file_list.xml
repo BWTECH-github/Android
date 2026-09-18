@@ -69,13 +69,16 @@
 
         <TextView
             android:id="@+id/Filename"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="middle"
             android:singleLine="true"
             android:textColor="@color/textColor"
             android:textSize="@dimen/two_line_primary_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintEnd_toStartOf="@id/share_icons_layout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="File name" />
@@ -86,9 +89,11 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/standard_half_margin"
             android:visibility="gone"
-            app:layout_constraintStart_toStartOf="@id/Filename"
-            app:layout_constraintTop_toBottomOf="@id/Filename"
-            app:layout_constraintEnd_toStartOf="@id/file_list_size"
+            android:layout_marginStart="6dp"
+            app:layout_constraintBottom_toBottomOf="@id/Filename"
+            app:layout_constraintStart_toEndOf="@id/Filename"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/Filename"
             tools:visibility="visible">
 
             <ImageView
@@ -112,37 +117,60 @@
 
         </LinearLayout>
 
-        <TextView
+        <!-- File size -->
+        <LinearLayout
             android:id="@+id/file_list_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/list_item_lastmod_and_filesize_text"
-            android:textSize="@dimen/two_line_secondary_text_size"
-            app:layout_constraintStart_toEndOf="@+id/share_icons_layout"
+            app:layout_constraintStart_toStartOf="@+id/Filename"
             app:layout_constraintTop_toBottomOf="@+id/Filename"
-            app:layout_constraintEnd_toStartOf="@id/file_list_separator"
-            tools:text="Size MB" />
+            app:layout_constraintEnd_toStartOf="@id/file_list_last_mod">
 
-        <TextView
-            android:id="@+id/file_list_separator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=","
-            android:textColor="@color/list_item_lastmod_and_filesize_text"
-            android:textSize="@dimen/two_line_secondary_text_size"
-            app:layout_constraintStart_toEndOf="@+id/file_list_size"
-            app:layout_constraintTop_toBottomOf="@+id/Filename" />
+            <ImageView
+                android:layout_width="@dimen/two_line_secondary_text_size"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="2dp"
+                android:src="@drawable/ic_folder"
+                app:tint="@color/list_item_lastmod_and_filesize_text">
+            </ImageView>
 
-        <TextView
+            <TextView
+                android:id="@+id/file_list_size_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/list_item_lastmod_and_filesize_text"
+                android:textSize="@dimen/two_line_secondary_text_size"
+                tools:text="Size MB" />
+
+        </LinearLayout>
+
+        <!-- Last modified -->
+        <LinearLayout
             android:id="@+id/file_list_last_mod"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/standard_quarter_margin"
-            android:textColor="@color/list_item_lastmod_and_filesize_text"
-            android:textSize="@dimen/two_line_secondary_text_size"
-            app:layout_constraintStart_toEndOf="@+id/file_list_separator"
-            app:layout_constraintTop_toBottomOf="@id/Filename"
-            tools:text="Mod Date" />
+            app:layout_constraintStart_toEndOf="@+id/file_list_size"
+            app:layout_constraintTop_toBottomOf="@id/Filename">
+
+            <ImageView
+                android:layout_width="@dimen/two_line_secondary_text_size"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="2dp"
+                android:src="@drawable/ic_sort_by_date"
+                app:tint="@color/list_item_lastmod_and_filesize_text">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/file_list_last_mod_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/list_item_lastmod_and_filesize_text"
+                android:textSize="@dimen/two_line_secondary_text_size"
+                tools:text="Mod Date" />
+
+        </LinearLayout>
+
 
         <!-- <include
             android:id="@+id/space_path_line"
