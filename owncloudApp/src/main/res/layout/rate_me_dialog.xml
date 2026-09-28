@@ -27,13 +27,13 @@
         android:id="@+id/rate_me_dialog_title_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:drawableEnd="@drawable/ic_star_black_24dp"
         android:drawablePadding="16dp"
-        android:textColor="@color/color_accent"
-        android:textSize="20sp"
-        android:text="@string/rate_dialog_title" />
+        android:text="@string/rate_dialog_title"
+        android:textColor="@color/textColor"
+        android:textSize="20sp" />
 
     <View
         android:layout_width="match_parent"
@@ -46,17 +46,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="16sp"
-        android:textColor="@color/color_accent"
-        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/rate_dialog_description" />
+        android:layout_marginStart="8dp"
+        android:text="@string/rate_dialog_description"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:weightSum="3"
         android:gravity="center">
@@ -66,31 +66,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/color_accent"
-            android:textColor="@color/white"
+            android:text="@string/button_no_thanks_name"
             android:textSize="12sp"
-            android:text="@string/button_no_thanks_name" />
+            android:theme="@style/Button.Secondary" />
 
         <Button
             android:id="@+id/button_later"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:background="@color/color_accent"
-            android:textColor="@color/white"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/button_later_name"
             android:textSize="12sp"
-            android:text="@string/button_later_name" />
+            android:theme="@style/Button.Secondary" />
 
         <Button
             android:id="@+id/button_rate_now"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/color_accent"
-            android:textColor="@color/white"
+            android:text="@string/button_rate_now_name"
             android:textSize="12sp"
-            android:text="@string/button_rate_now_name" />
+            android:theme="@style/Button.Brand" />
     </LinearLayout>
 </LinearLayout>
