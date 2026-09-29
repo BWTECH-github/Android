@@ -168,6 +168,7 @@ class MainFileListFragment : Fragment(),
 
     private lateinit var layoutManager: StaggeredGridLayoutManager
     private lateinit var fileListAdapter: FileListAdapter
+    private lateinit var swipeItemTouchHelper: ItemTouchHelper
     private lateinit var viewType: ViewType
 
     var actionMode: ActionMode? = null
@@ -554,16 +555,27 @@ class MainFileListFragment : Fragment(),
                     }
                 }
 
+                // The row stays in the list, but ItemTouchHelper still keeps it as "swiped out" and would
+                // resume that swipe on the next touch (e.g. while scrolling), re-triggering the action.
+                // Re-attaching the helper drops that stale state; it also resets the row's translation,
+                // so restore it for the slide-back animation below.
+                val itemView = viewHolder.itemView
+                val swipedTranslationX = itemView.translationX
+                swipeItemTouchHelper.attachToRecyclerView(null)
+                swipeItemTouchHelper.attachToRecyclerView(binding.recyclerViewMainFileList)
+                itemView.translationX = swipedTranslationX
+
                 // Slide the row back to its resting position instead of leaving it swiped out or
                 // snapping back instantly via a rebind
-                viewHolder.itemView.animate()
+                itemView.animate()
                     .translationX(0f)
                     .setDuration(SWIPE_RESET_ANIMATION_DURATION_MS)
                     .start()
             }
         }
 
-        ItemTouchHelper(swipeCallback).attachToRecyclerView(binding.recyclerViewMainFileList)
+        swipeItemTouchHelper = ItemTouchHelper(swipeCallback)
+        swipeItemTouchHelper.attachToRecyclerView(binding.recyclerViewMainFileList)
     }
 
     private fun setTextHintRootToolbar() {
