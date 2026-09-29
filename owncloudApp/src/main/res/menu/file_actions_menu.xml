@@ -63,6 +63,7 @@
         android:id="@+id/action_cancel_sync"
         android:title="@string/common_cancel_sync"
         android:icon="@drawable/ic_action_cancel_white"
+        app:iconTint="@color/textColor"
         app:showAsAction="ifRoom"
         android:orderInCategory="1" />
     <item
