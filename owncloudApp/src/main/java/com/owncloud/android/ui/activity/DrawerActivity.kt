@@ -546,13 +546,13 @@ abstract class DrawerActivity : ToolbarActivity() {
         drawerToggle?.onConfigurationChanged(newConfig)
     }
 
-    override fun onBackPressed() {
+    /*override fun onBackPressed() {
         if (isDrawerOpen()) {
             closeDrawer()
             return
         }
         super.onBackPressed()
-    }
+    }*/
 
     override fun onResume() {
         super.onResume()
