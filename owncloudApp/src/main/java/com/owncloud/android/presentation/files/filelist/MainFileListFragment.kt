@@ -125,6 +125,7 @@ import com.owncloud.android.ui.activity.FolderPickerActivity
 import com.owncloud.android.utils.DisplayUtils
 import com.owncloud.android.utils.MimetypeIconUtil
 import com.owncloud.android.utils.PreferenceUtils
+import kotlin.math.abs
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okio.Path.Companion.toPath
@@ -473,8 +474,13 @@ class MainFileListFragment : Fragment(),
             }
             private val deleteIcon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_delete)
 
+            // Only real file rows are swipeable, not the footer showing the number of files and folders
             override fun getSwipeDirs(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder): Int =
-                if (viewType == ViewType.VIEW_TYPE_LIST && actionMode == null) super.getSwipeDirs(recyclerView, viewHolder) else 0
+                if (viewType == ViewType.VIEW_TYPE_LIST && actionMode == null && viewHolder is FileListAdapter.ListViewHolder) {
+                    super.getSwipeDirs(recyclerView, viewHolder)
+                } else {
+                    0
+                }
 
             override fun getSwipeThreshold(viewHolder: RecyclerView.ViewHolder): Float = SWIPE_TRIGGER_THRESHOLD_FRACTION
 
@@ -499,11 +505,12 @@ class MainFileListFragment : Fragment(),
                 val itemView = viewHolder.itemView
                 val maxReveal = itemView.width * SWIPE_MAX_REVEAL_FRACTION
                 val clampedDX = dX.coerceIn(-maxReveal, maxReveal)
+                val thresholdReached = abs(dX) >= recyclerView.width * SWIPE_TRIGGER_THRESHOLD_FRACTION
 
                 if (clampedDX > 0) {
-                    drawSwipeBackground(c, itemView, favoriteBackground, favoriteIcon, isStart = true, revealSize = clampedDX)
+                    drawSwipeBackground(c, itemView, favoriteBackground, favoriteIcon, isStart = true, revealSize = clampedDX, thresholdReached)
                 } else if (clampedDX < 0) {
-                    drawSwipeBackground(c, itemView, deleteBackground, deleteIcon, isStart = false, revealSize = -clampedDX)
+                    drawSwipeBackground(c, itemView, deleteBackground, deleteIcon, isStart = false, revealSize = -clampedDX, thresholdReached)
                 }
 
                 super.onChildDraw(c, recyclerView, viewHolder, clampedDX, dY, actionState, isCurrentlyActive)
@@ -515,7 +522,8 @@ class MainFileListFragment : Fragment(),
                 background: ColorDrawable,
                 icon: Drawable?,
                 isStart: Boolean,
-                revealSize: Float
+                revealSize: Float,
+                showIcon: Boolean
             ) {
                 if (isStart) {
                     background.setBounds(itemView.left, itemView.top, itemView.left + revealSize.toInt(), itemView.bottom)
@@ -524,7 +532,7 @@ class MainFileListFragment : Fragment(),
                 }
                 background.draw(c)
 
-                icon?.let {
+                icon?.takeIf { showIcon }?.let {
                     val iconMargin = (itemView.height - it.intrinsicHeight) / 2
                     val iconTop = itemView.top + (itemView.height - it.intrinsicHeight) / 2
                     val iconLeft = if (isStart) itemView.left + iconMargin else itemView.right - iconMargin - it.intrinsicWidth
@@ -1815,7 +1823,7 @@ class MainFileListFragment : Fragment(),
         private const val FILE_DOCXF_EXTENSION = "docxf"
 
         // Fraction of the row's width the user needs to drag before the swipe action (favorite/delete) triggers
-        private const val SWIPE_TRIGGER_THRESHOLD_FRACTION = 0.25f
+        private const val SWIPE_TRIGGER_THRESHOLD_FRACTION = 0.15f
 
         // Fraction of the row's width the swipe reveal is allowed to travel, so the row is only dragged
         // a short distance instead of sliding fully off screen like a dismiss gesture
