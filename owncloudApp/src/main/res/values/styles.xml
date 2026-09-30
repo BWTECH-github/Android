@@ -121,6 +121,8 @@
     -->
     <style name="ownCloud.Appbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="colorPrimary">@color/actionbar_start_color</item>
+        <!-- title color of the legacy ActionBar (e.g. passcode/pattern screens) -->
+        <item name="android:textColorPrimary">@color/textColor</item>
         <item name="toolbarNavigationButtonStyle">@style/Toolbar.Button.Navigation.Tinted</item>
         <!-- tints built-in action icons without their own drawable tint (e.g. the search menu item) -->
         <item name="colorControlNormal">@color/textColor</item>
