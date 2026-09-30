@@ -32,6 +32,7 @@ import android.content.pm.ResolveInfo
 import android.net.Uri
 import android.text.method.LinkMovementMethod
 import android.util.TypedValue
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.webkit.MimeTypeMap
 import android.widget.LinearLayout
@@ -492,5 +493,17 @@ fun <T> FragmentActivity.collectLatestLifecycleFlow(
         repeatOnLifecycle(lifecycleState) {
             flow.collectLatest(collect)
         }
+    }
+}
+
+/**
+ * The app is always laid out edge-to-edge, so the app bar has to keep its content clear of the status bar and display
+ * cutout (e.g. punch hole camera) itself. Applies to every toolbar layout of the app (owncloud_toolbar, simple_toolbar,
+ * preview_toolbar). Screens with the drawer are skipped: their DrawerLayout already fits system windows.
+ */
+fun Activity.fitAppBarToSystemBars() {
+    if (findViewById<View>(R.id.drawer_layout) != null) return
+    listOf(R.id.standard_toolbar, R.id.simple_toolbar, R.id.preview_toolbar).forEach { toolbarId ->
+        (findViewById<View>(toolbarId)?.parent as? View)?.applySystemBarsAndCutoutPadding(top = true)
     }
 }

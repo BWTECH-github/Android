@@ -53,6 +53,7 @@ import com.owncloud.android.domain.spaces.model.OCSpace
 import com.owncloud.android.domain.spaces.usecases.GetPersonalSpaceForAccountUseCase
 import com.owncloud.android.domain.user.usecases.GetStoredQuotaUseCase
 import com.owncloud.android.extensions.createNotificationChannel
+import com.owncloud.android.extensions.fitAppBarToSystemBars
 import com.owncloud.android.lib.common.SingleSessionManager
 import com.owncloud.android.presentation.authentication.AccountUtils
 import com.owncloud.android.presentation.migration.StorageMigrationActivity
@@ -167,6 +168,11 @@ class MainApp : Application() {
 
                 PreferenceManager.migrateFingerprintToBiometricKey(applicationContext)
                 PreferenceManager.deleteOldSettingsPreferences(applicationContext)
+            }
+
+            // After onCreate, so the activity's content view (and its toolbar) is already set
+            override fun onActivityPostCreated(activity: Activity, savedInstanceState: Bundle?) {
+                activity.fitAppBarToSystemBars()
             }
 
             private fun shouldShowDialog(activity: Activity) =

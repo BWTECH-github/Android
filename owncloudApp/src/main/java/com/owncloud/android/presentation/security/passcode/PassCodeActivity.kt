@@ -44,6 +44,7 @@ import com.owncloud.android.BuildConfig
 import com.owncloud.android.R
 import com.owncloud.android.databinding.PasscodelockBinding
 import com.owncloud.android.domain.utils.Event
+import com.owncloud.android.extensions.applySystemBarsAndCutoutPadding
 import com.owncloud.android.extensions.showBiometricDialog
 import com.owncloud.android.extensions.showMessageInSnackbar
 import com.owncloud.android.presentation.documentsprovider.DocumentsProviderUtils.notifyDocumentsProviderRoots
@@ -95,6 +96,8 @@ class PassCodeActivity : AppCompatActivity(), NumberKeyboardListener, EnableBiom
         } // else, let it go, or taking screenshots & testing will not be possible
 
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbarLayout.simpleToolbar)
+        binding.passcodeLockLayout.applySystemBarsAndCutoutPadding(bottom = true)
 
         if (intent.getBooleanExtra(BIOMETRIC_HAS_FAILED, false)) {
             showMessageInSnackbar(message = getString(R.string.biometric_not_available))
@@ -174,10 +177,10 @@ class PassCodeActivity : AppCompatActivity(), NumberKeyboardListener, EnableBiom
         return true
     }
 
-    override fun onBackPressed() {
+    /*override fun onBackPressed() {
         PassCodeManager.onActivityStopped(this)
         super.onBackPressed()
-    }
+    }*/
 
     private fun inflatePasscodeTxtLine() {
         val layoutCode = findViewById<LinearLayout>(R.id.layout_code)

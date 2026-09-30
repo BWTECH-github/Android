@@ -76,19 +76,15 @@
         <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
     </style>
 
-    <!-- Extends Theme.ownCloud to make the LEGACY ActionBar an OVERLAY on top of the image preview -->
-    <style name="Theme.ownCloud.Overlay">
-        <item name="windowActionBarOverlay">true</item>
-        <item name="actionBarTheme">@style/ownCloud.Appbar.Preview</item>
+    <!-- Extends Theme.ownCloud.Toolbar for the image preview; its layout overlays a Toolbar on top of the image -->
+    <style name="Theme.ownCloud.Overlay" parent="Theme.ownCloud.Toolbar">
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
     </style>
 
-    <!-- Extends Theme.ownCloud for video in full screen mode -->
-    <style name="Theme.ownCloud.Video">
-        <item name="windowActionBarOverlay">true</item>
+    <!-- Extends Theme.ownCloud.Toolbar for video in full screen mode; its layout overlays a Toolbar on top of the video -->
+    <style name="Theme.ownCloud.Video" parent="Theme.ownCloud.Toolbar">
         <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="27">never</item>
-        <item name="actionBarTheme">@style/ownCloud.Appbar.Preview</item>
         <item name="android:windowBackground">@android:color/background_dark</item>
         <!-- turquoise toolbar background (video preview): dark status bar icons for readability -->
         <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
@@ -121,7 +117,7 @@
     -->
     <style name="ownCloud.Appbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="colorPrimary">@color/actionbar_start_color</item>
-        <!-- title color of the legacy ActionBar (e.g. passcode/pattern screens) -->
+        <!-- default text color inside the app bar (e.g. titles) -->
         <item name="android:textColorPrimary">@color/textColor</item>
         <item name="toolbarNavigationButtonStyle">@style/Toolbar.Button.Navigation.Tinted</item>
         <!-- tints built-in action icons without their own drawable tint (e.g. the search menu item) -->

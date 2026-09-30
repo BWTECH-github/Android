@@ -36,8 +36,8 @@ import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.view.Window
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.viewpager.widget.ViewPager
@@ -97,11 +97,11 @@ class PreviewImageActivity : FileActivity(),
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.preview_image_activity)
 
-        // ActionBar
+        // Toolbar, overlaid on top of the image
+        setSupportActionBar(findViewById(R.id.preview_toolbar))
         supportActionBar?.run {
             setDisplayHomeAsUpEnabled(true)
             setHomeActionContentDescription(R.string.common_back)
@@ -397,12 +397,8 @@ class PreviewImageActivity : FileActivity(),
     }
 
     private fun showActionBar(show: Boolean) {
-        val actionBar = supportActionBar ?: return
-        if (show) {
-            actionBar.show()
-        } else {
-            actionBar.hide()
-        }
+        // Toggle the whole app bar, not only the toolbar, so its padding below the status bar goes with it
+        findViewById<View>(R.id.toolbar_layout)?.isVisible = show
     }
 
     private fun updateActionBarTitle(title: String) {

@@ -36,7 +36,6 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
-import android.view.Window
 import androidx.annotation.OptIn
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.MenuProvider
@@ -102,10 +101,11 @@ class PreviewVideoActivity : FileActivity(), Player.Listener, OnPrepareVideoPlay
 
     private lateinit var binding: VideoPreviewBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY)
         super.onCreate(savedInstanceState)
         binding = VideoPreviewBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        // Toolbar, overlaid on top of the video
+        setSupportActionBar(binding.toolbarLayout.previewToolbar)
         addMenuProvider(this)
 
 
@@ -295,10 +295,9 @@ class PreviewVideoActivity : FileActivity(), Player.Listener, OnPrepareVideoPlay
     }
 
     private fun setActionBarVisibility(visibility: Int) {
-        if (visibility == View.VISIBLE) {
-            supportActionBar?.show()
-        } else if (visibility == View.GONE) {
-            supportActionBar?.hide()
+        // Toggle the whole app bar, not only the toolbar, so its padding below the status bar goes with it
+        if (visibility == View.VISIBLE || visibility == View.GONE) {
+            binding.toolbarLayout.root.visibility = visibility
         }
     }
 

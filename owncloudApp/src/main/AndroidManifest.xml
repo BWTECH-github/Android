@@ -188,10 +188,10 @@
             android:name=".presentation.security.passcode.PassCodeActivity"
             android:label="@string/passcode_label"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.ownCloud" />
+            android:theme="@style/Theme.ownCloud.Toolbar" />
         <activity
             android:name=".presentation.conflicts.ConflictsResolveActivity"
-            android:theme="@style/Theme.ownCloud" />
+            android:theme="@style/Theme.ownCloud.Toolbar" />
         <activity
             android:name=".presentation.logging.LogsListActivity"
             android:label="@string/prefs_log_open_logs_list_view"
@@ -237,7 +237,7 @@
             android:name=".presentation.security.pattern.PatternActivity"
             android:screenOrientation="portrait"
             android:label="@string/pattern_label"
-            android:theme="@style/Theme.ownCloud" />
+            android:theme="@style/Theme.ownCloud.Toolbar" />
         <activity android:name=".presentation.security.biometric.BiometricActivity" />
         <activity
             android:name=".presentation.authentication.LoginActivity"

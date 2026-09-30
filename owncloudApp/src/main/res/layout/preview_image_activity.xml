@@ -16,10 +16,19 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<com.owncloud.android.ui.preview.ViewPagerWorkAround xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fragmentPager"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:filterTouchesWhenObscured="true"
-    android:contentDescription="@string/content_description_image_previewed"
-    />
+    android:layout_height="match_parent">
+
+    <com.owncloud.android.ui.preview.ViewPagerWorkAround
+        android:id="@+id/fragmentPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:filterTouchesWhenObscured="true"
+        android:contentDescription="@string/content_description_image_previewed" />
+
+    <include
+        android:id="@+id/toolbar_layout"
+        layout="@layout/preview_toolbar" />
+
+</FrameLayout>

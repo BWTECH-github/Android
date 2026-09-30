@@ -41,6 +41,7 @@ import com.owncloud.android.BuildConfig
 import com.owncloud.android.R
 import com.owncloud.android.data.providers.implementation.OCSharedPreferencesProvider
 import com.owncloud.android.databinding.ActivityPatternLockBinding
+import com.owncloud.android.extensions.applySystemBarsAndCutoutPadding
 import com.owncloud.android.extensions.showBiometricDialog
 import com.owncloud.android.extensions.showMessageInSnackbar
 import com.owncloud.android.presentation.documentsprovider.DocumentsProviderUtils.notifyDocumentsProviderRoots
@@ -78,6 +79,8 @@ class PatternActivity : AppCompatActivity(), EnableBiometrics {
         _binding = ActivityPatternLockBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbarLayout.simpleToolbar)
+        binding.activityPatternLockLayout.applySystemBarsAndCutoutPadding(bottom = true)
 
         if (intent.getBooleanExtra(BIOMETRIC_HAS_FAILED, false)) {
             showMessageInSnackbar(message = getString(R.string.biometric_not_available))
@@ -154,10 +157,10 @@ class PatternActivity : AppCompatActivity(), EnableBiometrics {
         return true
     }
 
-    override fun onBackPressed() {
+    /*override fun onBackPressed() {
         PatternManager.onActivityStopped(this)
         super.onBackPressed()
-    }
+    }*/
 
     /**
      * Binds the appropriate listener to the pattern view.
