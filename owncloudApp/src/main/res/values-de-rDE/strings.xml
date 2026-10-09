@@ -39,10 +39,12 @@
     <string name="drawer_feedback">Rückmeldungen</string>
     <string name="drawer_help">Hilfe</string>
     <string name="prefs_category_general">Allgemein</string>
+    <string name="prefs_subsection_appearance">Anzeige</string>
     <string name="prefs_subsection_logging">Protokollierung</string>
     <string name="prefs_subsection_more">Mehr</string>
     <string name="prefs_subsection_security">Sicherheit</string>
     <string name="prefs_subsection_whatsnew">Was hat sich seit der letzten Version geändert?</string>
+    <string name="prefs_subsection_appearance_summary">Verwalte die Anzeige deiner App</string>
     <string name="prefs_subsection_security_summary">Legen Sie Sperren fest, um auf die App zuzugreifen, und erlauben Sie Berührungen mit anderen sichtbaren Fenstern.</string>
     <string name="prefs_subsection_logging_summary">Protokolle verfolgen, die durch die Ausführung der App erstellt wurden.</string>
     <string name="prefs_subsection_more_summary">App-Info, Feedback und mehr</string>

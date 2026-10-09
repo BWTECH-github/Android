@@ -19,6 +19,14 @@
     app:key="settings_screen">
 
     <Preference
+        app:fragment="com.owncloud.android.presentation.settings.appearance.SettingsAppearanceFragment"
+        app:icon="@drawable/ic_viewer_role"
+        app:key="appearance_subsection"
+        app:summary="@string/prefs_subsection_appearance_summary"
+        app:title="@string/prefs_subsection_appearance" />
+
+    <Preference
+        app:allowDividerAbove="true"
         app:fragment="com.owncloud.android.presentation.settings.security.SettingsSecurityFragment"
         app:icon="@drawable/ic_lock_colored"
         app:key="security_subsection"

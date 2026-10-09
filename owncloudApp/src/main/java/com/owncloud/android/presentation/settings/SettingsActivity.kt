@@ -31,6 +31,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import com.owncloud.android.R
 import com.owncloud.android.presentation.settings.advanced.SettingsAdvancedFragment
+import com.owncloud.android.presentation.settings.appearance.SettingsAppearanceFragment
 import com.owncloud.android.presentation.settings.automaticuploads.SettingsPictureUploadsFragment
 import com.owncloud.android.presentation.settings.automaticuploads.SettingsVideoUploadsFragment
 import com.owncloud.android.presentation.settings.logging.SettingsLogsFragment
@@ -64,6 +65,7 @@ class SettingsActivity : AppCompatActivity() {
     private fun updateToolbarTitle() {
         val titleId = when (supportFragmentManager.fragments.lastOrNull()) {
             is SettingsSecurityFragment -> R.string.prefs_subsection_security
+            is SettingsAppearanceFragment -> R.string.prefs_subsection_appearance
             is SettingsLogsFragment -> R.string.prefs_subsection_logging
             is SettingsPictureUploadsFragment -> R.string.prefs_subsection_picture_uploads
             is SettingsVideoUploadsFragment -> R.string.prefs_subsection_video_uploads

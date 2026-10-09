@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?><!--
   ownCloud Android client application
 
-  Copyright (C) 2022 ownCloud GmbH.
+  Copyright (C) 2026 BW-Tech GmbH.
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License version 2,
@@ -15,19 +15,12 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:key="appearance_screen">
 
-    <!--<SwitchPreferenceCompat
+    <SwitchPreferenceCompat
         app:iconSpaceReserved="false"
-        app:key="show_disabled_spaces"
-        app:title="@string/prefs_show_disabled_spaces"
-        app:summary="@string/prefs_show_disabled_spaces_summary"/> -->
+        app:key="show_hidden_files"
+        app:title="@string/prefs_show_hidden_files" />
 
-    <ListPreference
-        app:defaultValue="NEVER"
-        app:dialogTitle="@string/prefs_delete_local_files"
-        app:iconSpaceReserved="false"
-        app:key="remove_local_files"
-        app:negativeButtonText=""
-        app:title="@string/prefs_delete_local_files" />
 </PreferenceScreen>

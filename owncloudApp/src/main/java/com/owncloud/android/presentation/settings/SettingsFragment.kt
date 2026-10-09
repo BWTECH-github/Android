@@ -47,6 +47,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
     private val releaseNotesViewModel by viewModel<ReleaseNotesViewModel>()
 
     private var settingsScreen: PreferenceScreen? = null
+    private var prefAppearance: PreferenceScreen? = null
     private var subsectionPictureUploads: Preference? = null
     private var subsectionVideoUploads: Preference? = null
     private var subsectionMore: Preference? = null
@@ -59,6 +60,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         setPreferencesFromResource(R.xml.settings, rootKey)
 
         settingsScreen = findPreference(SCREEN_SETTINGS)
+        prefAppearance = findPreference(PREFERENCE_APPEARANCE)
         subsectionPictureUploads = findPreference(SUBSECTION_PICTURE_UPLOADS)
         subsectionVideoUploads = findPreference(SUBSECTION_VIDEO_UPLOADS)
         subsectionMore = findPreference(SUBSECTION_MORE)
@@ -125,6 +127,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     companion object {
         private const val SCREEN_SETTINGS = "settings_screen"
+        private const val PREFERENCE_APPEARANCE = "appearance_screen"
         private const val PREFERENCE_PRIVACY_POLICY = "privacyPolicy"
         private const val PREFERENCE_ABOUT_APP = "about_app"
         private const val SUBSECTION_PICTURE_UPLOADS = "picture_uploads_subsection"
