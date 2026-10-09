@@ -3,7 +3,7 @@
 Die Android-App zu owncloud.online: Dateien ansehen, hoch- und herunterladen,
 teilen und Aufnahmen automatisch hochladen lassen.
 
-| <img src="docs_resources/filelist_device.png"> | <img src="docs_resources/photos_device.png"> | <img src="docs_resources/share_device.png"> | <img src="docs_resources/detail_view_device.png"> |
+| <img src="docs_resources/filelist_device.jpg"> | <img src="docs_resources/photos_device.jpg"> | <img src="docs_resources/share_device.jpg"> | <img src="docs_resources/detail_view_device.jpg"> |
 | ---------------------------------------------- | -------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
 
 ## Was sie kann
