@@ -30,17 +30,25 @@ import android.content.Intent.FLAG_ACTIVITY_NO_HISTORY
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.net.Uri
+import android.os.Build
 import android.text.method.LinkMovementMethod
 import android.util.TypedValue
+import android.view.Gravity
 import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.webkit.MimeTypeMap
+import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.text.HtmlCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -505,5 +513,26 @@ fun Activity.fitAppBarToSystemBars() {
     if (findViewById<View>(R.id.drawer_layout) != null) return
     listOf(R.id.standard_toolbar, R.id.simple_toolbar, R.id.preview_toolbar).forEach { toolbarId ->
         (findViewById<View>(toolbarId)?.parent as? View)?.applySystemBarsAndCutoutPadding(top = true)
+    }
+}
+
+/**
+ * Since Android 16 the app is forced edge-to-edge and the theme's navigationBarColor is ignored, so the white window
+ * background would show below the system navigation bar. Draws the navigation bar color as the bottommost child of the
+ * decor view instead: behind the app content, only visible where the content leaves the navigation bar area free.
+ */
+fun Activity.paintNavigationBarBackground() {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.BAKLAVA) return
+    val decorView = window.decorView as? ViewGroup ?: return
+    val navigationBarBackground = View(this).apply {
+        setBackgroundColor(ContextCompat.getColor(this@paintNavigationBarBackground, R.color.actionbar_start_color))
+    }
+    decorView.addView(
+        navigationBarBackground, 0, FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, 0, Gravity.BOTTOM)
+    )
+    ViewCompat.setOnApplyWindowInsetsListener(navigationBarBackground) { view, windowInsets ->
+        val navigationBarHeight = windowInsets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom
+        view.updateLayoutParams<FrameLayout.LayoutParams> { height = navigationBarHeight }
+        windowInsets
     }
 }

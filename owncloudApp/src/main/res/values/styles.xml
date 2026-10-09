@@ -31,6 +31,12 @@
         <!-- dark status bar icons/text (time, battery, ...), for readability on the turquoise background -->
         <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
 
+        <!-- turquoise system navigation bar matching the bottom navigation bar -->
+        <item name="android:navigationBarColor">@color/actionbar_start_color</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+        <item name="android:navigationBarDividerColor" tools:targetApi="28">@android:color/transparent</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="29">false</item>
+
         <!-- theme for the app bar (both for old actionbar and new toolbar) -->
         <item name="actionBarTheme">@style/ownCloud.Appbar</item>
 

@@ -54,6 +54,7 @@ import com.owncloud.android.domain.spaces.usecases.GetPersonalSpaceForAccountUse
 import com.owncloud.android.domain.user.usecases.GetStoredQuotaUseCase
 import com.owncloud.android.extensions.createNotificationChannel
 import com.owncloud.android.extensions.fitAppBarToSystemBars
+import com.owncloud.android.extensions.paintNavigationBarBackground
 import com.owncloud.android.lib.common.SingleSessionManager
 import com.owncloud.android.presentation.authentication.AccountUtils
 import com.owncloud.android.presentation.migration.StorageMigrationActivity
@@ -173,6 +174,7 @@ class MainApp : Application() {
             // After onCreate, so the activity's content view (and its toolbar) is already set
             override fun onActivityPostCreated(activity: Activity, savedInstanceState: Bundle?) {
                 activity.fitAppBarToSystemBars()
+                activity.paintNavigationBarBackground()
             }
 
             private fun shouldShowDialog(activity: Activity) =
