@@ -111,6 +111,8 @@
         <item name="android:textColorPrimary">@color/textColor</item>
         <item name="searchViewStyle">@style/ownCloud.SearchView</item>
         <item name="buttonBarButtonStyle">@style/Button.Secondary</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Button.Brand.Dialog</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Button.Secondary.Dialog</item>
         <item name="buttonBarStyle">@style/Theme.ownCloud.Dialog.ButtonBar</item>
         <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
     </style>
@@ -185,7 +187,7 @@
     <style name="Button.Secondary" parent="Widget.AppCompat.Button.Colored">
         <item name="colorButtonNormal">@color/secondary_button_background_color</item>
         <item name="colorAccent">@color/secondary_button_background_color</item>
-        <item name="android:textColor">@color/secondary_button_text_color</item>
+        <item name="android:textColor">@color/textColor</item>
     </style>
 
     <style name="Button.Primary" parent="Widget.AppCompat.Button.Colored">
@@ -199,6 +201,14 @@
         <item name="colorButtonNormal">@color/primary</item>
         <item name="colorAccent">@color/primary</item>
         <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="Button.Brand.Dialog">
+        <item name="android:theme">@style/Button.Brand</item>
+    </style>
+
+    <style name="Button.Secondary.Dialog">
+        <item name="android:theme">@style/Button.Secondary</item>
     </style>
 
     <style name="Button.Borderless" parent="Widget.AppCompat.Button.Borderless">
