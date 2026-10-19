@@ -70,4 +70,9 @@
     <!-- File list swipe actions -->
     <color name="swipe_favorite_background">#FFD700</color>
     <color name="swipe_delete_background">@color/quota_exceeded</color>
+
+    <!-- AppCompat paints this "status guard" behind the status bar while an action mode (multiselection) is shown.
+         Since edge-to-edge (Android 15+) window.statusBarColor is ignored, so the default white/black guard would show -->
+    <color name="abc_decor_view_status_guard" xmlns:tools="http://schemas.android.com/tools" tools:ignore="PrivateResource">@color/action_mode_status_bar_background</color>
+    <color name="abc_decor_view_status_guard_light" xmlns:tools="http://schemas.android.com/tools" tools:ignore="PrivateResource">@color/action_mode_status_bar_background</color>
 </resources>
