@@ -20,6 +20,12 @@
 
     <SwitchPreferenceCompat
         app:iconSpaceReserved="false"
+        app:key="activate_darkmode"
+        app:title="@string/prefs_enable_darkmode" />
+
+
+    <SwitchPreferenceCompat
+        app:iconSpaceReserved="false"
         app:key="show_hidden_files"
         app:title="@string/prefs_show_hidden_files" />
 

@@ -84,6 +84,7 @@
     <string name="prefs_automatic_uploads_not_available_users_light">Automatic uploads are not available for users light</string>
     <string name="prefs_subsection_advanced">Advanced</string>
     <string name="prefs_subsection_notifications">Manage notifications</string>
+    <string name="prefs_enable_darkmode">Enable Darkmode</string>
     <string name="prefs_show_hidden_files">Show hidden files</string>
     <string name="prefs_show_disabled_spaces">Show disabled spaces</string>
     <string name="prefs_show_disabled_spaces_summary">Applies only to space managers in Infinite Scale accounts</string>

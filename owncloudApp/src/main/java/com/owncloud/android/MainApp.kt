@@ -38,6 +38,7 @@ import android.os.Bundle
 import android.view.WindowManager
 import android.widget.CheckBox
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.pm.PackageInfoCompat
 import com.owncloud.android.data.providers.implementation.OCSharedPreferencesProvider
 import com.owncloud.android.datamodel.ThumbnailsCacheManager
@@ -65,6 +66,7 @@ import com.owncloud.android.presentation.security.passcode.PassCodeActivity
 import com.owncloud.android.presentation.security.passcode.PassCodeManager
 import com.owncloud.android.presentation.security.pattern.PatternActivity
 import com.owncloud.android.presentation.security.pattern.PatternManager
+import com.owncloud.android.presentation.settings.appearance.SettingsAppearanceFragment.Companion.PREF_ENABLE_DARKMODE
 import com.owncloud.android.presentation.settings.logging.SettingsLogsFragment.Companion.PREFERENCE_ENABLE_LOGGING
 import com.owncloud.android.providers.CoroutinesDispatcherProvider
 import com.owncloud.android.providers.LogsProvider
@@ -101,6 +103,8 @@ class MainApp : Application() {
         super.onCreate()
 
         appContext = applicationContext
+
+        applyNightMode(OCSharedPreferencesProvider(appContext).getBoolean(PREF_ENABLE_DARKMODE, false))
 
         startLogsIfEnabled()
 
@@ -328,6 +332,12 @@ class MainApp : Application() {
     }
 
     companion object {
+        fun applyNightMode(enabled: Boolean) {
+            AppCompatDelegate.setDefaultNightMode(
+                if (enabled) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
+            )
+        }
+
         const val MDM_FLAVOR = "mdm"
         const val QA_FLAVOR = "qa"
 

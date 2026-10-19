@@ -84,6 +84,7 @@
     <string name="prefs_automatic_uploads_not_available_users_light">Automatischer Upload ist für Users Light nicht verfügbar</string>
     <string name="prefs_subsection_advanced">Fortgeschritten</string>
     <string name="prefs_subsection_notifications">Benachrichtigungen verwalten</string>
+    <string name="prefs_enable_darkmode">Aktiviere dunklen Modus</string>
     <string name="prefs_show_hidden_files">Versteckte Dateien anzeigen</string>
     <string name="prefs_show_disabled_spaces">Deaktivierte Spaces anzeigen</string>
     <string name="prefs_show_disabled_spaces_summary">Gilt nur für Space-Manager in Infinite Scale Konten</string>

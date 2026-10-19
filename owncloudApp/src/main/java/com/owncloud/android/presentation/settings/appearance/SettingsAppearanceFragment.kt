@@ -14,17 +14,20 @@ class SettingsAppearanceFragment : PreferenceFragmentCompat() {
     private val appearanceViewModel by viewModel<SettingsAppearanceViewModel>()
 
     private var prefShowHiddenFiles: SwitchPreferenceCompat? = null
+    private var prefEnableDarkmode: SwitchPreferenceCompat? = null
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.settings_appearance, rootKey)
 
         prefShowHiddenFiles = findPreference(PREF_SHOW_HIDDEN_FILES)
+        prefEnableDarkmode = findPreference(PREF_ENABLE_DARKMODE)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         prefShowHiddenFiles?.isChecked = appearanceViewModel.isHiddenFilesShown()
+        prefEnableDarkmode?.isChecked = appearanceViewModel.isDarkmodeEnabled()
 
         initPreferenceListeners()
     }
@@ -34,9 +37,15 @@ class SettingsAppearanceFragment : PreferenceFragmentCompat() {
             appearanceViewModel.setShowHiddenFiles(newValue as Boolean)
             true
         }
+
+        prefEnableDarkmode?.setOnPreferenceChangeListener { _: Preference?, newValue: Any ->
+            appearanceViewModel.setDarkmodeEnabled(newValue as Boolean)
+            true
+        }
     }
 
     companion object {
         const val PREF_SHOW_HIDDEN_FILES = "show_hidden_files"
+        const val PREF_ENABLE_DARKMODE = "activate_darkmode"
     }
 }

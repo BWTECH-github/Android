@@ -16,7 +16,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:key="settings_screen">
+    app:key="settings_screen" >
 
     <Preference
         app:fragment="com.owncloud.android.presentation.settings.appearance.SettingsAppearanceFragment"
