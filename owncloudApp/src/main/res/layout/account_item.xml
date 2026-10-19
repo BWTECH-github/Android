@@ -65,7 +65,7 @@
             android:gravity="bottom"
             android:maxLines="1"
             android:text="@string/placeholder_filename"
-            android:textColor="@color/textColor"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/account"
@@ -79,10 +79,10 @@
             android:layout_height="24dp"
             android:layout_marginStart="8dp"
             android:ellipsize="middle"
-            android:text="@string/placeholder_sentence"
-            android:textColor="@color/textColor"
-            android:textSize="14sp"
             android:lines="1"
+            android:text="@string/placeholder_sentence"
+            android:textColor="@color/black"
+            android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@+id/clean_account_local_storage_button"
             app:layout_constraintStart_toEndOf="@id/ticker"
             app:layout_constraintTop_toBottomOf="@id/name" />
@@ -134,10 +134,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/used_quota_title_manage_accounts"
             android:layout_marginEnd="@dimen/item_file_grid_margin"
-            android:textSize="@dimen/two_line_secondary_text_size"
-            android:textColor="@color/textColor"/>
+            android:text="@string/used_quota_title_manage_accounts"
+            android:textColor="@color/black"
+            android:textSize="@dimen/two_line_secondary_text_size" />
 
         <ProgressBar
             android:id="@+id/manage_accounts_quota_bar"
@@ -152,7 +152,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/drawer_loading_quota"
-            android:textColor="@color/textColor"
+            android:textColor="@color/black"
             android:textSize="@dimen/two_line_secondary_text_size" />
     </LinearLayout>
 

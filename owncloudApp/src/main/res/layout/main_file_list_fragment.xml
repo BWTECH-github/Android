@@ -139,7 +139,7 @@
         android:visibility="visible"
         fab:fab_addButtonColorNormal="@color/primary_button_background_color"
         fab:fab_addButtonColorPressed="@color/owncloud_blue"
-        fab:fab_addButtonPlusIconColor="@color/white"
+        fab:fab_addButtonPlusIconColor="@color/fab_white"
         fab:fab_labelStyle="@style/menu_labels_style"
         fab:layout_dodgeInsetEdges="bottom">
 
