@@ -946,7 +946,7 @@ class MainFileListFragment : Fragment(),
                             getDrawableFromUrl(requireContext(), appRegistryProvider.icon)
                         } catch (e: Exception) {
                             Timber.e(e, "An exception occurred while Glide is trying to load an image")
-                            addDefaultTint(R.color.bottom_sheet_fragment_item_color)
+                            addDefaultTint(R.color.icon_color)
                             ResourcesCompat.getDrawable(resources, R.drawable.ic_open_in_web, null)
                         }
                         setOnClickListener {
