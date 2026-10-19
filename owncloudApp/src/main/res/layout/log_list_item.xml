@@ -46,6 +46,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/icon_color"
             tools:ignore="ContentDescription" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -66,7 +67,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="middle"
             android:singleLine="true"
-            android:textColor="@color/textColor"
+            android:textColor="@color/black"
             android:textSize="@dimen/two_line_primary_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -105,7 +106,8 @@
             android:contentDescription="@string/content_description_log_download"
             android:src="@drawable/ic_baseline_download_grey"
             app:layout_constraintRight_toLeftOf="@id/imageView_share_activity_logs_list"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/icon_color" />
 
         <ImageView
             android:id="@+id/imageView_share_activity_logs_list"
@@ -115,7 +117,8 @@
             android:contentDescription="@string/content_description_log_share"
             android:src="@drawable/ic_share_grey"
             app:layout_constraintRight_toLeftOf="@id/imageView_delete_activity_logs_list"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/icon_color" />
 
         <ImageView
             android:id="@+id/imageView_delete_activity_logs_list"
@@ -124,6 +127,7 @@
             android:contentDescription="@string/content_description_log_delete"
             android:src="@drawable/ic_action_delete_grey"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/icon_color" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
