@@ -65,7 +65,7 @@
             android:layout_marginBottom="30dp"
             android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/textColor"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -128,6 +128,7 @@
             android:layout_height="0dp"
             android:text="@string/filedetails_type"
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/fdType"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/fdType" />
@@ -140,7 +141,7 @@
             android:gravity="end"
             android:text=""
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:textColor="@color/textColor"
+            android:textColor="@color/grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/fdTypeLabel"
             app:layout_constraintTop_toBottomOf="@id/divider"
@@ -152,6 +153,7 @@
             android:layout_height="0dp"
             android:text="@string/filedetails_size"
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/fdSize"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/fdSize" />
@@ -164,7 +166,7 @@
             android:gravity="end"
             android:text=""
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:textColor="@color/textColor"
+            android:textColor="@color/grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/fdSizeLabel"
             app:layout_constraintTop_toBottomOf="@id/fdType"
@@ -183,14 +185,15 @@
             android:id="@+id/fdModifiedLabel"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:visibility="gone"
             android:text="@string/filedetails_modified"
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/fdModified"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/fdModified"
             app:layout_constraintVertical_bias="1.0"
-            tools:visibility="visible"/>
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/fdModified"
@@ -198,27 +201,28 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:gravity="end"
-            android:visibility="gone"
             android:text=""
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:textColor="@color/textColor"
+            android:textColor="@color/grey"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/fdModifiedLabel"
             app:layout_constraintTop_toBottomOf="@id/divider2"
             tools:text="@tools:sample/lorem[6]"
-            tools:visibility="visible"/>
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/fdCreatedLabel"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:visibility="gone"
             android:text="@string/filedetails_created"
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/fdCreated"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/fdCreated"
-            tools:visibility="visible"/>
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/fdCreated"
@@ -226,26 +230,27 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:gravity="end"
-            android:visibility="gone"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:textColor="@color/textColor"
+            android:textColor="@color/grey"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/fdCreatedLabel"
             app:layout_constraintTop_toBottomOf="@id/fdModified"
             tools:text="@tools:sample/lorem[6]"
-            tools:visibility="visible"/>
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/fdLastSyncLabel"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:text="@string/filedetails_last_sync"
-            android:visibility="gone"
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/fdLastSync"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/fdLastSync"
-            tools:visibility="visible"/>
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/fdLastSync"
@@ -253,14 +258,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:gravity="end"
-            android:visibility="gone"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:textColor="@color/textColor"
+            android:textColor="@color/grey"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/fdLastSyncLabel"
             app:layout_constraintTop_toBottomOf="@id/fdCreated"
             tools:text="@tools:sample/lorem[6]"
-            tools:visibility="visible"/>
+            tools:visibility="visible" />
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/divider3"
@@ -277,10 +282,11 @@
             android:layout_height="0dp"
             android:text="@string/ssl_validator_label_L"
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/fdPath"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/fdPath"
-            tools:visibility="visible"/>
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/fdPath"
@@ -289,12 +295,12 @@
             android:layout_marginTop="12dp"
             android:gravity="end"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:textColor="@color/textColor"
+            android:textColor="@color/grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/fdPathLabel"
             app:layout_constraintTop_toBottomOf="@id/divider3"
             tools:text="@tools:sample/lorem[6]"
-            tools:visibility="visible"/>
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/fdSpaceLabel"
@@ -302,11 +308,12 @@
             android:layout_height="0dp"
             android:text="@string/space_label"
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/fdSpace"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/fdSpace"
-            tools:visibility="visible"/>
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/fdSpace"
@@ -315,29 +322,30 @@
             android:layout_marginTop="12dp"
             android:gravity="end"
             android:paddingRight="5dp"
-            android:visibility="gone"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="@color/grey"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@id/fdIconSpace"
             app:layout_constraintStart_toEndOf="@id/fdSpaceLabel"
             app:layout_constraintTop_toBottomOf="@id/fdPath"
-            tools:text="asasa"
-            tools:visibility="visible"/>
+            tools:text="space"
+            tools:visibility="visible" />
 
         <ImageButton
             android:id="@+id/fdIconSpace"
             android:layout_width="@dimen/file_indicator_pin_size_grid"
             android:layout_height="@dimen/file_indicator_pin_size_grid"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_spaces"
             android:scaleType="fitCenter"
+            android:src="@drawable/ic_spaces"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/fdSpace"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/fdSpace"
             app:layout_constraintTop_toTopOf="@id/fdSpace"
-            tools:visibility="visible"
-            />
+            app:tint="@color/icon_color"
+            tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

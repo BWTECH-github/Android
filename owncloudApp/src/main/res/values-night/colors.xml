@@ -38,7 +38,7 @@
     <color name="dialog_list_item">#1F1F1F</color>
 
     <!-- Multiselect backgrounds -->
-    <color name="selected_item_background">#ECECEC</color>
+    <color name="selected_item_background">#686868</color>
 
     <!-- Warning message background -->
     <color name="warning_background_color">#E0E0E0</color>
