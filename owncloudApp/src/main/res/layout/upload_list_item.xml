@@ -41,7 +41,7 @@
             android:layout_gravity="center_vertical"
             android:ellipsize="middle"
             android:singleLine="true"
-            android:textColor="@color/textColor"
+            android:textColor="@color/black"
             tools:text="@string/placeholder_filename"
             android:textSize="16sp" />
 
