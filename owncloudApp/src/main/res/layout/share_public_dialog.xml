@@ -31,12 +31,12 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:labelFor="@+id/shareViaLinkNameValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:labelFor="@+id/shareViaLinkNameValue"
                     android:padding="@dimen/standard_half_padding"
                     android:text="@string/share_via_link_name_label"
-                    android:textColor="@color/black"
+                    android:textColor="@color/drawerMenuTextColor"
                     android:textSize="15sp" />
 
                 <EditText
@@ -60,19 +60,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="@string/share_via_link_edit_permission_read_only_label" />
+                    android:text="@string/share_via_link_edit_permission_read_only_label"
+                    android:textColor="@color/drawerMenuTextColor" />
 
                 <RadioButton
                     android:id="@+id/shareViaLinkEditPermissionReadAndWrite"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/share_via_link_edit_permission_read_and_write_label" />
+                    android:text="@string/share_via_link_edit_permission_read_and_write_label"
+                    android:textColor="@color/drawerMenuTextColor" />
 
                 <RadioButton
                     android:id="@+id/shareViaLinkEditPermissionUploadFiles"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/share_via_link_edit_permission_upload_only_label" />
+                    android:text="@string/share_via_link_edit_permission_upload_only_label"
+                    android:textColor="@color/drawerMenuTextColor" />
 
             </RadioGroup>
 
@@ -92,16 +95,16 @@
 
                 <TextView
                     android:id="@+id/shareViaLinkPasswordLabel"
-                    android:labelFor="@+id/shareViaLinkPasswordSwitch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_toStartOf="@id/shareViaLinkPasswordSwitch"
+                    android:labelFor="@+id/shareViaLinkPasswordSwitch"
                     android:paddingLeft="@dimen/standard_half_padding"
                     android:paddingRight="@dimen/standard_half_padding"
                     android:paddingTop="@dimen/standard_half_padding"
                     android:text="@string/share_via_link_password_label"
-                    android:textColor="@color/black"
+                    android:textColor="@color/drawerMenuTextColor"
                     android:textSize="15sp" />
 
             </RelativeLayout>
@@ -283,18 +286,18 @@
 
                 <TextView
                     android:id="@+id/shareViaLinkExpirationLabel"
-                    android:labelFor="@+id/shareViaLinkExpirationSwitch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_toStartOf="@id/shareViaLinkExpirationSwitch"
+                    android:focusable="false"
+                    android:labelFor="@+id/shareViaLinkExpirationSwitch"
                     android:paddingLeft="@dimen/standard_half_padding"
                     android:paddingRight="@dimen/standard_half_padding"
                     android:paddingTop="@dimen/standard_half_padding"
                     android:text="@string/share_via_link_expiration_date_label"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    android:focusable="false"/>
+                    android:textColor="@color/drawerMenuTextColor"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/shareViaLinkExpirationValue"

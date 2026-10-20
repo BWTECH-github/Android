@@ -138,6 +138,7 @@
                 android:paddingStart="@dimen/standard_half_padding"
                 android:paddingTop="@dimen/standard_padding"
                 android:text="@string/share_no_users"
+                android:textColor="@color/grey"
                 android:textSize="15sp" />
 
         </LinearLayout>
@@ -208,6 +209,7 @@
                 android:paddingStart="@dimen/standard_half_padding"
                 android:paddingTop="@dimen/standard_padding"
                 android:text="@string/share_no_public_links"
+                android:textColor="@color/grey"
                 android:textSize="15sp" />
 
         </LinearLayout>

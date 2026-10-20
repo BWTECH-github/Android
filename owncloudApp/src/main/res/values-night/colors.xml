@@ -12,7 +12,7 @@
     <color name="owncloud_blue">#00e4bd</color>
     <color name="owncloud_blue_accent">#00A081</color>
     <color name="owncloud_blue_bright">#00A081</color>
-    <color name="warning_grey_text">#525757</color>
+    <color name="warning_grey_text">#A2A2A2</color>
     <color name="list_item_lastmod_and_filesize_text">#C6CECE</color>
     <color name="search_view_hint_text">#BDBDBD</color>
     <color name="icon_color">#CCCCCC</color>
@@ -41,7 +41,7 @@
     <color name="selected_item_background">#686868</color>
 
     <!-- Warning message background -->
-    <color name="warning_background_color">#E0E0E0</color>
+    <color name="warning_background_color">#3A3A3A</color>
 
     <color name="warning">#f4511e</color>
     <color name="success">#009688</color>

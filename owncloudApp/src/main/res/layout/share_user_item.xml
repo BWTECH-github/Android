@@ -37,19 +37,19 @@
             android:layout_gravity="center_vertical" />
 
         <TextView
+            android:id="@+id/userOrGroupName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="@dimen/two_line_primary_text_size"
-            android:text="@string/username"
-            android:id="@+id/userOrGroupName"
-            android:layout_marginTop="@dimen/standard_half_margin"
+            android:layout_gravity="center_vertical"
             android:layout_marginBottom="@dimen/standard_half_margin"
             android:layout_marginStart="@dimen/standard_half_margin"
-            android:textColor="@color/textColor"
-            android:singleLine="true"
+            android:layout_marginTop="@dimen/standard_half_margin"
+            android:layout_weight="1"
             android:ellipsize="middle"
-            android:layout_gravity="center_vertical" />
+            android:singleLine="true"
+            android:text="@string/username"
+            android:textSize="@dimen/two_line_primary_text_size"
+            android:textColor="@color/black" />
 
         <ImageButton
             android:layout_width="48dp"

@@ -35,7 +35,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -125,6 +127,11 @@ class SearchShareesFragment : Fragment(),
 
         searchView.imeOptions = EditorInfo.IME_FLAG_NO_EXTRACT_UI // avoid fullscreen with softkeyboard
 
+        searchView.findViewById<EditText>(androidx.appcompat.R.id.search_src_text).apply {
+            setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            setHintTextColor(ContextCompat.getColor(requireContext(), R.color.grey))
+        }
+
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 Timber.v("onQueryTextSubmit intercepted, query: $query")
@@ -172,7 +179,7 @@ class SearchShareesFragment : Fragment(),
     private fun updatePrivateShares(privateShares: List<OCShare>) {
         // Update list of users/groups
         userGroupsAdapter = ShareUserListAdapter(
-            requireActivity().applicationContext,
+            requireContext(),
             R.layout.share_user_item, privateShares, this
         )
 
