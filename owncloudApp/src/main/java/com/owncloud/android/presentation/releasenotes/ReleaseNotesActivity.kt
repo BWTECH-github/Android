@@ -25,6 +25,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.owncloud.android.BuildConfig
 import com.owncloud.android.MainApp
@@ -54,6 +57,15 @@ class ReleaseNotesActivity : AppCompatActivity() {
     }
 
     private fun initView() {
+        // The app is laid out edge-to-edge, so keep the header clear of the status bar and display cutout
+        ViewCompat.setOnApplyWindowInsetsListener(binding.statusBarBackground) { view, windowInsets ->
+            val topInset = windowInsets.getInsets(
+                WindowInsetsCompat.Type.statusBars() or WindowInsetsCompat.Type.displayCutout()
+            ).top
+            view.updateLayoutParams { height = topInset }
+            windowInsets
+        }
+
         binding.releaseNotes.let {
             it.layoutManager = LinearLayoutManager(this)
             it.adapter = releaseNotesAdapter
