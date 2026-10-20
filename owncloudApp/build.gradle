@@ -100,8 +100,8 @@ android {
 
         applicationId "com.bwtech.owncloudonline"
 
-        versionCode = 50000003
-        versionName = "5.0.0.3-beta"
+        versionCode = 50000004
+        versionName = "5.0.0.4-beta"
 
         buildConfigField "String", gitRemote, "\"" + getGitOriginRemote() + "\""
         buildConfigField "String", commitSHA1, "\"" + getLatestGitHash() + "\""
