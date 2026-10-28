@@ -98,10 +98,18 @@ android {
 
         testInstrumentationRunner "com.owncloud.android.utils.OCTestAndroidJUnitRunner"
 
-        applicationId "com.bwtech.owncloudonline"
+        // Branded builds supply these three; unset, the values below apply and
+        // the build behaves exactly as it does today. Same pattern as the
+        // OC_RELEASE_* signing variables above, for the same reason: one
+        // source tree has to produce a different app per customer without a
+        // file being edited per build.
+        applicationId System.env.OC_APPLICATION_ID ?: "com.bwtech.owncloudonline"
 
-        versionCode = 50000005
-        versionName = "5.0.0.5-beta"
+        // versionCode must increase with every build or Android refuses the
+        // install over an existing copy — toInteger() because an environment
+        // variable is a String and Gradle wants a number here.
+        versionCode = System.env.OC_VERSION_CODE ? System.env.OC_VERSION_CODE.toInteger() : 50000005
+        versionName = System.env.OC_VERSION_NAME ?: "5.0.0.5-beta"
 
         buildConfigField "String", gitRemote, "\"" + getGitOriginRemote() + "\""
         buildConfigField "String", commitSHA1, "\"" + getLatestGitHash() + "\""
